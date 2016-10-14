@@ -58,6 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Registros\RegistroUsuariosWebForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +70,13 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registros\RegistroUsuariosWebForm.aspx.cs">
+      <DependentUpon>RegistroUsuariosWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\RegistroUsuariosWebForm.aspx.designer.cs">
+      <DependentUpon>RegistroUsuariosWebForm.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
@@ -81,7 +89,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Consultas\" />
-    <Folder Include="Registros\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
