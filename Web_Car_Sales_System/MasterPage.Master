@@ -4,17 +4,226 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Web Car Sales System</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
+
     </asp:ContentPlaceHolder>
+
+        <header class="main-header">
+        <nav class="navbar navbar-static-top">
+            <div class="navbar-main">
+              
+              <div class="container">
+
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                  </button>
+                  
+                  <a class="navbar-brand" href="index.html"><img src="assets/images/sadaka-logo.png" alt=""></a>
+                  
+                </div>
+
+                <div id="navbar" class="navbar-collapse collapse pull-right">
+
+                  <ul class="nav navbar-nav">
+
+                    <li><a class="is-active" href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li class="has-child"><a href="#">CAUSES</a>
+
+                      <ul class="submenu">
+                         <li class="submenu-item"><a href="causes.html">Causes list </a></li>
+                         <li class="submenu-item"><a href="causes-single.html">Single cause </a></li>
+                         <li class="submenu-item"><a href="causes-single.html">Single cause </a></li>
+                         <li class="submenu-item"><a href="causes-single.html">Single cause </a></li>
+                      </ul>
+
+                    </li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+
+                  </ul>
+
+                </div> <!-- /#navbar -->
+
+              </div> <!-- /.container -->
+              
+            </div> <!-- /.navbar-main -->
+
+
+        </nav> 
+
+    </header> <!-- /. main-header -->
+         <!-- Bootsrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+        <!-- Owl carousel -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+
+        <!-- Template main Css -->
+        <link rel="stylesheet" href="css/style.css">
+        
+        <!-- Modernizer -->
+        <script src="js/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
+
     <form id="form1" runat="server">
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
+ 
         </asp:ContentPlaceHolder>
+
+        <footer class="main-footer">
+
+        <div class="footer-top">
+            
+        </div>
+
+
+        <div class="footer-main">
+            <div class="container">
+                
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <div class="footer-col">
+
+                            <h4 class="footer-title">About us <span class="title-under"></span></h4>
+
+                            <div class="footer-content">
+
+                                <p>
+                                    <strong>Sadaka</strong> ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros rutrum turpis viverra elementum semper quis ex. Donec lorem nulla, aliquam quis neque vel, maximus lacinia urna.
+                                </p> 
+
+                                <p>
+                                    ILorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros rutrum turpis viverra elementum semper quis ex. Donec lorem nulla, aliquam quis neque vel, maximus lacinia urna.
+                                </p>
+
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="footer-col">
+
+                            <h4 class="footer-title">LAST TWEETS <span class="title-under"></span></h4>
+
+                            <div class="footer-content">
+                                <ul class="tweets list-unstyled">
+                                    <li class="tweet"> 
+
+                                        20 Surprise Eggs, Kinder Surprise Cars 2 Thomas Spongebob Disney Pixar  http://t.co/fTSazikPd4 
+
+                                    </li>
+
+                                    <li class="tweet"> 
+
+                                        20 Surprise Eggs, Kinder Surprise Cars 2 Thomas Spongebob Disney Pixar  http://t.co/fTSazikPd4 
+
+                                    </li>
+
+                                    <li class="tweet"> 
+
+                                        20 Surprise Eggs, Kinder Surprise Cars 2 Thomas Spongebob Disney Pixar  http://t.co/fTSazikPd4 
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="footer-col">
+
+                            <h4 class="footer-title">Contactanos: <span class="title-under"></span></h4>
+
+                            <div class="footer-content">
+
+                                <div class="footer-form">
+                                    
+                                    <div class="footer-form" >
+                                    
+                                    <form class="ajax-form">
+                                        <div  class="form-group"> <!-- revisar-->
+                                            <input type="text" name="ContactoNombre" class="form-control" placeholder="Nombre*">
+                                        </div>
+                                         <div class="form-group">
+                                            <input type="email" name="ContactoCorreo" class="form-control" placeholder="Correo*">
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea name="ContactoMensage" class="form-control" placeholder="Mensaje*"></textarea>
+                                        </div>
+
+                                        <div class="form-group alerts">
+                        
+                                            <div class="alert alert-success" role="alert">
+                                              
+                                            </div>
+
+                                            <div class="alert alert-danger" role="alert">
+                                              
+                                            </div>
+                                            
+                                        </div>
+
+                                         <div class="form-group">
+                                            <button type="submit" class="btn btn-submit pull-right">Enviar Mensaje</button>
+                                        </div>
+                                        
+                                    </form>
+
+                                </div>
+
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+        </div>
+        
+    </footer> <!-- main-footer -->
     </div>
     </form>
+
+    <!-- jQuery -->
+    <script src="js/jquery-3.1.0.min.js"></script>
+
+    <!-- Bootsrap javascript file -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <!-- owl carouseljavascript file -->
+    <script src="js/owl.carousel.min.js"></script>
+
+    <!-- Template main javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 </body>
 </html>

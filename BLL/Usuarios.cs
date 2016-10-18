@@ -11,13 +11,16 @@ namespace BLL
     {
         public int UsuarioId { get; set; }
         public string Nombre { set; get; }
+        public string NombreUsuario { set; get; }
         public string Password { set; get; }
         public int Prioridad { set; get; }
+        //foto
 
-        public Usuarios(int usuarioId, string nombre, string password, int prioridad)
+        public Usuarios(int usuarioId, string nombre, string nombreUsuario, string password, int prioridad)
         {
             this.UsuarioId = usuarioId;
             this.Nombre = nombre;
+            this.NombreUsuario = nombreUsuario;
             this.Password = password;
             this.Prioridad = prioridad;
         }
@@ -33,7 +36,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(string.Format("INSERT INTO Usuarios (Nombre, Password, Prioridad) VALUES ('{0}','{1}',{2})", this.Nombre, this.Password, this.Prioridad));
+                retorno = conexion.Ejecutar(string.Format("INSERT INTO Usuarios (Nombre, NombreUsuario, Password, Prioridad) VALUES ('{0}','{1}','{2}',{3})", this.Nombre, this.NombreUsuario, this.Password, this.Prioridad));
                 return retorno;
             }
             catch (Exception ex)
@@ -48,7 +51,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(string.Format("UPDATE Usuarios SET Nombre='{0}', Password='{1}', Prioridad={2} WHERE UsuarioId={3}", this.Nombre, this.Password, this.Prioridad, this.UsuarioId));
+                retorno = conexion.Ejecutar(string.Format("UPDATE Usuarios SET Nombre='{0}', NombreUsuario'{1}', Password='{2}', Prioridad={3} WHERE UsuarioId={4}", this.Nombre, this.NombreUsuario, this.Password, this.Prioridad, this.UsuarioId));
                 return retorno;
             }
             catch (Exception ex)
@@ -81,6 +84,7 @@ namespace BLL
             {
                 this.UsuarioId = (int)dt.Rows[0]["UsuarioId"];
                 this.Nombre = dt.Rows[0]["Nombre"].ToString();
+                this.NombreUsuario = dt.Rows[0]["NombreUsuario"].ToString();
                 this.Password = dt.Rows[0]["Password"].ToString();
                 this.Prioridad = (int)dt.Rows[0]["Prioridad"];
             }
