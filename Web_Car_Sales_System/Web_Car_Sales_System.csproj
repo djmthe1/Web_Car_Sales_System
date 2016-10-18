@@ -59,9 +59,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\WebCarSalesDb.mdf" />
-    <Content Include="App_Data\WebCarSalesDb_log.ldf">
-      <DependentUpon>WebCarSalesDb.mdf</DependentUpon>
-    </Content>
     <Content Include="Consultas\ConsultaUsuariosWebForm.aspx" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
