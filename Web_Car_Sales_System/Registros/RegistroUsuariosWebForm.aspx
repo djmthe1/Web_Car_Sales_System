@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="RegistroUsuariosWebForm.aspx.cs" Inherits="Web_Car_Sales_System.Registros.RegistroUsuariosWebForm" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="RegistroUsuariosWebForm.aspx.cs" Inherits="Web_Car_Sales_System.Registros.RegistroUsuariosWebForm" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {

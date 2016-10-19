@@ -51,7 +51,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(string.Format("UPDATE Usuarios SET Nombre='{0}', NombreUsuario'{1}', Password='{2}', Prioridad={3} WHERE UsuarioId={4}", this.Nombre, this.NombreUsuario, this.Password, this.Prioridad, this.UsuarioId));
+                retorno = conexion.Ejecutar(string.Format("UPDATE Usuarios SET Nombre='{0}', NombreUsuario='{1}', Password='{2}', Prioridad={3} WHERE UsuarioId={4}", this.Nombre, this.NombreUsuario, this.Password, this.Prioridad, this.UsuarioId));
                 return retorno;
             }
             catch (Exception ex)
