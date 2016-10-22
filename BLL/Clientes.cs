@@ -16,12 +16,12 @@ namespace BLL
         public string Direccion { set; get; }
         public string Cedula { set; get; }
         public string Nacionalidad { set; get; }
-        public string Ocupacion { set; get; }
         public string LugarDeNacimiento { set; get; }
+        public string Ocupacion { set; get; }
         public int Sexo { set; get; }
         public List<ClientesTelefonos> telefonos { get; set; }
 
-        public Clientes(int clienteId, string nombreCompleto, string nombreUsuario, string password, string direccion, string cedula, string nacionalidad, string ocupacion, string lugarDeNacimiento, int sexo, int facturaId)
+        public Clientes(int clienteId, string nombreCompleto, string nombreUsuario, string password, string direccion, string cedula, string nacionalidad, string lugarDeNacimiento, string ocupacion,  int sexo, int facturaId)
         {
             this.ClienteId = clienteId;
             this.NombreCompleto = nombreCompleto;
@@ -31,8 +31,8 @@ namespace BLL
             this.Direccion = direccion;
             this.Cedula = cedula;
             this.Nacionalidad = nacionalidad;
-            this.Ocupacion = ocupacion;
             this.LugarDeNacimiento = lugarDeNacimiento;
+            this.Ocupacion = ocupacion;
             this.Sexo = sexo;
         }
 
@@ -41,9 +41,9 @@ namespace BLL
             telefonos = new List<ClientesTelefonos>();
         }
 
-        public void InsertarTelefono(int ClienteId, string Tipo, string Telefono)
+        public void InsertarTelefono(string Tipo, string Telefono)
         {
-            this.telefonos.Add(new ClientesTelefonos(ClienteId, Tipo, Telefono));
+            this.telefonos.Add(new ClientesTelefonos(Tipo, Telefono));
         }
 
         public override bool Insertar()
@@ -53,7 +53,7 @@ namespace BLL
             object Identity;
             try
             {
-                Identity = conexion.ObtenerValor(string.Format("INSERT INTO Clientes (NombreCompleto, NombreUsuario, Password, Direccion, Cedula, Nacionalidad, Ocupacion, LugarDeNacimiento, Sexo) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}',{8})", this.NombreCompleto, this.NombreUsuario, this.Password, this.Direccion, this.Cedula, this.Nacionalidad, this.Ocupacion, this.LugarDeNacimiento, this.Sexo));
+                Identity = conexion.ObtenerValor(string.Format("INSERT INTO Clientes (NombreCompleto, NombreUsuario, Password, Direccion, Cedula, Nacionalidad, LugarDeNacimiento, Ocupacion, Sexo) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}',{8}) SELECT @@Identity", this.NombreCompleto, this.NombreUsuario, this.Password, this.Direccion, this.Cedula, this.Nacionalidad, this.LugarDeNacimiento, this.Ocupacion, this.Sexo));
                 int.TryParse(Identity.ToString(), out retorno);
                 if (retorno > 0)
                 {
@@ -76,13 +76,13 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(string.Format("UPDATE Clientes SET NombreCompleto='{0}', NombreUsuario='{1}', Password='{2}', Direccion='{3}', Cedula='{4}', Nacionalidad='{5}', Ocupacion='{6}', LugarDeNacimiento='{7}', Sexo={8} WHERE ClienteId={9}", this.NombreCompleto, this.NombreUsuario, this.Password, this.Direccion, this.Cedula, this.Nacionalidad, this.Ocupacion, this.LugarDeNacimiento, this.Sexo, this.ClienteId));
+                retorno = conexion.Ejecutar(string.Format("UPDATE Clientes SET NombreCompleto='{0}', NombreUsuario='{1}', Password='{2}', Direccion='{3}', Cedula='{4}', Nacionalidad='{5}', LugarDeNacimiento='{6}', Ocupacion='{7}', Sexo={8} WHERE ClienteId={9}", this.NombreCompleto, this.NombreUsuario, this.Password, this.Direccion, this.Cedula, this.Nacionalidad, this.LugarDeNacimiento, this.Ocupacion, this.Sexo, this.ClienteId));
                 if (retorno)
                 {
                     conexion.Ejecutar(string.Format("DELETE FROM ClientesTelefonos WHERE ClienteId={0}", this.ClienteId));
                     foreach (ClientesTelefonos numeros in telefonos)
                     {
-                        conexion.Ejecutar(string.Format("INSERT INTO ClientesTelefonos (ClienteId, Tipo, Telefono) VALUES ({0},'{1}','{2}')", retorno, numeros.Tipo, numeros.Telefono));
+                        conexion.Ejecutar(string.Format("INSERT INTO ClientesTelefonos (ClienteId, Tipo, Telefono) VALUES ({0},'{1}','{2}')", ClienteId, numeros.Tipo, numeros.Telefono));
                     }
                 }
                 return retorno;
@@ -128,14 +128,14 @@ namespace BLL
                 this.Direccion = dt.Rows[0]["Direccion"].ToString();
                 this.Cedula = dt.Rows[0]["Cedula"].ToString();
                 this.Nacionalidad = dt.Rows[0]["Nacionalidad"].ToString();
-                this.Ocupacion = dt.Rows[0]["Ocupacion"].ToString();
                 this.LugarDeNacimiento = dt.Rows[0]["LugarDeNacimiento"].ToString();
+                this.Ocupacion = dt.Rows[0]["Ocupacion"].ToString();
                 this.Sexo = (int)dt.Rows[0]["Sexo"];
 
                 dtTelefonos = conexion.ObtenerDatos("SELECT * FROM ClientesTelefonos WHERE ClienteId=" + IdBuscado);
                 foreach (DataRow row in dtTelefonos.Rows)
                 {
-                    this.InsertarTelefono((int)dtTelefonos.Rows[0]["ClienteId"], row["Tipo"].ToString(), row["Telefono"].ToString());
+                    this.InsertarTelefono(row["Tipo"].ToString(), row["Telefono"].ToString());
                 }
             }
             return dt.Rows.Count > 0;

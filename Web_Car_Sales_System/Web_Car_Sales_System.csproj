@@ -183,6 +183,11 @@
     <Compile Include="Registros\RegistroVehiculosWebForm.aspx.designer.cs">
       <DependentUpon>RegistroVehiculosWebForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebCarSalesDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebCarSalesDbDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
@@ -200,15 +205,27 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="WebCarSalesDbDataSet.xsc">
+      <DependentUpon>WebCarSalesDbDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="WebCarSalesDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WebCarSalesDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="WebCarSalesDbDataSet.xss">
+      <DependentUpon>WebCarSalesDbDataSet.xsd</DependentUpon>
+    </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reportes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{02b6df23-9e8e-4215-bc6d-62bd6b825819}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reportes\ModelosReport.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

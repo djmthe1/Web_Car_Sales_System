@@ -61,30 +61,30 @@ create table Clientes(--Revisar
 	Direccion varchar(30),
 	Cedula varchar(20),
 	Nacionalidad varchar(10),
-	Ocupacion varchar(30),
 	LugarDeNacimiento varchar(20),
+	Ocupacion varchar(30),
 	Sexo int
 )
 
 --TelefonosClientes
-create table NumerosTelefono(
+create table ClientesTelefonos(
 	TelefonoId int identity primary key,
 	ClienteId int References Clientes(ClienteId),
-	TipoTelefono varchar(12),--revisar
-	Numero varchar(12)
+	Tipo varchar(12),
+	Telefono varchar(12)
 )
 
 --Vehiculos
 create table Vehiculos(
 	VehiculoId int identity primary key,
-	EstadoDelVehiculo int,
-	ModeloId int References Modelos(ModeloId),
+	EstadoVehiculo int,
 	MarcaId int References Marcas(MarcaId),
+	ModeloId int References Modelos(ModeloId),
 	MotorId int References Motores(MotorId),
 	ColorId int References Colores(ColorId),
 	Año int,
 	NoChasis int,
-	TipoVehiculoId int References TipoDeVehiculos(TipoDeVehiculoId),
+	TipoVehiculoId int References TipoVehiculos(TipoVehiculoId),
 	Kilometraje int,
 	Precio int,
 	Placa varchar(20),
@@ -95,13 +95,13 @@ create table Vehiculos(
 	Radio bit,
 	Gato bit,
 	Gomas bit,
-	GomaDeRepuesto bit,
+	GomaRepuesto bit,
 	Alfombras bit,
 	Botiquin bit,
-	TaponDeGasolina bit,
-	TaponDeRadiador bit,
+	TaponGasolina bit,
+	TaponRadiador bit,
 	Encendedor bit,
 	ManualDeUsuario bit,
-	DuplicadoDeLlaveDeEncendido bit,
-	LlaveDeRueda bit
+	DuplicadoLlaveEncendido bit,
+	LlaveRueda bit
 )
