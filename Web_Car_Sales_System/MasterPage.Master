@@ -17,6 +17,18 @@
                     <li><a class="is-active" href="Index.aspx">INICIO</a></li>
                     <li><a href="Buscar.aspx">BUSQUEDA</a></li>
                     <li><a href="Listado.aspx">VEHICULOS</a></li>
+                      <li class="has-child"><a href="#">REGISTROS</a>
+
+                      <ul class="submenu">
+                         <li class="submenu-item"><a href="RegistroColoresWebForm.aspx">COLORES </a></li>
+                         <li class="submenu-item"><a href="RegistroMarcasWebForm.aspx">MARCAS </a></li>
+                         <li class="submenu-item"><a href="RegistroModelosWebForm.aspx">MODELOS </a></li>
+                         <li class="submenu-item"><a href="RegistroMotoresWebForm.aspx">MOTORES </a></li>
+                          <li class="submenu-item"><a href="RegistroTipoVehiculosWebForm.aspx">TIPO DE VEHICULOS </a></li>
+                          <li class="submenu-item"><a href="RegistroVehiculosWebForm.aspx">VEHICULOS </a></li>
+                      </ul>
+
+                    </li>
                     <li><a href="Contacto.aspx">CONTACTO</a></li>
                     <li><a href="Login.aspx">LOGIN</a></li>
                   </ul>

@@ -44,12 +44,13 @@ create table Usuarios(
 --Factura de ventas
 create table Facturas(
 	FacturaId int identity primary key,
-	Fecha Date(10),
+	Fecha varchar(12),
 	VehiculoId int References Vehiculos(VehiculoId),
-	PagoInicialEnEfectivo int,
-	PagoInicialEnCheque int,
+	ClienteId int References Clientes(ClienteId),
+	PagoInicialEfectivo int,
+	PagoInicialCheque int,
 	PrecioAPagar int,
-	AutorizadoPor varchar(20)
+	AutorizadoPor Int
 )
 
 --Clientes
@@ -57,7 +58,7 @@ create table Clientes(--Revisar
 	ClienteId int identity primary key,
 	NombreCompleto varchar(30),
 	NombreUsuario varchar(20),
-	Password varchar (40),
+	Password varchar(40),
 	Direccion varchar(30),
 	Cedula varchar(20),
 	Nacionalidad varchar(10),

@@ -48,7 +48,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(string.Format("UPDATE Modelos SET MarcaId={0} Descripcion='{1}' WHERE ModeloId={2}", this.MarcaId, this.Descripcion, this.ModeloId));
+                retorno = conexion.Ejecutar(string.Format("UPDATE Modelos SET MarcaId={0}, Descripcion='{1}' WHERE ModeloId={2}", this.MarcaId, this.Descripcion, this.ModeloId));
                 return retorno;
             }
             catch (Exception ex)

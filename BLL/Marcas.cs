@@ -61,7 +61,7 @@ namespace BLL
             bool retorno;
             try
             {
-                retorno = conexion.Ejecutar(string.Format("DELETE FROM Marcas WHERE ColorId={0}", this.MarcaId));
+                retorno = conexion.Ejecutar(string.Format("DELETE FROM Marcas WHERE MarcaId={0}", this.MarcaId));
                 return retorno;
             }
             catch (Exception ex)

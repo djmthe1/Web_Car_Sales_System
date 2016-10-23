@@ -103,10 +103,10 @@ namespace BLL
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
             ConexionDb conexion = new ConexionDb();
-            string ordenar = "";
+        string ordenar = "";
             if (!Orden.Equals(""))
                 ordenar = " orden by  " + Orden;
             return conexion.ObtenerDatos(("SELECT " + Campos + " FROM Facturas WHERE " + Condicion + Orden));
         }
-    }
+}
 }

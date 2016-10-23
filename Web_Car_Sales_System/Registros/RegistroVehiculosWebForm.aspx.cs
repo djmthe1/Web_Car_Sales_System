@@ -30,28 +30,28 @@ namespace Web_Car_Sales_System.Registros
             MarcaDropDownList.DataBind();
 
             Modelos modelo = new Modelos();
-            MarcaDropDownList.DataSource = modelo.Listado(" * ", " 1=1 ", " ");
-            MarcaDropDownList.DataTextField = "Descripcion";
-            MarcaDropDownList.DataValueField = "ModeloId";
-            MarcaDropDownList.DataBind();
+            ModeloDropDownList.DataSource = modelo.Listado(" * ", " 1=1 ", " ");
+            ModeloDropDownList.DataTextField = "Descripcion";
+            ModeloDropDownList.DataValueField = "ModeloId";
+            ModeloDropDownList.DataBind();
 
             Motores motor = new Motores();
-            MarcaDropDownList.DataSource = motor.Listado(" * ", " 1=1 ", " ");
-            MarcaDropDownList.DataTextField = "Descripcion";
-            MarcaDropDownList.DataValueField = "MotorId";
-            MarcaDropDownList.DataBind();
+            MotorDropDownList.DataSource = motor.Listado(" * ", " 1=1 ", " ");
+            MotorDropDownList.DataTextField = "Descripcion";
+            MotorDropDownList.DataValueField = "MotorId";
+            MotorDropDownList.DataBind();
 
             Colores color = new Colores();
-            MarcaDropDownList.DataSource = color.Listado(" * ", " 1=1 ", " ");
-            MarcaDropDownList.DataTextField = "Descripcion";
-            MarcaDropDownList.DataValueField = "ColorId";
-            MarcaDropDownList.DataBind();
+            ColorDropDownList.DataSource = color.Listado(" * ", " 1=1 ", " ");
+            ColorDropDownList.DataTextField = "Descripcion";
+            ColorDropDownList.DataValueField = "ColorId";
+            ColorDropDownList.DataBind();
 
             TipoVehiculos tipo = new TipoVehiculos();
-            MarcaDropDownList.DataSource = tipo.Listado(" * ", " 1=1 ", " ");
-            MarcaDropDownList.DataTextField = "Descripcion";
-            MarcaDropDownList.DataValueField = "TipoVehiculoId";
-            MarcaDropDownList.DataBind();
+            TipoDropDownList.DataSource = tipo.Listado(" * ", " 1=1 ", " ");
+            TipoDropDownList.DataTextField = "Descripcion";
+            TipoDropDownList.DataValueField = "TipoVehiculoId";
+            TipoDropDownList.DataBind();
         }
 
         private void Limpiar()
@@ -63,21 +63,21 @@ namespace Web_Car_Sales_System.Registros
             ((TextBox)PrecioTextBox).Text = string.Empty;
             ((TextBox)PlacaTextBox).Text = string.Empty;
             ((TextBox)MatriculaTextBox).Text = string.Empty;
-            ((RadioButton)RetrovisorInternoCheckBox).Checked = false;
-            ((RadioButton)RetrovisorDerechoCheckBox).Checked = false;
-            ((RadioButton)RetrovisorIzquierdoCheckBox).Checked = false;
-            ((RadioButton)GomasCheckBox).Checked = false;
-            ((RadioButton)GatoCheckBox).Checked = false;
-            ((RadioButton)RadioCheckBox).Checked = false;
-            ((RadioButton)LlaveRuedaCheckBox).Checked = false;
-            ((RadioButton)GomaRepuestoCheckBox).Checked = false;
-            ((RadioButton)AlfombrasCheckBox).Checked = false;
-            ((RadioButton)BotiquinCheckBox).Checked = false;
-            ((RadioButton)TaponGasolinaCheckBox).Checked = false;
-            ((RadioButton)TaponRadiadorCheckBox).Checked = false;
-            ((RadioButton)EncendedorCheckBox).Checked = false;
-            ((RadioButton)ManualDeUsuarioCheckBox).Checked = false;
-            ((RadioButton)DuplicadoLlaveEncendidoCheckBox).Checked = false;
+            ((CheckBox)RetrovisorInternoCheckBox).Checked = false;
+            ((CheckBox)RetrovisorDerechoCheckBox).Checked = false;
+            ((CheckBox)RetrovisorIzquierdoCheckBox).Checked = false;
+            ((CheckBox)GomasCheckBox).Checked = false;
+            ((CheckBox)GatoCheckBox).Checked = false;
+            ((CheckBox)RadioCheckBox).Checked = false;
+            ((CheckBox)LlaveRuedaCheckBox).Checked = false;
+            ((CheckBox)GomaRepuestoCheckBox).Checked = false;
+            ((CheckBox)AlfombrasCheckBox).Checked = false;
+            ((CheckBox)BotiquinCheckBox).Checked = false;
+            ((CheckBox)TaponGasolinaCheckBox).Checked = false;
+            ((CheckBox)TaponRadiadorCheckBox).Checked = false;
+            ((CheckBox)EncendedorCheckBox).Checked = false;
+            ((CheckBox)ManualDeUsuarioCheckBox).Checked = false;
+            ((CheckBox)DuplicadoLlaveEncendidoCheckBox).Checked = false;
         }
 
         private void ObtenerValores()

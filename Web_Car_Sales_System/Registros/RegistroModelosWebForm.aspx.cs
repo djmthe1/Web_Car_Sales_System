@@ -48,6 +48,7 @@ namespace Web_Car_Sales_System.Registros
         private void DevolverValores()
         {
             ModeloIdTextBox.Text = modelo.ModeloId.ToString();
+            MarcaDropDownList.SelectedValue = modelo.MarcaId.ToString();
             DescripcionTextBox.Text = modelo.Descripcion;
         }
 

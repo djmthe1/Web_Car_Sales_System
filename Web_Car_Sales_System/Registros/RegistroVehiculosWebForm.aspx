@@ -83,7 +83,7 @@
             <td class="auto-style26">
                 <asp:DropDownList ID="EstadoDropDownList" runat="server" Class="form-control input-sm" CssClass="col-xs-offset-0" Height="34px" style="margin-left: 0px" Width="285px">
                     <asp:ListItem Value="1">Nuevo</asp:ListItem>
-                    <asp:ListItem Value="1">Usado</asp:ListItem>
+                    <asp:ListItem Value="2">Usado</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td class="text-right">&nbsp;</td>
