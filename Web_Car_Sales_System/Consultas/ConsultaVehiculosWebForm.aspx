@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ConsultaUsuariosWebForm.aspx.cs" Inherits="Web_Car_Sales_System.Consultas.ConsultaUsuariosWebForm" EnableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ConsultaVehiculosWebForm.aspx.cs" Inherits="Web_Car_Sales_System.Consultas.ConsultaVehiculosWebForm" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
@@ -49,7 +49,7 @@
     <table class="auto-style1">
         <tr>
             <td class="auto-style25">&nbsp;</td>
-            <td class="auto-style28"><strong>Consulta de Usuarios</strong></td>
+            <td class="auto-style28"><strong>Consulta de Vehiculos</strong></td>
             <td>&nbsp;</td>
         </tr>
         <tr>
@@ -59,10 +59,19 @@
         </tr>
         <tr>
             <td class="auto-style27">Buscar Por:<asp:DropDownList ID="BuscarPorDropDownList" Class="form-control input-sm" runat="server" CssClass="col-xs-offset-0" Height="40px" Width="150px" style="margin-left: 0px">
-                <asp:ListItem>UsuarioId</asp:ListItem>
-                <asp:ListItem>Nombre</asp:ListItem>
-                <asp:ListItem>NombreUsuario</asp:ListItem>
-                <asp:ListItem>Prioridad</asp:ListItem>
+                <asp:ListItem>VehiculoId</asp:ListItem>
+                <asp:ListItem>EstadoVehiculo</asp:ListItem>
+                <asp:ListItem>MarcaId</asp:ListItem>
+                <asp:ListItem>ModeloId</asp:ListItem>
+                <asp:ListItem>MotorId</asp:ListItem>
+                <asp:ListItem>ColorId</asp:ListItem>
+                <asp:ListItem>Año</asp:ListItem>
+                <asp:ListItem Value="NoChasis"></asp:ListItem>
+                <asp:ListItem>TipoVehiculoId</asp:ListItem>
+                <asp:ListItem>Kilometraje</asp:ListItem>
+                <asp:ListItem>Precio</asp:ListItem>
+                <asp:ListItem>Placa</asp:ListItem>
+                <asp:ListItem>Matricula</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td class="auto-style26">

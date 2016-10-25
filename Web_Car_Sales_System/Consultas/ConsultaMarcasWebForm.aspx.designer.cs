@@ -10,7 +10,7 @@
 namespace Web_Car_Sales_System.Consultas {
     
     
-    public partial class ConsultaUsuariosWebForm {
+    public partial class ConsultaMarcasWebForm {
         
         /// <summary>
         /// BuscarPorDropDownList control.

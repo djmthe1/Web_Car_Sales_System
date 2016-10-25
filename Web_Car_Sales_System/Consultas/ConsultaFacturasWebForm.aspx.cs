@@ -8,7 +8,7 @@ using BLL;
 
 namespace Web_Car_Sales_System.Consultas
 {
-    public partial class ConsultaUsuariosWebForm : System.Web.UI.Page
+    public partial class ConsultaFacturasWebForm : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,7 +17,7 @@ namespace Web_Car_Sales_System.Consultas
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            Usuarios usuario = new Usuarios();
+            Facturas factura = new Facturas();
             string filtro = "1=1";
 
             if (FiltroTextBox.Text.Length > 0)
@@ -25,7 +25,7 @@ namespace Web_Car_Sales_System.Consultas
                 filtro = BuscarPorDropDownList.SelectedValue + " like '%" + FiltroTextBox.Text + "%'";
             }
 
-            ConsultaGridView.DataSource = usuario.Listado("UsuarioId, Nombre, NombreUsuario, Prioridad", filtro, "");
+            ConsultaGridView.DataSource = factura.Listado("FacturaId, Fecha, ClienteId, VehiculoId, PagoInicialEfectivo, PagoInicialCheque, PrecioAPagar, AutorizadoPor", filtro, "");
             ConsultaGridView.DataBind();
         }
 

@@ -5,10 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BLL;
+using System.Data;
 
 namespace Web_Car_Sales_System.Consultas
 {
-    public partial class ConsultaUsuariosWebForm : System.Web.UI.Page
+    public partial class ConsultaMarcasWebForm : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,21 +18,28 @@ namespace Web_Car_Sales_System.Consultas
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            Usuarios usuario = new Usuarios();
+            Marcas marca = new Marcas();
             string filtro = "1=1";
 
             if (FiltroTextBox.Text.Length > 0)
             {
                 filtro = BuscarPorDropDownList.SelectedValue + " like '%" + FiltroTextBox.Text + "%'";
             }
-
-            ConsultaGridView.DataSource = usuario.Listado("UsuarioId, Nombre, NombreUsuario, Prioridad", filtro, "");
+            
+            ConsultaGridView.DataSource = marca.Listado("MarcaId, Descripcion", filtro, "");
             ConsultaGridView.DataBind();
         }
 
         protected void ImprimirButton_Click(object sender, EventArgs e)
         {
+            Reportes.VisorReportes Visor = new Reportes.VisorReportes();
+            DataTable dt = new DataTable();
 
+            dt = (DataTable)ConsultaGridView.DataSource;
+            dt.TableName = "Marcas";
+            Visor.reporte = @"Reportes\MarcasReport.rdlc";
+            Visor.data = dt;
+            Visor.DataBind();
         }
     }
 }

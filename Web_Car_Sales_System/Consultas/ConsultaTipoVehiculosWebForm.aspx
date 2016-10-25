@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ConsultaUsuariosWebForm.aspx.cs" Inherits="Web_Car_Sales_System.Consultas.ConsultaUsuariosWebForm" EnableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ConsultaTipoVehiculosWebForm.aspx.cs" Inherits="Web_Car_Sales_System.Consultas.ConsultaTipoVehiculosWebForm" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
@@ -22,7 +22,7 @@
             text-align: left;
         }
         .auto-style27 {
-            width: 315px;
+            width: 307px;
             text-align: right;
         }
             .auto-style28 {
@@ -43,26 +43,27 @@
             text-align: center;
             font-size: x-large;
         }
+            .auto-style32 {
+            width: 307px
+        }
             </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table class="auto-style1">
         <tr>
-            <td class="auto-style25">&nbsp;</td>
-            <td class="auto-style28"><strong>Consulta de Usuarios</strong></td>
+            <td class="auto-style32">&nbsp;</td>
+            <td class="auto-style28"><strong>Consulta de Tipos de Vehiculos</strong></td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style25">&nbsp;</td>
+            <td class="auto-style32">&nbsp;</td>
             <td class="auto-style28"></td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style27">Buscar Por:<asp:DropDownList ID="BuscarPorDropDownList" Class="form-control input-sm" runat="server" CssClass="col-xs-offset-0" Height="40px" Width="150px" style="margin-left: 0px">
-                <asp:ListItem>UsuarioId</asp:ListItem>
-                <asp:ListItem>Nombre</asp:ListItem>
-                <asp:ListItem>NombreUsuario</asp:ListItem>
-                <asp:ListItem>Prioridad</asp:ListItem>
+                <asp:ListItem>TipoVehiculoId</asp:ListItem>
+                <asp:ListItem>Descripcion</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td class="auto-style26">

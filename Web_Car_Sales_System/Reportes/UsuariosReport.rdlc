@@ -6,13 +6,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.56715cm</Width>
+              <Width>4.24625cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.56715cm</Width>
+              <Width>4.24625cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.56715cm</Width>
+              <Width>4.24625cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -28,7 +28,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Modelo Id</Value>
+                              <Value>Usuario Id</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -58,7 +58,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Marca Id</Value>
+                              <Value>Nombre Usuario</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -88,7 +88,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Descripcion</Value>
+                              <Value>prioridad</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -116,21 +116,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ModeloId">
+                    <Textbox Name="UsuarioId">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ModeloId.Value</Value>
+                              <Value>=Fields!UsuarioId.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ModeloId</rd:DefaultName>
+                      <rd:DefaultName>UsuarioId</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -146,21 +146,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="MarcaId">
+                    <Textbox Name="NombreUsuario">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MarcaId.Value</Value>
+                              <Value>=Fields!NombreUsuario.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>MarcaId</rd:DefaultName>
+                      <rd:DefaultName>NombreUsuario</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -176,21 +176,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Descripcion">
+                    <Textbox Name="prioridad">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Descripcion.Value</Value>
+                              <Value>=Fields!prioridad.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Descripcion</rd:DefaultName>
+                      <rd:DefaultName>prioridad</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -225,11 +225,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>Modelos</DataSetName>
-        <Top>1.87537cm</Top>
-        <Left>4.60058cm</Left>
+        <DataSetName>Usuarios</DataSetName>
+        <Top>1.79599cm</Top>
+        <Left>2.00766cm</Left>
         <Height>1.2cm</Height>
-        <Width>10.70146cm</Width>
+        <Width>12.73875cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -243,7 +243,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Reporte de Modelos</Value>
+                <Value>Reporte de Usuarios</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -255,8 +255,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox10</rd:DefaultName>
-        <Top>0.20833in</Top>
-        <Left>2.55388in</Left>
+        <Top>0.06944in</Top>
+        <Left>2.15476in</Left>
         <Height>0.25in</Height>
         <Width>2.23958in</Width>
         <ZIndex>1</ZIndex>
@@ -274,10 +274,10 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>7.34734in</Width>
+  <Width>6.5in</Width>
   <Page>
     <PageHeader>
-      <Height>2.54cm</Height>
+      <Height>1in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <Style>
@@ -287,7 +287,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>1in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <Style>
@@ -296,13 +296,13 @@
         </Border>
       </Style>
     </PageFooter>
-    <PageHeight>29.7cm</PageHeight>
-    <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
-    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <PageHeight>11.69in</PageHeight>
+    <PageWidth>8.27in</PageWidth>
+    <LeftMargin>0.7874in</LeftMargin>
+    <RightMargin>0.7874in</RightMargin>
+    <TopMargin>0.7874in</TopMargin>
+    <BottomMargin>0.7874in</BottomMargin>
+    <ColumnSpacing>0.05118in</ColumnSpacing>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
@@ -312,39 +312,47 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>a8ef2990-51b5-41f6-90a5-6f84881a6eb7</rd:DataSourceID>
+      <rd:DataSourceID>66002d88-f905-4143-8ff0-ba0193eeb1dd</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Modelos">
+    <DataSet Name="Usuarios">
       <Query>
         <DataSourceName>WebCarSalesDbDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="ModeloId">
-          <DataField>ModeloId</DataField>
+        <Field Name="UsuarioId">
+          <DataField>UsuarioId</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="MarcaId">
-          <DataField>MarcaId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Descripcion">
-          <DataField>Descripcion</DataField>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NombreUsuario">
+          <DataField>NombreUsuario</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Password">
+          <DataField>Password</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="prioridad">
+          <DataField>prioridad</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>WebCarSalesDbDataSet</rd:DataSetName>
         <rd:SchemaPath>C:\Users\D.J.M. - THE - 1\Documents\Visual Studio 2015\Projects\Web_Car_Sales_System\Web_Car_Sales_System\WebCarSalesDbDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>Modelos</rd:TableName>
+        <rd:TableName>Usuarios</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>ModelosTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>UsuariosTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>aaf9eac8-769c-4cc9-8f60-94ce19dee30c</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>e9870792-3f72-4237-966e-784a3e423c04</rd:ReportID>
 </Report>

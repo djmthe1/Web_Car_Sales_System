@@ -40,6 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -62,7 +63,15 @@
     <Content Include="App_Data\WebCarSalesDb_log.ldf">
       <DependentUpon>WebCarSalesDb.mdf</DependentUpon>
     </Content>
+    <Content Include="Consultas\ConsultaClientesWebForm.aspx" />
+    <Content Include="Consultas\ConsultaColoresWebForm.aspx" />
+    <Content Include="Consultas\ConsultaFacturasWebForm.aspx" />
+    <Content Include="Consultas\ConsultaMarcasWebForm.aspx" />
+    <Content Include="Consultas\ConsultaModelosWebForm.aspx" />
+    <Content Include="Consultas\ConsultaMotoresWebForm.aspx" />
+    <Content Include="Consultas\ConsultaTipoVehiculosWebForm.aspx" />
     <Content Include="Consultas\ConsultaUsuariosWebForm.aspx" />
+    <Content Include="Consultas\ConsultaVehiculosWebForm.aspx" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
@@ -95,15 +104,72 @@
     <Content Include="Registros\RegistroTipoVehiculosWebForm.aspx" />
     <Content Include="Registros\RegistroUsuariosWebForm.aspx" />
     <Content Include="Registros\RegistroVehiculosWebForm.aspx" />
+    <Content Include="Reportes\VisorReportes.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\ConsultaClientesWebForm.aspx.cs">
+      <DependentUpon>ConsultaClientesWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaClientesWebForm.aspx.designer.cs">
+      <DependentUpon>ConsultaClientesWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaColoresWebForm.aspx.cs">
+      <DependentUpon>ConsultaColoresWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaColoresWebForm.aspx.designer.cs">
+      <DependentUpon>ConsultaColoresWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaFacturasWebForm.aspx.cs">
+      <DependentUpon>ConsultaFacturasWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaFacturasWebForm.aspx.designer.cs">
+      <DependentUpon>ConsultaFacturasWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaMarcasWebForm.aspx.cs">
+      <DependentUpon>ConsultaMarcasWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaMarcasWebForm.aspx.designer.cs">
+      <DependentUpon>ConsultaMarcasWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaModelosWebForm.aspx.cs">
+      <DependentUpon>ConsultaModelosWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaModelosWebForm.aspx.designer.cs">
+      <DependentUpon>ConsultaModelosWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaMotoresWebForm.aspx.cs">
+      <DependentUpon>ConsultaMotoresWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaMotoresWebForm.aspx.designer.cs">
+      <DependentUpon>ConsultaMotoresWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaTipoVehiculosWebForm.aspx.cs">
+      <DependentUpon>ConsultaTipoVehiculosWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaTipoVehiculosWebForm.aspx.designer.cs">
+      <DependentUpon>ConsultaTipoVehiculosWebForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\ConsultaUsuariosWebForm.aspx.cs">
       <DependentUpon>ConsultaUsuariosWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Consultas\ConsultaUsuariosWebForm.aspx.designer.cs">
       <DependentUpon>ConsultaUsuariosWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaVehiculosWebForm.aspx.cs">
+      <DependentUpon>ConsultaVehiculosWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaVehiculosWebForm.aspx.designer.cs">
+      <DependentUpon>ConsultaVehiculosWebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -183,6 +249,13 @@
     <Compile Include="Registros\RegistroVehiculosWebForm.aspx.designer.cs">
       <DependentUpon>RegistroVehiculosWebForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\VisorReportes.aspx.cs">
+      <DependentUpon>VisorReportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\VisorReportes.aspx.designer.cs">
+      <DependentUpon>VisorReportes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebCarSalesDbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -225,7 +298,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\ClientesReport.rdlc" />
+    <EmbeddedResource Include="Reportes\ColoresReport.rdlc" />
+    <EmbeddedResource Include="Reportes\FacturasReport.rdlc" />
+    <EmbeddedResource Include="Reportes\MarcasReport.rdlc" />
     <EmbeddedResource Include="Reportes\ModelosReport.rdlc" />
+    <EmbeddedResource Include="Reportes\MotoresReport.rdlc" />
+    <EmbeddedResource Include="Reportes\TipoVehiculosReport.rdlc" />
+    <EmbeddedResource Include="Reportes\UsuariosReport.rdlc" />
+    <EmbeddedResource Include="Reportes\VehiculosReport.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
