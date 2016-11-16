@@ -10,31 +10,38 @@ namespace Web_Car_Sales_System.Registros
 {
     public partial class RegistroMotoresWebForm : System.Web.UI.Page
     {
-        Motores motor = new Motores();
-        int id = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Motores motor = new Motores();
             if (!IsPostBack)
             {
+                if (Request.QueryString["ID"] != null)
+                {
+                    int id = 0;
+                    int.TryParse(Request.QueryString["ID"].ToString(), out id);
 
+                    if (motor.Buscar(id))
+                    {
+                        DevolverValores(motor);
+                    }
+                }
             }
         }
 
         private void Limpiar()
         {
-            ((TextBox)MotorIdTextBox).Text = string.Empty;
-            ((TextBox)DescripcionTextBox).Text = string.Empty;
+            MotorIdTextBox.Text = string.Empty;
+            DescripcionTextBox.Text = string.Empty;
         }
 
-        private void ObtenerValores()
+        private void ObtenerValores(Motores motor)
         {
-            int.TryParse(MotorIdTextBox.Text, out id);
-            motor.MotorId = id;
+            motor.MotorId = Validaciones.Entero(MotorIdTextBox.Text);
             motor.Descripcion = DescripcionTextBox.Text;
         }
 
-        private void DevolverValores()
+        private void DevolverValores(Motores motor)
         {
             MotorIdTextBox.Text = motor.MotorId.ToString();
             DescripcionTextBox.Text = motor.Descripcion;
@@ -42,7 +49,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Motores motor = new Motores();
+            ObtenerValores(motor);
             if (MotorIdTextBox.Text.Length == 0)
             {
                 Response.Write("<script>alert('Debe insertar un Id, Error al Buscar')</script>");
@@ -52,7 +60,7 @@ namespace Web_Car_Sales_System.Registros
                 if (motor.Buscar(motor.MotorId))
                 {
                     Limpiar();
-                    DevolverValores();
+                    DevolverValores(motor);
                 }
                 else
                 {
@@ -69,7 +77,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Motores motor = new Motores();
+            ObtenerValores(motor);
             if (MotorIdTextBox.Text == "")
             {
                 if (DescripcionTextBox.Text != "")
@@ -113,7 +122,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Motores motor = new Motores();
+            ObtenerValores(motor);
             if (MotorIdTextBox.Text.Length == 0)
             {
                 Response.Write("<script>alert('Debe insertar un Id')</script>");

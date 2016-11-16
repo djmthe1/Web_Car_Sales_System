@@ -10,11 +10,9 @@ namespace Web_Car_Sales_System.Registros
 {
     public partial class RegistroUsuariosWebForm : System.Web.UI.Page
     {
-        Usuarios usuario = new Usuarios();
-        int id, prioridad = 0;
-
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuarios usuario = new Usuarios();
             if (!IsPostBack)
             {
                 
@@ -23,26 +21,24 @@ namespace Web_Car_Sales_System.Registros
 
         private void Limpiar()
         {
-            ((TextBox)UsuarioIdTextBox).Text = string.Empty;
-            ((TextBox)NombreTextBox).Text = string.Empty;
-            ((TextBox)NombreUsuarioTextBox).Text = string.Empty;
-            ((TextBox)ContraseñaTextBox).Text = string.Empty;
-            ((TextBox)ConfirmarTextBox).Text = string.Empty;
+            UsuarioIdTextBox.Text = string.Empty;
+            NombreTextBox.Text = string.Empty;
+            NombreUsuarioTextBox.Text = string.Empty;
+            ContraseñaTextBox.Text = string.Empty;
+            ConfirmarTextBox.Text = string.Empty;
             PrioridadDropDownList.SelectedIndex = -1;
         }
 
-        private void ObtenerValores()
+        private void ObtenerValores(Usuarios usuario)
         {
-            int.TryParse(UsuarioIdTextBox.Text, out id);
-            usuario.UsuarioId = id;
+            usuario.UsuarioId = Validaciones.Entero(UsuarioIdTextBox.Text);
             usuario.Nombre = NombreTextBox.Text;
             usuario.NombreUsuario = NombreUsuarioTextBox.Text;
             usuario.Password = ContraseñaTextBox.Text;
-            int.TryParse(PrioridadDropDownList.SelectedValue, out prioridad);
-            usuario.Prioridad = prioridad;
+            usuario.Prioridad = Validaciones.Entero(PrioridadDropDownList.SelectedValue);
         }
 
-        private void DevolverValores()
+        private void DevolverValores(Usuarios usuario)
         {
             UsuarioIdTextBox.Text = usuario.UsuarioId.ToString();
             NombreTextBox.Text = usuario.Nombre;
@@ -53,7 +49,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Usuarios usuario = new Usuarios();
+            ObtenerValores(usuario);
             if (UsuarioIdTextBox.Text.Length == 0)
             {
                 Response.Write("<script>alert('Debe insertar un Id, Error al Buscar')</script>");
@@ -63,7 +60,7 @@ namespace Web_Car_Sales_System.Registros
                 if (usuario.Buscar(usuario.UsuarioId))
                 {
                     Limpiar();
-                    DevolverValores();
+                    DevolverValores(usuario);
                 }
                 else
                 {
@@ -80,7 +77,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Usuarios usuario = new Usuarios();
+            ObtenerValores(usuario);
             if (UsuarioIdTextBox.Text == "")
             {
                 if (NombreTextBox.Text != "" && NombreUsuarioTextBox.Text != "" && ContraseñaTextBox.Text != "" && ConfirmarTextBox.Text != "" && PrioridadDropDownList.Text != "")
@@ -124,7 +122,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Usuarios usuario = new Usuarios();
+            ObtenerValores(usuario);
             if (UsuarioIdTextBox.Text.Length == 0)
             {
                 Response.Write("<script>alert('Debe insertar un Id')</script>");

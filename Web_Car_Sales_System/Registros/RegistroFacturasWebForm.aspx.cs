@@ -10,15 +10,23 @@ namespace Web_Car_Sales_System.Registros
 {
     public partial class RegistroFacturasWebForm : System.Web.UI.Page
     {
-        Facturas factura = new Facturas();
-        int id, clienteId, vehiculoId, efectivo, cheque, pagar, autorizadoPor = 0;
-
         protected void Page_Load(object sender, EventArgs e)
         {
+            Facturas factura = new Facturas();
             if (!IsPostBack)
             {
                 FechaTextBox.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 ObtenerDropDownList();
+                if (Request.QueryString["ID"] != null)
+                {
+                    int id = 0;
+                    int.TryParse(Request.QueryString["ID"].ToString(), out id);
+
+                    if (factura.Buscar(id))
+                    {
+                        DevolverValores(factura);
+                    }
+                }
             }
         }
 
@@ -39,33 +47,26 @@ namespace Web_Car_Sales_System.Registros
 
         private void Limpiar()
         {
-            ((TextBox)FacturaIdTextBox).Text = string.Empty;
-            ((TextBox)InicialEfectivoTextBox).Text = string.Empty;
-            ((TextBox)InicialChequeTextBox).Text = string.Empty;
-            ((TextBox)PrecioAPagarTextBox).Text = string.Empty;
-            ((TextBox)AutorizadoTextBox).Text = string.Empty;
+            FacturaIdTextBox.Text = string.Empty;
+            InicialEfectivoTextBox.Text = string.Empty;
+            InicialChequeTextBox.Text = string.Empty;
+            PrecioAPagarTextBox.Text = string.Empty;
+            AutorizadoTextBox.Text = string.Empty;
         }
 
-        private void ObtenerValores()
+        private void ObtenerValores(Facturas factura)
         {
-            int.TryParse(FacturaIdTextBox.Text, out id);
-            factura.FacturaId = id;
+            factura.FacturaId = Validaciones.Entero(FacturaIdTextBox.Text);
             factura.Fecha = FechaTextBox.Text;
-            int.TryParse(ClienteDropDownList.SelectedValue, out clienteId);
-            factura.ClienteId = clienteId;
-            int.TryParse(VehiculoDropDownList.SelectedValue, out vehiculoId);
-            factura.VehiculoId = vehiculoId;
-            int.TryParse(InicialEfectivoTextBox.Text, out efectivo);
-            factura.PagoInicialEfectivo = efectivo;
-            int.TryParse(InicialChequeTextBox.Text, out cheque);
-            factura.PagoInicialCheque = cheque;
-            int.TryParse(PrecioAPagarTextBox.Text, out pagar);
-            factura.PrecioAPagar = pagar;
-            int.TryParse(AutorizadoTextBox.Text, out autorizadoPor);
-            factura.AutorizadoPor = autorizadoPor;
+            factura.ClienteId = Validaciones.Entero(ClienteDropDownList.SelectedValue);
+            factura.VehiculoId = Validaciones.Entero(VehiculoDropDownList.SelectedValue);
+            factura.PagoInicialEfectivo = Validaciones.Entero(InicialEfectivoTextBox.Text);
+            factura.PagoInicialCheque = Validaciones.Entero(InicialChequeTextBox.Text);
+            factura.PrecioAPagar = Validaciones.Entero(PrecioAPagarTextBox.Text);
+            factura.AutorizadoPor = Validaciones.Entero(AutorizadoTextBox.Text);
         }
 
-        private void DevolverValores()
+        private void DevolverValores(Facturas factura)
         {
             FacturaIdTextBox.Text = factura.FacturaId.ToString();
             FechaTextBox.Text = factura.Fecha;
@@ -79,7 +80,8 @@ namespace Web_Car_Sales_System.Registros
         
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Facturas factura = new Facturas();
+            ObtenerValores(factura);
             if (FacturaIdTextBox.Text.Length == 0)
             {
                 Response.Write("<script>alert('Debe insertar un Id, Error al Buscar')</script>");
@@ -89,7 +91,7 @@ namespace Web_Car_Sales_System.Registros
                 if (factura.Buscar(factura.FacturaId))
                 {
                     Limpiar();
-                    DevolverValores();
+                    DevolverValores(factura);
                 }
                 else
                 {
@@ -106,7 +108,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Facturas factura = new Facturas();
+            ObtenerValores(factura);
             if (FacturaIdTextBox.Text == "")
             {
                 if (VehiculoDropDownList.Text != "")
@@ -150,7 +153,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Facturas factura = new Facturas();
+            ObtenerValores(factura);
             if (FacturaIdTextBox.Text.Length == 0)
             {
                 Response.Write("<script>alert('Debe insertar un Id')</script>");

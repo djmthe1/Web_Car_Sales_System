@@ -10,31 +10,39 @@ namespace Web_Car_Sales_System.Registros
 {
     public partial class RegistroTipoVehiculosWebForm : System.Web.UI.Page
     {
-        TipoVehiculos tipo = new TipoVehiculos();
         int id = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            TipoVehiculos tipo = new TipoVehiculos();
             if (!IsPostBack)
             {
+                if (Request.QueryString["ID"] != null)
+                {
+                    int id = 0;
+                    int.TryParse(Request.QueryString["ID"].ToString(), out id);
 
+                    if (tipo.Buscar(id))
+                    {
+                        DevolverValores(tipo);
+                    }
+                }
             }
         }
 
         private void Limpiar()
         {
-            ((TextBox)TipoVehiculoIdTextBox).Text = string.Empty;
-            ((TextBox)DescripcionTextBox).Text = string.Empty;
+            TipoVehiculoIdTextBox.Text = string.Empty;
+            DescripcionTextBox.Text = string.Empty;
         }
 
-        private void ObtenerValores()
+        private void ObtenerValores(TipoVehiculos tipo)
         {
-            int.TryParse(TipoVehiculoIdTextBox.Text, out id);
-            tipo.TipoVehiculoId = id;
+            tipo.TipoVehiculoId = Validaciones.Entero(TipoVehiculoIdTextBox.Text);
             tipo.Descripcion = DescripcionTextBox.Text;
         }
 
-        private void DevolverValores()
+        private void DevolverValores(TipoVehiculos tipo)
         {
             TipoVehiculoIdTextBox.Text = tipo.TipoVehiculoId.ToString();
             DescripcionTextBox.Text = tipo.Descripcion;
@@ -42,7 +50,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            TipoVehiculos tipo = new TipoVehiculos();
+            ObtenerValores(tipo);
             if (TipoVehiculoIdTextBox.Text.Length == 0)
             {
                 Response.Write("<script>alert('Debe insertar un Id, Error al Buscar')</script>");
@@ -52,7 +61,7 @@ namespace Web_Car_Sales_System.Registros
                 if (tipo.Buscar(tipo.TipoVehiculoId))
                 {
                     Limpiar();
-                    DevolverValores();
+                    DevolverValores(tipo);
                 }
                 else
                 {
@@ -69,7 +78,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            TipoVehiculos tipo = new TipoVehiculos();
+            ObtenerValores(tipo);
             if (TipoVehiculoIdTextBox.Text == "")
             {
                 if (DescripcionTextBox.Text != "")
@@ -113,7 +123,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            TipoVehiculos tipo = new TipoVehiculos();
+            ObtenerValores(tipo);
             if (TipoVehiculoIdTextBox.Text.Length == 0)
             {
                 Response.Write("<script>alert('Debe insertar un Id')</script>");

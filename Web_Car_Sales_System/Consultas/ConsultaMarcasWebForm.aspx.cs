@@ -36,10 +36,9 @@ namespace Web_Car_Sales_System.Consultas
             DataTable dt = new DataTable();
 
             dt = (DataTable)ConsultaGridView.DataSource;
-            dt.TableName = "Marcas";
-            Visor.reporte = @"Reportes\MarcasReport.rdlc";
+            Visor.nombre = "Marcas";
+            Visor.reporte = "MarcasReport.rdlc";
             Visor.data = dt;
-            Visor.DataBind();
         }
     }
 }

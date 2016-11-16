@@ -10,14 +10,22 @@ namespace Web_Car_Sales_System.Registros
 {
     public partial class RegistroVehiculosWebForm : System.Web.UI.Page
     {
-        Vehiculos vehiculo = new Vehiculos();
-        int id, estado, marcaId, modeloId, motorId, colorId, año, tipoVehiculoId, kilometraje, precio = 0;
-
         protected void Page_Load(object sender, EventArgs e)
         {
+            Vehiculos vehiculo = new Vehiculos();
             if (!IsPostBack)
             {
                 ObtenerDropDownList();
+                if (Request.QueryString["ID"] != null)
+                {
+                    int id = 0;
+                    int.TryParse(Request.QueryString["ID"].ToString(), out id);
+
+                    if (vehiculo.Buscar(id))
+                    {
+                        DevolverValores(vehiculo);
+                    }
+                }
             }
         }
 
@@ -28,84 +36,78 @@ namespace Web_Car_Sales_System.Registros
             MarcaDropDownList.DataTextField = "Descripcion";
             MarcaDropDownList.DataValueField = "MarcaId";
             MarcaDropDownList.DataBind();
+            MarcaDropDownList.Items.Insert(0, "Seleccionar--");
 
             Modelos modelo = new Modelos();
             ModeloDropDownList.DataSource = modelo.Listado(" * ", " 1=1 ", " ");
             ModeloDropDownList.DataTextField = "Descripcion";
             ModeloDropDownList.DataValueField = "ModeloId";
             ModeloDropDownList.DataBind();
+            ModeloDropDownList.Items.Insert(0, "Seleccionar--");
 
             Motores motor = new Motores();
             MotorDropDownList.DataSource = motor.Listado(" * ", " 1=1 ", " ");
             MotorDropDownList.DataTextField = "Descripcion";
             MotorDropDownList.DataValueField = "MotorId";
             MotorDropDownList.DataBind();
+            MotorDropDownList.Items.Insert(0, "Seleccionar--");
 
             Colores color = new Colores();
             ColorDropDownList.DataSource = color.Listado(" * ", " 1=1 ", " ");
             ColorDropDownList.DataTextField = "Descripcion";
             ColorDropDownList.DataValueField = "ColorId";
             ColorDropDownList.DataBind();
+            ColorDropDownList.Items.Insert(0, "Seleccionar--");
 
             TipoVehiculos tipo = new TipoVehiculos();
             TipoDropDownList.DataSource = tipo.Listado(" * ", " 1=1 ", " ");
             TipoDropDownList.DataTextField = "Descripcion";
             TipoDropDownList.DataValueField = "TipoVehiculoId";
             TipoDropDownList.DataBind();
+            TipoDropDownList.Items.Insert(0, "Seleccionar--");
         }
 
         private void Limpiar()
         {
-            ((TextBox)VehiculoIdTextBox).Text = string.Empty;
-            ((TextBox)AñoTextBox).Text = string.Empty;
-            ((TextBox)ChasisTextBox).Text = string.Empty;
-            ((TextBox)KilometrajeTextBox).Text = string.Empty;
-            ((TextBox)PrecioTextBox).Text = string.Empty;
-            ((TextBox)PlacaTextBox).Text = string.Empty;
-            ((TextBox)MatriculaTextBox).Text = string.Empty;
-            ((CheckBox)RetrovisorInternoCheckBox).Checked = false;
-            ((CheckBox)RetrovisorDerechoCheckBox).Checked = false;
-            ((CheckBox)RetrovisorIzquierdoCheckBox).Checked = false;
-            ((CheckBox)GomasCheckBox).Checked = false;
-            ((CheckBox)GatoCheckBox).Checked = false;
-            ((CheckBox)RadioCheckBox).Checked = false;
-            ((CheckBox)LlaveRuedaCheckBox).Checked = false;
-            ((CheckBox)GomaRepuestoCheckBox).Checked = false;
-            ((CheckBox)AlfombrasCheckBox).Checked = false;
-            ((CheckBox)BotiquinCheckBox).Checked = false;
-            ((CheckBox)TaponGasolinaCheckBox).Checked = false;
-            ((CheckBox)TaponRadiadorCheckBox).Checked = false;
-            ((CheckBox)EncendedorCheckBox).Checked = false;
-            ((CheckBox)ManualDeUsuarioCheckBox).Checked = false;
-            ((CheckBox)DuplicadoLlaveEncendidoCheckBox).Checked = false;
+            VehiculoIdTextBox.Text = string.Empty;
+            AñoTextBox.Text = string.Empty;
+            ChasisTextBox.Text = string.Empty;
+            KilometrajeTextBox.Text = string.Empty;
+            PrecioTextBox.Text = string.Empty;
+            PlacaTextBox.Text = string.Empty;
+            MatriculaTextBox.Text = string.Empty;
+            RetrovisorInternoCheckBox.Checked = false;
+            RetrovisorDerechoCheckBox.Checked = false;
+            RetrovisorIzquierdoCheckBox.Checked = false;
+            GomasCheckBox.Checked = false;
+            GatoCheckBox.Checked = false;
+            RadioCheckBox.Checked = false;
+            LlaveRuedaCheckBox.Checked = false;
+            GomaRepuestoCheckBox.Checked = false;
+            AlfombrasCheckBox.Checked = false;
+            BotiquinCheckBox.Checked = false;
+            TaponGasolinaCheckBox.Checked = false;
+            TaponRadiadorCheckBox.Checked = false;
+            EncendedorCheckBox.Checked = false;
+            ManualDeUsuarioCheckBox.Checked = false;
+            DuplicadoLlaveEncendidoCheckBox.Checked = false;
         }
 
-        private void ObtenerValores()
+        private void ObtenerValores(Vehiculos vehiculo)
         {
-            int.TryParse(VehiculoIdTextBox.Text, out id);
-            vehiculo.VehiculoId = id;
-            int.TryParse(EstadoDropDownList.SelectedValue, out estado);
-            vehiculo.EstadoVehiculo = estado;
-            int.TryParse(MarcaDropDownList.SelectedValue, out marcaId);
-            vehiculo.MarcaId = marcaId;
-            int.TryParse(ModeloDropDownList.SelectedValue, out modeloId);
-            vehiculo.ModeloId = modeloId;
-            int.TryParse(MotorDropDownList.SelectedValue, out motorId);
-            vehiculo.MotorId = motorId;
-            int.TryParse(ColorDropDownList.SelectedValue, out colorId);
-            vehiculo.ColorId = colorId;
-            int.TryParse(AñoTextBox.Text, out año);
-            vehiculo.Año = año;
+            vehiculo.VehiculoId = Validaciones.Entero(VehiculoIdTextBox.Text);
+            vehiculo.EstadoVehiculo = Validaciones.Entero(EstadoDropDownList.SelectedValue);
+            vehiculo.MarcaId = Validaciones.Entero(MarcaDropDownList.SelectedValue);
+            vehiculo.ModeloId = Validaciones.Entero(ModeloDropDownList.SelectedValue);
+            vehiculo.MotorId = Validaciones.Entero(MotorDropDownList.SelectedValue);
+            vehiculo.ColorId = Validaciones.Entero(ColorDropDownList.SelectedValue);
+            vehiculo.Año = Validaciones.Entero(AñoTextBox.Text);
             vehiculo.NoChasis = ChasisTextBox.Text;
-            int.TryParse(TipoDropDownList.SelectedValue, out tipoVehiculoId);
-            vehiculo.TipoVehiculoId = tipoVehiculoId;
-            int.TryParse(KilometrajeTextBox.Text, out kilometraje);
-            vehiculo.Kilometraje = kilometraje;
-            int.TryParse(PrecioTextBox.Text, out precio);
-            vehiculo.Precio = precio;
+            vehiculo.TipoVehiculoId = Validaciones.Entero(TipoDropDownList.SelectedValue);
+            vehiculo.Kilometraje = Validaciones.Entero(KilometrajeTextBox.Text);
+            vehiculo.Precio = Validaciones.Entero(PrecioTextBox.Text);
             vehiculo.Placa = PlacaTextBox.Text;
             vehiculo.Matricula = MatriculaTextBox.Text;
-
             if (DuplicadoLlaveEncendidoCheckBox.Checked)
             {
                 vehiculo.DuplicadoLlaveEncendido = true;
@@ -242,7 +244,7 @@ namespace Web_Car_Sales_System.Registros
             }
         }
 
-        private void DevolverValores()
+        private void DevolverValores(Vehiculos vehiculo)
         {
             VehiculoIdTextBox.Text = vehiculo.VehiculoId.ToString();
             EstadoDropDownList.SelectedValue = vehiculo.EstadoVehiculo.ToString();
@@ -334,7 +336,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Vehiculos vehiculo = new Vehiculos();
+            ObtenerValores(vehiculo);
             if (VehiculoIdTextBox.Text.Length == 0)
             {
                 Response.Write("<script>alert('Debe insertar un Id, Error al Buscar')</script>");
@@ -344,7 +347,7 @@ namespace Web_Car_Sales_System.Registros
                 if (vehiculo.Buscar(vehiculo.VehiculoId))
                 {
                     Limpiar();
-                    DevolverValores();
+                    DevolverValores(vehiculo);
                 }
                 else
                 {
@@ -361,7 +364,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Vehiculos vehiculo = new Vehiculos();
+            ObtenerValores(vehiculo);
             if (VehiculoIdTextBox.Text == "")
             {
                 if (EstadoDropDownList.Text != "")
@@ -405,7 +409,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Vehiculos vehiculo = new Vehiculos();
+            ObtenerValores(vehiculo);
             if (VehiculoIdTextBox.Text.Length == 0)
             {
                 Response.Write("<script>alert('Debe insertar un Id')</script>");

@@ -95,6 +95,7 @@
     <Content Include="Pictures\Carousel\2017-Toyota-Hilux.jpg" />
     <Content Include="Pictures\Carousel\2017HondaAccordHybrid.jpg" />
     <Content Include="Pictures\Carousel\Mercedes-Benz-C-Class-2017.jpg" />
+    <Content Include="Registros\RegistroClientesGuestWebForm.aspx" />
     <Content Include="Registros\RegistroClientesWebForm.aspx" />
     <Content Include="Registros\RegistroColoresWebForm.aspx" />
     <Content Include="Registros\RegistroFacturasWebForm.aspx" />
@@ -171,6 +172,13 @@
     <Compile Include="Consultas\ConsultaVehiculosWebForm.aspx.designer.cs">
       <DependentUpon>ConsultaVehiculosWebForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GuestMasterPage.Master.cs">
+      <DependentUpon>GuestMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuestMasterPage.Master.designer.cs">
+      <DependentUpon>GuestMasterPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -186,6 +194,13 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registros\RegistroClientesGuestWebForm.aspx.cs">
+      <DependentUpon>RegistroClientesGuestWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\RegistroClientesGuestWebForm.aspx.designer.cs">
+      <DependentUpon>RegistroClientesGuestWebForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registros\RegistroClientesWebForm.aspx.cs">
       <DependentUpon>RegistroClientesWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -256,6 +271,7 @@
     <Compile Include="Reportes\VisorReportes.aspx.designer.cs">
       <DependentUpon>VisorReportes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Validaciones.cs" />
     <Compile Include="WebCarSalesDbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -272,6 +288,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="GuestMasterPage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

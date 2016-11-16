@@ -10,31 +10,37 @@ namespace Web_Car_Sales_System.Registros
 {
     public partial class RegistroMarcasWebForm : System.Web.UI.Page
     {
-        Marcas marca = new Marcas();
-        int id = 0;
-
         protected void Page_Load(object sender, EventArgs e)
         {
+            Marcas marca = new Marcas();
             if (!IsPostBack)
             {
+                if (Request.QueryString["ID"] != null)
+                {
+                    int id = 0;
+                    int.TryParse(Request.QueryString["ID"].ToString(), out id);
 
+                    if (marca.Buscar(id))
+                    {
+                        DevolverValores(marca);
+                    }
+                }
             }
         }
 
         private void Limpiar()
         {
-            ((TextBox)MarcaIdTextBox).Text = string.Empty;
-            ((TextBox)DescripcionTextBox).Text = string.Empty;
+            MarcaIdTextBox.Text = string.Empty;
+            DescripcionTextBox.Text = string.Empty;
         }
 
-        private void ObtenerValores()
+        private void ObtenerValores(Marcas marca)
         {
-            int.TryParse(MarcaIdTextBox.Text, out id);
-            marca.MarcaId = id;
+            marca.MarcaId = Validaciones.Entero(MarcaIdTextBox.Text);
             marca.Descripcion = DescripcionTextBox.Text;
         }
 
-        private void DevolverValores()
+        private void DevolverValores(Marcas marca)
         {
             MarcaIdTextBox.Text = marca.MarcaId.ToString();
             DescripcionTextBox.Text = marca.Descripcion;
@@ -42,7 +48,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Marcas marca = new Marcas();
+            ObtenerValores(marca);
             if (MarcaIdTextBox.Text.Length == 0)
             {
                 Response.Write("<script>alert('Debe insertar un Id, Error al Buscar')</script>");
@@ -52,7 +59,7 @@ namespace Web_Car_Sales_System.Registros
                 if (marca.Buscar(marca.MarcaId))
                 {
                     Limpiar();
-                    DevolverValores();
+                    DevolverValores(marca);
                 }
                 else
                 {
@@ -69,7 +76,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Marcas marca = new Marcas();
+            ObtenerValores(marca);
             if (MarcaIdTextBox.Text == "")
             {
                 if (DescripcionTextBox.Text != "")
@@ -113,7 +121,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Marcas marca = new Marcas();
+            ObtenerValores(marca);
             if (MarcaIdTextBox.Text.Length == 0)
             {
                 Response.Write("<script>alert('Debe insertar un Id')</script>");

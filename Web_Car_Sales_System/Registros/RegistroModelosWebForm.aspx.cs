@@ -10,14 +10,22 @@ namespace Web_Car_Sales_System.Registros
 {
     public partial class RegistroModelosWebForm : System.Web.UI.Page
     {
-        Modelos modelo = new Modelos();
-        int id, marca = 0;
-
         protected void Page_Load(object sender, EventArgs e)
         {
+            Modelos modelo = new Modelos();
             if (!IsPostBack)
             {
                 ObtenerDropDownList();
+                if (Request.QueryString["ID"] != null)
+                {
+                    int id = 0;
+                    int.TryParse(Request.QueryString["ID"].ToString(), out id);
+
+                    if (modelo.Buscar(id))
+                    {
+                        DevolverValores(modelo);
+                    }
+                }
             }
         }
 
@@ -28,24 +36,23 @@ namespace Web_Car_Sales_System.Registros
             MarcaDropDownList.DataTextField = "Descripcion";
             MarcaDropDownList.DataValueField = "MarcaId";
             MarcaDropDownList.DataBind();
+            MarcaDropDownList.Items.Insert(0, "Seleccionar--");
         }
 
         private void Limpiar()
         {
-            ((TextBox)ModeloIdTextBox).Text = string.Empty;
-            ((TextBox)DescripcionTextBox).Text = string.Empty;
+            ModeloIdTextBox.Text = string.Empty;
+            DescripcionTextBox.Text = string.Empty;
         }
 
-        private void ObtenerValores()
+        private void ObtenerValores(Modelos modelo)
         {
-            int.TryParse(ModeloIdTextBox.Text, out id);
-            modelo.ModeloId = id;
-            int.TryParse(MarcaDropDownList.SelectedValue, out marca);
-            modelo.MarcaId = marca;
+            modelo.ModeloId = Validaciones.Entero(ModeloIdTextBox.Text);
+            modelo.MarcaId = Validaciones.Entero(MarcaDropDownList.SelectedValue);
             modelo.Descripcion = DescripcionTextBox.Text;
         }
 
-        private void DevolverValores()
+        private void DevolverValores(Modelos modelo)
         {
             ModeloIdTextBox.Text = modelo.ModeloId.ToString();
             MarcaDropDownList.SelectedValue = modelo.MarcaId.ToString();
@@ -54,7 +61,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Modelos modelo = new Modelos();
+            ObtenerValores(modelo);
             if (ModeloIdTextBox.Text.Length == 0)
             {
                 Response.Write("<script>alert('Debe insertar un Id, Error al Buscar')</script>");
@@ -64,7 +72,7 @@ namespace Web_Car_Sales_System.Registros
                 if (modelo.Buscar(modelo.ModeloId))
                 {
                     Limpiar();
-                    DevolverValores();
+                    DevolverValores(modelo);
                 }
                 else
                 {
@@ -81,7 +89,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Modelos modelo = new Modelos();
+            ObtenerValores(modelo);
             if (ModeloIdTextBox.Text == "")
             {
                 if (MarcaDropDownList.Text != "" && DescripcionTextBox.Text != "")
@@ -125,7 +134,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Modelos modelo = new Modelos();
+            ObtenerValores(modelo);
             if (ModeloIdTextBox.Text.Length == 0)
             {
                 Response.Write("<script>alert('Debe insertar un Id')</script>");

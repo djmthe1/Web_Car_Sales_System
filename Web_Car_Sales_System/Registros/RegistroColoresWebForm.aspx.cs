@@ -10,31 +10,34 @@ namespace Web_Car_Sales_System.Registros
 {
     public partial class RegistroColoresWebForm : System.Web.UI.Page
     {
-        Colores color = new Colores();
-        int id = 0;
-
         protected void Page_Load(object sender, EventArgs e)
         {
+            Colores color = new Colores();
             if (!IsPostBack)
             {
-
+                if (Request.QueryString["ID"] != null)
+                {
+                    if (color.Buscar(Validaciones.Entero(Request.QueryString["ID"].ToString())))
+                    {
+                        DevolverValores(color);
+                    }
+                }
             }
         }
 
         private void Limpiar()
         {
-            ((TextBox)ColorIdTextBox).Text = string.Empty;
-            ((TextBox)DescripcionTextBox).Text = string.Empty;
+            ColorIdTextBox.Text = string.Empty;
+            DescripcionTextBox.Text = string.Empty;
         }
 
-        private void ObtenerValores()
+        private void ObtenerValores(Colores color)
         {
-            int.TryParse(ColorIdTextBox.Text, out id);
-            color.ColorId = id;
+            color.ColorId = Validaciones.Entero(ColorIdTextBox.Text);
             color.Descripcion = DescripcionTextBox.Text;
         }
 
-        private void DevolverValores()
+        private void DevolverValores(Colores color)
         {
             ColorIdTextBox.Text = color.ColorId.ToString();
             DescripcionTextBox.Text = color.Descripcion;
@@ -42,7 +45,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Colores color = new Colores();
+            ObtenerValores(color);
             if (ColorIdTextBox.Text.Length == 0)
             {
                 Response.Write("<script>alert('Debe insertar un Id, Error al Buscar')</script>");
@@ -52,7 +56,7 @@ namespace Web_Car_Sales_System.Registros
                 if (color.Buscar(color.ColorId))
                 {
                     Limpiar();
-                    DevolverValores();
+                    DevolverValores(color);
                 }
                 else
                 {
@@ -69,7 +73,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Colores color = new Colores();
+            ObtenerValores(color);
             if (ColorIdTextBox.Text == "")
             {
                 if (DescripcionTextBox.Text != "")
@@ -78,10 +83,12 @@ namespace Web_Car_Sales_System.Registros
                     {
                         Limpiar();
                         Response.Write("<script>alert('Insertado correctamente')</script>");
+                        Validaciones.ShowToastr(this, "Exito", "Insertado correctamente!", "success");
                     }
                     else
                     {
                         Response.Write("<script>alert('Error al insertar')</script>");
+                        Validaciones.ShowToastr(this, "Error", "Error al insertar", "error");
                     }
                 }
                 else
@@ -97,10 +104,12 @@ namespace Web_Car_Sales_System.Registros
                     {
                         Limpiar();
                         Response.Write("<script>alert('Modificado correctamente')</script>");
+                        Validaciones.ShowToastr(this, "Exito", "Modificado correctamente!", "success");
                     }
                     else
                     {
                         Response.Write("<script>alert('Error al modificar')</script>");
+                        Validaciones.ShowToastr(this, "Error", "Error al modificar", "error");
                     }
                 }
                 else
@@ -113,7 +122,8 @@ namespace Web_Car_Sales_System.Registros
 
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            Colores color = new Colores();
+            ObtenerValores(color);
             if (ColorIdTextBox.Text.Length == 0)
             {
                 Response.Write("<script>alert('Debe insertar un Id')</script>");
