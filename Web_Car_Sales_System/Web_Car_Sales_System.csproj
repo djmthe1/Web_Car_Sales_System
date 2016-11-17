@@ -106,6 +106,8 @@
     <Content Include="Registros\RegistroUsuariosWebForm.aspx" />
     <Content Include="Registros\RegistroVehiculosWebForm.aspx" />
     <Content Include="Reportes\VisorReportes.aspx" />
+    <Content Include="Toastr\toastr.min.css" />
+    <Content Include="Toastr\toastr.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

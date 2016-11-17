@@ -4,6 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+      <%--toastr--%>
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/Toastr/toastr.min.js"></script>
+    <link href="/Toastr/toastr.min.css" rel="stylesheet" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+
     <title>Web Car Sales System</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -65,6 +71,8 @@
     
     <!-- Modernizer -->
     <script src="js/modernizr-2.6.2.min.js"></script>
+
+
 
 </head>
 <body>

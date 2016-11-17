@@ -53,11 +53,6 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style25">&nbsp;</td>
-            <td class="auto-style28"></td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
             <td class="auto-style27">Buscar Por:<asp:DropDownList ID="BuscarPorDropDownList" Class="form-control input-sm" runat="server" CssClass="col-xs-offset-0" Height="40px" Width="150px" style="margin-left: 0px">
                 <asp:ListItem>FacturaId</asp:ListItem>
                 <asp:ListItem>Fecha</asp:ListItem>
@@ -69,13 +64,24 @@
                 <asp:ListItem>AutorizadoPor</asp:ListItem>
                 </asp:DropDownList>
             </td>
-            <td class="auto-style26">
+            <td class="auto-style28">
                 <asp:TextBox ID="FiltroTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Filtro"></asp:TextBox>
             </td>
             <td>
                 <strong>
                 <asp:Button ID="BuscarButton" Class="btn-primary" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" />
                 </strong>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style27">Filtral por Fecha:<asp:CheckBox ID="FechaCheckBox" runat="server" Text="" />
+            </td>
+            <td class="auto-style26">
+                &nbsp;&nbsp;&nbsp; Desde:
+                &nbsp;<asp:TextBox ID="DesdeTextBox" runat="server" Width="150px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hasta:</td>
+            <td>
+                <asp:TextBox ID="HastaTextBox" runat="server" Width="150px"></asp:TextBox>
             </td>
         </tr>
     </table>

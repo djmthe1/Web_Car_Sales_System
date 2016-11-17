@@ -14,12 +14,6 @@ namespace Web_Car_Sales_System
             int.TryParse(s, out variable);
             return variable;
         }
-        public static float Float(string s)
-        {
-            float variable = 0;
-            float.TryParse(s, out variable);
-            return variable;
-        }
 
         public static void ShowToastr(this Page page, string message, string title, string type = "info")
         {

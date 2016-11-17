@@ -105,7 +105,7 @@ namespace Web_Car_Sales_System.Registros
             ObtenerValores(cliente);
             if (ClienteIdTextBox.Text.Length == 0)
             {
-                Response.Write("<script>alert('Debe insertar un Id, Error al Buscar')</script>");
+                Validaciones.ShowToastr(this, "Advertencia", "Debe insertar un Id", "warning");
             }
             else
             {
@@ -116,7 +116,7 @@ namespace Web_Car_Sales_System.Registros
                 }
                 else
                 {
-                    Response.Write("<script>alert('Id no encontrado')</script>");
+                    Validaciones.ShowToastr(this, "Advertencia", "Id no encontrado", "warning");
                     Limpiar();
                 }
             }
@@ -144,12 +144,12 @@ namespace Web_Car_Sales_System.Registros
                 }
                 else
                 {
-                    Response.Write("<script>alert('Debe seleccionar un tipo de telefono')</script>");
+                    Validaciones.ShowToastr(this, "Advertencia", "Debe seleccionar un tipo de telefono", "warning");
                 }
             }
             catch (Exception)
             {
-
+                Validaciones.ShowToastr(this, "Error", "Error al insertar", "error");
             }
         }
 
@@ -169,16 +169,16 @@ namespace Web_Car_Sales_System.Registros
                     if (cliente.Insertar())
                     {
                         Limpiar();
-                        Response.Write("<script>alert('Insertado correctamente')</script>");
+                        Validaciones.ShowToastr(this, "Exito", "Insertado correctamente!", "success");
                     }
                     else
                     {
-                        Response.Write("<script>alert('Error al insertar')</script>");
+                        Validaciones.ShowToastr(this, "Error", "Error al insertar", "error");
                     }
                 }
                 else
                 {
-                    Response.Write("<script>alert('Debe llenar todos los campos, Error al insertar')</script>");
+                    Validaciones.ShowToastr(this, "Advertencia", "Debe llenar todos los campos", "warning");
                 }
             }
             else
@@ -188,16 +188,16 @@ namespace Web_Car_Sales_System.Registros
                     if (cliente.Editar())
                     {
                         Limpiar();
-                        Response.Write("<script>alert('Modificado correctamente')</script>");
+                        Validaciones.ShowToastr(this, "Exito", "Modificado correctamente!", "success");
                     }
                     else
                     {
-                        Response.Write("<script>alert('Error al modificar')</script>");
+                        Validaciones.ShowToastr(this, "Error", "Error al modificar", "error");
                     }
                 }
                 else
                 {
-                    Response.Write("<script>alert('Debe llenar todos los campos, Error al modificar')</script>");
+                    Validaciones.ShowToastr(this, "Advertencia", "Debe llenar todos los campos", "warning");
                 }
             }
 
@@ -209,7 +209,7 @@ namespace Web_Car_Sales_System.Registros
             ObtenerValores(cliente);
             if (ClienteIdTextBox.Text.Length == 0)
             {
-                Response.Write("<script>alert('Debe insertar un Id')</script>");
+                Validaciones.ShowToastr(this, "Advertencia", "Debe insertar un Id", "warning");
             }
             else
             {
@@ -217,17 +217,17 @@ namespace Web_Car_Sales_System.Registros
                 {
                     if (cliente.Eliminar())
                     {
-                        Response.Write("<script>alert('Eliminado correctamente')</script>");
+                        Validaciones.ShowToastr(this, "Exito", "Eliminado correctamente!", "success");
                         Limpiar();
                     }
                     else
                     {
-                        Response.Write("<script>alert('Error al eliminar')</script>");
+                        Validaciones.ShowToastr(this, "Error", "Error al eliminar", "error");
                     }
                 }
                 else
                 {
-                    Response.Write("<script>alert('Id no encontrado')</script>");
+                    Validaciones.ShowToastr(this, "Advertencia", "Id no encontrado", "warning");
                     Limpiar();
                 }
             }
