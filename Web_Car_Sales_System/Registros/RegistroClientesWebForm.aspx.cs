@@ -126,7 +126,7 @@ namespace Web_Car_Sales_System.Registros
         {
             try
             {
-                if (TipoDropDownList.Text != "")
+                if (Validaciones.Entero(TipoDropDownList.SelectedValue) >= 0)
                 {
                     DataTable dt = (DataTable)ViewState["Detalle"];
                     DataRow Valores;

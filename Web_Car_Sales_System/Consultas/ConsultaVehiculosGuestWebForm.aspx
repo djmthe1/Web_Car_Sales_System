@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ConsultaClientesWebForm.aspx.cs" Inherits="Web_Car_Sales_System.Consultas.ConsultaClientesWebForm" EnableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GuestMasterPage.Master" AutoEventWireup="true" CodeBehind="ConsultaVehiculosGuestWebForm.aspx.cs" Inherits="Web_Car_Sales_System.Consultas.ConsultaVehiculosGuestWebForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
@@ -32,7 +32,7 @@
             font-size: x-large;
         }
         .auto-style29 {
-            width: 171px
+            width: 170px
         }
         .auto-style30 {
             width: 441px
@@ -52,7 +52,7 @@
     <table class="auto-style1">
         <tr>
             <td class="auto-style25">&nbsp;</td>
-            <td class="auto-style28"><strong>Consulta de Clientes</strong></td>
+            <td class="auto-style28"><strong>Consulta de Vehiculos</strong></td>
             <td>&nbsp;</td>
         </tr>
         <tr>
@@ -62,15 +62,14 @@
         </tr>
         <tr>
             <td class="auto-style27">Buscar Por:<asp:DropDownList ID="BuscarPorDropDownList" Class="form-control input-sm" runat="server" CssClass="col-xs-offset-0" Height="40px" Width="150px" style="margin-left: 0px">
-                <asp:ListItem>ClienteId</asp:ListItem>
-                <asp:ListItem>NombreCompleto</asp:ListItem>
-                <asp:ListItem>NombreUsuario</asp:ListItem>
-                <asp:ListItem>Direccion</asp:ListItem>
-                <asp:ListItem>Cedula</asp:ListItem>
-                <asp:ListItem>Nacionalidad</asp:ListItem>
-                <asp:ListItem>LugarDeNacimiento</asp:ListItem>
-                <asp:ListItem>Ocupacion</asp:ListItem>
-                <asp:ListItem>Sexo</asp:ListItem>
+                <asp:ListItem>EstadoVehiculo</asp:ListItem>
+                <asp:ListItem>MarcaId</asp:ListItem>
+                <asp:ListItem>ModeloId</asp:ListItem>
+                <asp:ListItem>MotorId</asp:ListItem>
+                <asp:ListItem>ColorId</asp:ListItem>
+                <asp:ListItem>Año</asp:ListItem>
+                <asp:ListItem>TipoVehiculoId</asp:ListItem>
+                <asp:ListItem>Precio</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td class="auto-style26">
@@ -87,15 +86,35 @@
         <tr>
             <td class="auto-style29">&nbsp;</td>
             <td class="auto-style30">
-                <asp:GridView ID="ConsultaGridView" runat="server" Width="438px">
-                </asp:GridView>
+                <asp:Repeater ID="VehiculosRepeater" runat="server">
+                     <ItemTemplate>
+                         <div class="col s4">
+                             <div class="card-panel light-blue lighten-1 white-text">
+                                 <%--<div class="card-title">
+                                     <asp:Label ID="VehiculoId" runat="server" Text='<%# Eval("VehiculoId")%>'></asp:Label>
+                                 </div>--%>
+                                 <div class="card-content">
+                                     <asp:Label ID="EstadoVehiculo" runat="server" Text='<%# Eval("EstadoVehiculo")%>'></asp:Label><br />
+                                     <asp:Label ID="MarcaId" runat="server" Text='<%# Eval("MarcaId")%>'></asp:Label><br />
+                                     <asp:Label ID="ModeloId" runat="server" Text='<%# Eval("ModeloId")%>'></asp:Label><br />
+                                     <asp:Label ID="MotorId" runat="server" Text='<%# Eval("MotorId")%>'></asp:Label><br />
+                                     <asp:Label ID="ColorId" runat="server" Text='<%# Eval("ColorId")%>'></asp:Label><br />
+                                     <asp:Label ID="Año" runat="server" Text='<%# Eval("Año")%>'></asp:Label><br />
+                                     <asp:Label ID="TipoVehiculoId" runat="server" Text='<%# Eval("TipoVehiculoId")%>'></asp:Label><br />
+                                     <asp:Label ID="Precio" runat="server" Text='<%# Eval("Precio")%>'></asp:Label>
+                                 </div>
+                             </div>
+                         </div>
+                     </ItemTemplate>
+                </asp:Repeater>
             </td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style29">&nbsp;</td>
-            <td class="auto-style31">&nbsp;</td>
+            <td class="auto-style31">
+                &nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>

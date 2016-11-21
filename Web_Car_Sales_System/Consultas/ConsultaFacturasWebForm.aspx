@@ -32,7 +32,7 @@
             font-size: x-large;
         }
         .auto-style29 {
-            width: 250px
+            width: 170px
         }
         .auto-style30 {
             width: 441px
@@ -42,6 +42,9 @@
             text-decoration: underline;
             text-align: center;
             font-size: x-large;
+        }
+            .auto-style32 {
+            width: 301px
         }
             </style>
 </asp:Content>
@@ -69,7 +72,7 @@
             </td>
             <td>
                 <strong>
-                <asp:Button ID="BuscarButton" Class="btn-primary" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" />
+                <asp:Button ID="BuscarButton" Class="btn btn-success" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" />
                 </strong>
             </td>
         </tr>
@@ -78,10 +81,10 @@
             </td>
             <td class="auto-style26">
                 &nbsp;&nbsp;&nbsp; Desde:
-                &nbsp;<asp:TextBox ID="DesdeTextBox" runat="server" Width="150px"></asp:TextBox>
+                &nbsp;<asp:TextBox ID="DesdeTextBox" CssClass="form-control" runat="server" Width="150px"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hasta:</td>
             <td>
-                <asp:TextBox ID="HastaTextBox" runat="server" Width="150px"></asp:TextBox>
+                <asp:TextBox ID="HastaTextBox" CssClass="form-control" runat="server" Width="150px"></asp:TextBox>
             </td>
         </tr>
     </table>
@@ -108,21 +111,21 @@
     </table>
         <table class="auto-style1">
         <tr>
-            <td class="auto-style25">&nbsp;</td>
+            <td class="auto-style32">&nbsp;</td>
             <td class="auto-style16">&nbsp;</td>
             <td>
                 <strong>
-                <asp:Button ID="ImprimirButton" Class="btn-primary" runat="server" Text="Imprimir" Width="100px" OnClick="ImprimirButton_Click" />
+                <asp:Button ID="ImprimirButton" Class="btn btn-warning" runat="server" Text="Imprimir" Width="100px" OnClick="ImprimirButton_Click" />
                 </strong>
             </td>
         </tr>
         <tr>
-            <td class="auto-style25">&nbsp;</td>
+            <td class="auto-style32">&nbsp;</td>
             <td class="auto-style19">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style25">&nbsp;</td>
+            <td class="auto-style32">&nbsp;</td>
             <td class="auto-style16">&nbsp;</td>
             <td>
                 &nbsp;</td>

@@ -8,7 +8,7 @@
     <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="/Toastr/toastr.min.js"></script>
     <link href="/Toastr/toastr.min.css" rel="stylesheet" />
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 
     <title>Web Car Sales System</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -20,36 +20,34 @@
               <div class="container">
                 <div id="navbar" class="navbar-collapse collapse pull-right">
                   <ul class="nav navbar-nav">
-                    <li><a class="is-active" href="Index.aspx">INICIO</a></li>
-                    <li><a href="Buscar.aspx">BUSQUEDA</a></li>
+                    <li><a class="is-active" href="/Index.aspx">INICIO</a></li>
                     <li><a href="Listado.aspx">VEHICULOS</a></li>
-                      <li class="has-child"><a href="#">REGISTROS</a>
+                    <li class="has-child"><a href="#">REGISTROS</a>
 
                       <ul class="submenu">
-                         <li class="submenu-item"><a href="RegistroColoresWebForm.aspx">COLORES </a></li>
-                         <li class="submenu-item"><a href="RegistroMarcasWebForm.aspx">MARCAS </a></li>
-                         <li class="submenu-item"><a href="RegistroModelosWebForm.aspx">MODELOS </a></li>
-                         <li class="submenu-item"><a href="RegistroMotoresWebForm.aspx">MOTORES </a></li>
-                          <li class="submenu-item"><a href="RegistroTipoVehiculosWebForm.aspx">TIPO DE VEHICULOS </a></li>
-                          <li class="submenu-item"><a href="RegistroVehiculosWebForm.aspx">VEHICULOS </a></li>
+                         <li class="submenu-item"><a href="/Registros/RegistroColoresWebForm.aspx">COLORES </a></li>
+                         <li class="submenu-item"><a href="/Registros/RegistroMarcasWebForm.aspx">MARCAS </a></li>
+                         <li class="submenu-item"><a href="/Registros/RegistroModelosWebForm.aspx">MODELOS </a></li>
+                         <li class="submenu-item"><a href="/Registros/RegistroMotoresWebForm.aspx">MOTORES </a></li>
+                          <li class="submenu-item"><a href="/Registros/RegistroTipoVehiculosWebForm.aspx">TIPO DE VEHICULOS </a></li>
+                          <li class="submenu-item"><a href="/Registros/RegistroVehiculosWebForm.aspx">VEHICULOS </a></li>
                       </ul>
 
                     </li>
-                    <li><a href="Reportes/VisorReportes.aspx">REPORTE</a></li>
+                    <li><a href="/Reportes/VisorReportes.aspx">REPORTE</a></li>
                     <li class="has-child"><a href="#">CONSULTAS</a>
 
                       <ul class="submenu">
-                         <li class="submenu-item"><a href="RegistroColoresWebForm.aspx">COLORES </a></li>
-                         <li class="submenu-item"><a href="Consultas/ConsultaMarcasWebForm.aspx">MARCAS </a></li>
-                         <li class="submenu-item"><a href="RegistroModelosWebForm.aspx">MODELOS </a></li>
-                         <li class="submenu-item"><a href="RegistroMotoresWebForm.aspx">MOTORES </a></li>
-                          <li class="submenu-item"><a href="RegistroTipoVehiculosWebForm.aspx">TIPO DE VEHICULOS </a></li>
-                          <li class="submenu-item"><a href="RegistroVehiculosWebForm.aspx">VEHICULOS </a></li>
+                         <li class="submenu-item"><a href="/Consultas/ConsultaColoresWebForm.aspx">COLORES </a></li>
+                         <li class="submenu-item"><a href="/Consultas/ConsultaMarcasWebForm.aspx">MARCAS </a></li>
+                         <li class="submenu-item"><a href="/Consultas/ConsultaModelosWebForm.aspx">MODELOS </a></li>
+                         <li class="submenu-item"><a href="/Consultas/ConsultaMotoresWebForm.aspx">MOTORES </a></li>
+                          <li class="submenu-item"><a href="/Consultas/ConsultaTipoVehiculosWebForm.aspx">TIPO DE VEHICULOS </a></li>
+                          <li class="submenu-item"><a href="/Consultas/ConsultaVehiculosWebForm.aspx">VEHICULOS </a></li>
                       </ul>
 
                     </li>
-                    <li><a href="Contacto.aspx">CONTACTO</a></li>
-                    <li><a href="Login.aspx">LOGIN</a></li>
+                    <li><a href="/Login.aspx">CERRAR SESION</a></li>
                   </ul>
                 </div> <!-- /#navbar -->
               </div> <!-- /.container -->              
@@ -92,71 +90,6 @@
             <div class="container">
                 
                 <div class="row">
-
-                    <div class="col-md-4">
-                        <div class="footer-col">
-                            <h4 class="footer-title">NOSOTROS <span class="title-under"></span></h4>
-                            <div class="footer-content">
-                                <p>
-                                    <strong>Web Car Sales System</strong> Es una pagina que se esta utilizará para la venta de vehiculos
-                                </p> 
-                                <p>
-                                    Derechos Casi Reservados... :V
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="footer-col">
-                            <h4 class="footer-title">SIGUENOS! <span class="title-under"></span></h4>
-                            <div class="footer-content">
-                                <ul class="tweets list-unstyled">
-                                    <li class="tweet">
-                                        Facebook
-                                    </li>
-                                    <li class="tweet">
-                                        Twitter
-                                    </li>
-                                    <li class="tweet"> 
-                                        Instagram
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="footer-col">
-                            <h4 class="footer-title">Contactanos: <span class="title-under"></span></h4>
-                            <div class="footer-content">
-                                <div class="footer-form">
-                                    <div class="footer-form" >
-                                    <form class="ajax-form">
-                                        <div  class="form-group"> <!-- revisar-->
-                                            <input type="text" name="ContactoNombre" class="form-control" placeholder="Nombre*">
-                                        </div>
-                                         <div class="form-group">
-                                            <input type="email" name="ContactoCorreo" class="form-control" placeholder="Correo*">
-                                        </div>
-                                        <div class="form-group">
-                                            <textarea name="ContactoMensage" class="form-control" placeholder="Mensaje*"></textarea>
-                                        </div>
-                                        <div class="form-group alerts">
-                                            <div class="alert alert-success" role="alert">
-                                            </div>
-                                            <div class="alert alert-danger" role="alert">
-                                            </div>
-                                        </div>
-                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-submit pull-right">Enviar Mensaje</button>
-                                        </div>
-                                    </form>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="clearfix"></div>
 

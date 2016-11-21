@@ -6,33 +6,18 @@
             height: 128px;
         }
         .auto-style16 {
-            width: 310px
-        }
-        .auto-style19 {
-        width: 310px;
-        text-decoration: underline;
-        text-align: center;
-        font-size: x-large;
-    }
-        .auto-style25 {
-            width: 315px
+            width: 292px
         }
             .auto-style26 {
-            width: 296px;
+            width: 295px;
             text-align: left;
         }
         .auto-style27 {
             width: 307px;
             text-align: right;
         }
-            .auto-style28 {
-            width: 296px;
-            text-decoration: underline;
-            text-align: center;
-            font-size: x-large;
-        }
-        .auto-style29 {
-            width: 250px
+            .auto-style29 {
+            width: 162px
         }
         .auto-style30 {
             width: 441px
@@ -46,18 +31,33 @@
             .auto-style32 {
             width: 307px
         }
+            .auto-style33 {
+            width: 295px;
+            text-decoration: underline;
+            text-align: center;
+            font-size: x-large;
+        }
+        .auto-style34 {
+            width: 292px;
+            text-decoration: underline;
+            text-align: center;
+            font-size: x-large;
+        }
+        .auto-style35 {
+            width: 309px
+        }
             </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table class="auto-style1">
         <tr>
             <td class="auto-style32">&nbsp;</td>
-            <td class="auto-style28"><strong>Consulta de Tipos de Vehiculos</strong></td>
+            <td class="auto-style33"><strong>Consulta de Tipos de Vehiculos</strong></td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style32">&nbsp;</td>
-            <td class="auto-style28"></td>
+            <td class="auto-style33"></td>
             <td>&nbsp;</td>
         </tr>
         <tr>
@@ -71,7 +71,7 @@
             </td>
             <td>
                 <strong>
-                <asp:Button ID="BuscarButton" Class="btn-primary" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" />
+                <asp:Button ID="BuscarButton" Class="btn btn-success" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" />
                 </strong>
             </td>
         </tr>
@@ -99,21 +99,21 @@
     </table>
         <table class="auto-style1">
         <tr>
-            <td class="auto-style25">&nbsp;</td>
+            <td class="auto-style35">&nbsp;</td>
             <td class="auto-style16">&nbsp;</td>
             <td>
                 <strong>
-                <asp:Button ID="ImprimirButton" Class="btn-primary" runat="server" Text="Imprimir" Width="100px" OnClick="ImprimirButton_Click" />
+                <asp:Button ID="ImprimirButton" Class="btn btn-warning" runat="server" Text="Imprimir" Width="100px" OnClick="ImprimirButton_Click" />
                 </strong>
             </td>
         </tr>
         <tr>
-            <td class="auto-style25">&nbsp;</td>
-            <td class="auto-style19">&nbsp;</td>
+            <td class="auto-style35">&nbsp;</td>
+            <td class="auto-style34">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style25">&nbsp;</td>
+            <td class="auto-style35">&nbsp;</td>
             <td class="auto-style16">&nbsp;</td>
             <td>
                 &nbsp;</td>

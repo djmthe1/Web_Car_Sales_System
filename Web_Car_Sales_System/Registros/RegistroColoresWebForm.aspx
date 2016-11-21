@@ -70,7 +70,7 @@
             </td>
             <td class="auto-style18">
                 <strong>
-                <asp:Button ID="BuscarButton" Class="btn-primary" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" />
+                <asp:Button ID="BuscarButton" Class="btn btn-default" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" />
                 </strong>
             </td>
         </tr>
@@ -93,17 +93,17 @@
         <tr>
             <td class="auto-style21">
                 <strong>
-                <asp:Button ID="NuevoButton" Class="btn-primary" runat="server" Text="Nuevo" Width="100px" OnClick="NuevoButton_Click"/>
+                <asp:Button ID="NuevoButton" Class="btn btn-info" runat="server" Text="Nuevo" Width="100px" OnClick="NuevoButton_Click"/>
                 </strong>
             </td>
             <td class="auto-style12">
                 <strong>
-                <asp:Button ID="GuardarButton" Class="btn-primary" runat="server" Text="Guardar" Width="100px" OnClick="GuardarButton_Click"/>
+                <asp:Button ID="GuardarButton" Class="btn btn-success" runat="server" Text="Guardar" Width="100px" OnClick="GuardarButton_Click"/>
                 </strong>
             </td>
             <td> 
                 <strong>   
-                <asp:Button ID="EliminarButton" Class="btn-primary" runat="server" Text="Eliminar" Width="100px" OnClick="EliminarButton_Click"/>
+                <asp:Button ID="EliminarButton" Class="btn btn-danger" runat="server" Text="Eliminar" Width="100px" OnClick="EliminarButton_Click"/>
                 </strong>
             </td>
         </tr>

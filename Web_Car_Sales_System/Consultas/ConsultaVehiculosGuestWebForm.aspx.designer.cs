@@ -10,7 +10,7 @@
 namespace Web_Car_Sales_System.Consultas {
     
     
-    public partial class ConsultaVehiculosWebForm {
+    public partial class ConsultaVehiculosGuestWebForm {
         
         /// <summary>
         /// BuscarPorDropDownList control.
@@ -40,40 +40,13 @@ namespace Web_Car_Sales_System.Consultas {
         protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
-        /// AñoCheckBox control.
+        /// VehiculosRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox AñoCheckBox;
-        
-        /// <summary>
-        /// DesdeTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DesdeTextBox;
-        
-        /// <summary>
-        /// HastaTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox HastaTextBox;
-        
-        /// <summary>
-        /// ConsultaGridView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ConsultaGridView;
+        protected global::System.Web.UI.WebControls.Repeater VehiculosRepeater;
         
         /// <summary>
         /// ImprimirButton control.
