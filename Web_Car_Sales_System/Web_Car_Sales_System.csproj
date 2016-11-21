@@ -73,31 +73,25 @@
     <Content Include="Consultas\ConsultaUsuariosWebForm.aspx" />
     <Content Include="Consultas\ConsultaVehiculosGuestWebForm.aspx" />
     <Content Include="Consultas\ConsultaVehiculosWebForm.aspx" />
-    <Content Include="css\bootstrap-theme.css" />
-    <Content Include="css\bootstrap-theme.min.css" />
-    <Content Include="css\bootstrap.css" />
-    <Content Include="css\bootstrap.min.css" />
-    <Content Include="css\font-awesome.min.css" />
-    <Content Include="css\owl.carousel.css" />
-    <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\2015-toyota-camry.jpg" />
+    <Content Include="images\2017-Lexus-GX-460.jpg" />
+    <Content Include="images\2017-mercedes-benz-c300.jpg" />
+    <Content Include="images\2017-Tesla-Model-S.jpg" />
+    <Content Include="images\2017-Toyota-Hilux.jpg" />
+    <Content Include="images\2017HondaAccordHybrid.jpg" />
+    <Content Include="images\about.png" />
+    <Content Include="images\bg.jpg" />
+    <Content Include="images\buying-the-cars-online.jpg" />
+    <Content Include="images\icon-group-inventory.png" />
+    <Content Include="images\img-sprite.png" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\map.jpg" />
+    <Content Include="images\Mercedes-Benz-C-Class-2017.jpg" />
+    <Content Include="images\social.png" />
+    <Content Include="images\top_move.png" />
     <Content Include="Index.aspx" />
-    <Content Include="js\bootstrap.js" />
-    <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\jquery-3.1.0.js" />
-    <Content Include="js\jquery-3.1.0.min.js" />
-    <Content Include="js\modernizr-2.6.2.min.js" />
-    <Content Include="js\npm.js" />
-    <Content Include="js\owl.carousel.js" />
-    <Content Include="js\owl.carousel.min.js" />
     <Content Include="Login.aspx" />
-    <Content Include="Pictures\Carousel\2015-toyota-camry.jpg" />
-    <Content Include="Pictures\Carousel\2017-Lexus-GX-460.jpg" />
-    <Content Include="Pictures\Carousel\2017-Tesla-Model-S.jpg" />
-    <Content Include="Pictures\Carousel\2017-Toyota-Hilux.jpg" />
-    <Content Include="Pictures\Carousel\2017HondaAccordHybrid.jpg" />
-    <Content Include="Pictures\Carousel\Mercedes-Benz-C-Class-2017.jpg" />
     <Content Include="Registros\RegistroClientesGuestWebForm.aspx" />
     <Content Include="Registros\RegistroClientesWebForm.aspx" />
     <Content Include="Registros\RegistroColoresWebForm.aspx" />
@@ -109,6 +103,23 @@
     <Content Include="Registros\RegistroUsuariosWebForm.aspx" />
     <Content Include="Registros\RegistroVehiculosWebForm.aspx" />
     <Content Include="Reportes\VisorReportes.aspx" />
+    <Content Include="Themes\css\bootstrap-theme.css" />
+    <Content Include="Themes\css\bootstrap-theme.min.css" />
+    <Content Include="Themes\css\bootstrap.css" />
+    <Content Include="Themes\css\bootstrap.min.css" />
+    <Content Include="Themes\css\magnific-popup.css" />
+    <Content Include="Themes\css\style.css" />
+    <Content Include="Themes\js\bootstrap.js" />
+    <Content Include="Themes\js\bootstrap.min.js" />
+    <Content Include="Themes\js\easing.js" />
+    <Content Include="Themes\js\jquery-1.11.1.min.js" />
+    <Content Include="Themes\js\jquery-3.1.0.js" />
+    <Content Include="Themes\js\jquery-3.1.0.min.js" />
+    <Content Include="Themes\js\jquery.magnific-popup.js" />
+    <Content Include="Themes\js\jquery.nav.js" />
+    <Content Include="Themes\js\jquery.scrollTo.js" />
+    <Content Include="Themes\js\jquery.wmuSlider.js" />
+    <Content Include="Themes\js\move-top.js" />
     <Content Include="Toastr\toastr.min.css" />
     <Content Include="Toastr\toastr.min.js" />
     <Content Include="Web.config" />
@@ -311,19 +322,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
-    <Content Include="css\bootstrap-theme.css.map" />
-    <Content Include="css\bootstrap-theme.min.css.map" />
-    <Content Include="css\bootstrap.css.map" />
-    <Content Include="css\bootstrap.min.css.map" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="GuestMasterPage.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Themes\css\bootstrap-theme.css.map" />
+    <Content Include="Themes\css\bootstrap-theme.min.css.map" />
+    <Content Include="Themes\css\bootstrap.css.map" />
+    <Content Include="Themes\css\bootstrap.min.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
