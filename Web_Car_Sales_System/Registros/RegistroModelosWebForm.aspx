@@ -91,6 +91,7 @@
             </td>
             <td class="auto-style18">
                 <strong>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ControlToValidate="ModeloIdTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="BuscarEliminar">*</asp:RequiredFieldValidator>
                 <asp:Button ID="BuscarButton" Class="btn btn-default" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" />
                 </strong>
             </td>
@@ -107,8 +108,9 @@
             <td class="auto-style4">
                 <asp:TextBox ID="DescripcionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Descripción*"></asp:TextBox>
             </td>
-            <td class="text-right">
-                &nbsp;</td>
+            <td class="text-left">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="DescripcionTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+            </td>
         </tr>
     </table>
     <table class="auto-style1">
@@ -131,6 +133,8 @@
         </tr>
         <tr>
             <td class="auto-style22">    
+
+                <asp:ValidationSummary ID="ValidationSummary" runat="server" />
 
             </td>
             <td class="auto-style11">    

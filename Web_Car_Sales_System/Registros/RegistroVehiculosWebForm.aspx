@@ -309,6 +309,8 @@
         <tr>
             <td class="auto-style22">    
 
+                <asp:ValidationSummary ID="ValidationSummary" runat="server" />
+
             </td>
             <td class="auto-style11">    
 

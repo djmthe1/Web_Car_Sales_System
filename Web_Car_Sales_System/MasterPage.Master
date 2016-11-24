@@ -31,46 +31,39 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
-<%--   
-                    <li class="has-child"><a href="#">REGISTROS</a>
-
-                      <ul class="submenu">
-                         <li class="submenu-item"><a href="/Registros/RegistroColoresWebForm.aspx">COLORES </a></li>
-                         <li class="submenu-item"><a href="/Registros/RegistroMarcasWebForm.aspx">MARCAS </a></li>
-                         <li class="submenu-item"><a href="/Registros/RegistroModelosWebForm.aspx">MODELOS </a></li>
-                         <li class="submenu-item"><a href="/Registros/RegistroMotoresWebForm.aspx">MOTORES </a></li>
-                          <li class="submenu-item"><a href="/Registros/RegistroTipoVehiculosWebForm.aspx">TIPO DE VEHICULOS </a></li>
-                          <li class="submenu-item"><a href="/Registros/RegistroVehiculosWebForm.aspx">VEHICULOS </a></li>
-                      </ul>
-
-                    </li>
-                    <li><a href="/Reportes/VisorReportes.aspx">REPORTE</a></li>
-                    <li class="has-child"><a href="#">CONSULTAS</a>
-
-                      <ul class="submenu">
-                         <li class="submenu-item"><a href="/Consultas/ConsultaColoresWebForm.aspx">COLORES </a></li>
-                         <li class="submenu-item"><a href="/Consultas/ConsultaMarcasWebForm.aspx">MARCAS </a></li>
-                         <li class="submenu-item"><a href="/Consultas/ConsultaModelosWebForm.aspx">MODELOS </a></li>
-                         <li class="submenu-item"><a href="/Consultas/ConsultaMotoresWebForm.aspx">MOTORES </a></li>
-                          <li class="submenu-item"><a href="/Consultas/ConsultaTipoVehiculosWebForm.aspx">TIPO DE VEHICULOS </a></li>
-                          <li class="submenu-item"><a href="/Consultas/ConsultaVehiculosWebForm.aspx">VEHICULOS </a></li>
-                      </ul>
-
-                    </li>
-                  </ul>
---%>
-
     <div class="header_top">	
 	  <div class="container">
 		  <div class="cssmenu">
-				<ul id="nav">
-                     <li><a href="/Index.aspx">INICIO</a></li>
-					 <li><a href="#section-2">Nosotros</a></li>
-					 <li><a href="#section-3">Vehiculos</a></li>
-					 <li><a href="#section-4">Busqueda</a></li>
-				     <li><a href="#section-5">CONSULTAS</a></li>
-                    <li><a href="/Login.aspx">CERRAR SESION</a></li>
-				</ul>
+			    <nav id="nav">
+                    <ul class="nav">
+                        <li><a href="/Index.aspx">INICIO</a></li>
+                        <li><a href="">VEHICULOS</a></li>
+				        <li><a href="">REGISTROS</a>
+					        <ul>
+                                 <li><a href="/Registros/RegistroColoresWebForm.aspx">COLORES </a></li>
+                                 <li><a href="/Registros/RegistroMarcasWebForm.aspx">MARCAS </a></li>
+                                 <li><a href="/Registros/RegistroModelosWebForm.aspx">MODELOS </a></li>
+                                 <li><a href="/Registros/RegistroMotoresWebForm.aspx">MOTORES </a></li>
+                                 <li><a href="/Registros/RegistroTipoVehiculosWebForm.aspx">TIPO DE VEHICULOS </a></li>
+                                 <li><a href="/Registros/RegistroVehiculosWebForm.aspx">VEHICULOS </a></li>
+                                 <li><a href="/Registros/RegistroUsuariosWebForm.aspx">USUARIOS </a></li>
+					        </ul>
+				        </li>
+                        <li><a href="/Reportes/VisorReportes.aspx">REPORTES</a></li>
+				        <li><a href="">CONSULTAS</a>
+					        <ul>
+                                 <li><a href="/Consultas/ConsultaColoresWebForm.aspx">COLORES </a></li>
+                                 <li"><a href="/Consultas/ConsultaMarcasWebForm.aspx">MARCAS </a></li>
+                                 <li"><a href="/Consultas/ConsultaModelosWebForm.aspx">MODELOS </a></li>
+                                 <li"><a href="/Consultas/ConsultaMotoresWebForm.aspx">MOTORES </a></li>
+                                 <li"><a href="/Consultas/ConsultaTipoVehiculosWebForm.aspx">TIPO DE VEHICULOS </a></li>
+                                 <li"><a href="/Consultas/ConsultaVehiculosWebForm.aspx">VEHICULOS </a></li>
+                                 <li"><a href="/Consultas/ConsultaUsuariosWebForm.aspx">USUARIOS </a></li>
+                            </ul>
+				        </li>
+                            <li><a href="/Login.aspx">CERRAR SESION</a></li>
+			        </ul>
+				</nav>
 		    </div>
 	  	 </div>
 	 </div>
@@ -81,18 +74,21 @@
     <form id="form1" runat="server">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
-    </form>
 
     <div class="contact section" id="section-5">
      	<div class="container">
 
      	</div>
-     </div> 
+        <asp:ScriptManager ID="ScriptManager" runat="server">
+        </asp:ScriptManager>
+    </div> 
 
     <script type="text/javascript" src="/Themes/js/move-top.js"></script>
     <script type="text/javascript" src="/Themes/js/easing.js"></script>
     <script src="/Themes/js/jquery.scrollTo.js"></script>
 	<script src="/Themes/js/jquery.nav.js"></script>
 
-</body>
+    </form>
+
+    </body>
 </html>

@@ -64,10 +64,10 @@
                 height: 45px;
             }
             .auto-style52 {
-                text-align: left;
-                width: 408px;
-                height: 45px;
-            }
+        text-align: left;
+        width: 312px;
+        height: 45px;
+    }
             .auto-style53 {
                 height: 45px;
             }
@@ -118,23 +118,27 @@
             <td class="auto-style4">
                 <asp:TextBox ID="ClienteIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="ClienteId*"></asp:TextBox>
             </td>
-            <td class="auto-style18">
-                &nbsp;</td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="ClienteIdTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red">*</asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td class="auto-style35"><strong>Nombre Completo:</strong></td>
             <td class="auto-style4">
                 <asp:TextBox ID="NombreCompletoTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nombre Completo*"></asp:TextBox>
             </td>
-            <td class="text-right">&nbsp;</td>
+            <td class="text-left">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ControlToValidate="NombreCompletoTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red">*</asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td class="auto-style35"><strong>Nombre de Usuario:</strong></td>
             <td class="auto-style4">
                 <asp:TextBox ID="NombreUsuarioTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nombre de Usuario*"></asp:TextBox>
             </td>
-            <td class="text-right">
-                &nbsp;</td>
+            <td class="text-left">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator20" runat="server" ControlToValidate="NombreUsuarioTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red">*</asp:RequiredFieldValidator>
+            </td>
         </tr>
     </table>
     <table class="auto-style1">
@@ -143,23 +147,27 @@
             <td class="auto-style4">
                 <asp:TextBox ID="ContraseñaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Contraseña*"></asp:TextBox>
             </td>
-            <td class="auto-style18">
-                &nbsp;</td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator21" runat="server" ControlToValidate="ContraseñaTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red">*</asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td class="auto-style36"><strong>Repetir Contraseña:</strong></td>
             <td class="auto-style4">
                 <asp:TextBox ID="RepetirTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Repetir Contraseña*"></asp:TextBox>
             </td>
-            <td class="text-right">&nbsp;</td>
+            <td class="text-left">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator22" runat="server" ControlToValidate="RepetirTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red">*</asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td class="auto-style36"><strong>Dirección:</strong></td>
             <td class="auto-style4">
                 <asp:TextBox ID="DireccionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Dirección*"></asp:TextBox>
             </td>
-            <td class="text-right">
-                &nbsp;</td>
+            <td class="text-left">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+            </td>
         </tr>
     </table>
     <table class="auto-style1">
@@ -168,23 +176,27 @@
             <td class="auto-style4">
                 <asp:TextBox ID="CedulaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Cedula*"></asp:TextBox>
             </td>
-            <td class="auto-style18">
-                &nbsp;</td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="CedulaTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td class="auto-style36"><strong>Nacionalidad:</strong></td>
             <td class="auto-style4">
                 <asp:TextBox ID="NacionalidadTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nacionalidad*"></asp:TextBox>
             </td>
-            <td class="text-right">&nbsp;</td>
+            <td class="text-left">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="NacionalidadTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td class="auto-style36"><strong>Lugar de Nacimiento:</strong></td>
             <td class="auto-style4">
                 <asp:TextBox ID="NacimientoTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Lugar de Nacimiento*"></asp:TextBox>
             </td>
-            <td class="text-right">
-                &nbsp;</td>
+            <td class="text-left">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="NacimientoTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+            </td>
         </tr>
     </table>
     <table style="width: 100%;">
@@ -193,7 +205,9 @@
             <td class="auto-style52">
                 <asp:TextBox ID="OcupacionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Ocupación*"></asp:TextBox>
             </td>
-            <td class="auto-style53"></td>
+            <td class="auto-style53">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator24" runat="server" ControlToValidate="OcupacionTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td class="auto-style51"><strong>Sexo:</strong></td>
@@ -203,6 +217,7 @@
                     <asp:ListItem Value="1">Masculino</asp:ListItem>
                     <asp:ListItem Value="2">Femenino</asp:ListItem>
                 </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator23" runat="server" ControlToValidate="SexoDropDownList" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </td>
             <td class="auto-style53"></td>
         </tr>
@@ -224,12 +239,13 @@
                     <asp:ListItem Value="3">Trabajo</asp:ListItem>
                     <asp:ListItem Value="4">Otro</asp:ListItem>
                 </asp:DropDownList>
-                            <asp:Button ID="AgregarButton" runat="server" Class="btn btn-warning" OnClick="AgregarButton_Click" Text="Agregar" Width="100px" />
                         </td>
                     </tr>
                 </table>
             </td>
-            <td class="auto-style18">&nbsp;</td>
+            <td class="auto-style18">
+                            <asp:Button ID="AgregarButton" runat="server" Class="btn btn-warning" OnClick="AgregarButton_Click" Text="Agregar" Width="100px" />
+                        </td>
         </tr>
     </table>    
     <table class="auto-style1">
@@ -269,7 +285,7 @@
             </td>
             <td class="auto-style12">
                 <strong>
-                <asp:Button ID="GuardarButton" Class="btn btn-success" runat="server" Text="Guardar" Width="100px" OnClick="GuardarButton_Click"/>
+                <asp:Button ID="GuardarButton" Class="btn btn-success" runat="server" Text="Guardar" Width="100px" OnClick="GuardarButton_Click" ValidationGroup="Guardar"/>
                 </strong>
             </td>
             <td> 

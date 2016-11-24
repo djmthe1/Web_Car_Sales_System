@@ -25,16 +25,17 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
-    
     <div class="header_top">	
 	  <div class="container">
 		  <div class="cssmenu">
-				<ul id="nav">
+			    <nav id="nav">
+                    <ul class="nav">
                      <li><a href="/Default.aspx">INICIO</a></li>
-					 <li><a href="/Consulta/ConsultaVehiculosGuestWebForm.aspx">BUSQuEDA</a></li>
+					 <li><a href="/Consulta/ConsultaVehiculosGuestWebForm.aspx">BUSQUEDA</a></li>
 					 <li><a href="#section-3">VEHICULOS</a></li>
                     <li><a href="/Login.aspx">INICIAR SESION/REGISTRARSE</a></li>
-				</ul>
+			        </ul>
+				</nav>
 		    </div>
 	  	 </div>
 	 </div>
@@ -44,13 +45,16 @@
     <form id="form1" runat="server">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
-    </form>
 
     <div class="contact section" id="section-5">
      	<div class="container">
 
      	</div>
+        <asp:ScriptManager ID="ScriptManager" runat="server">
+        </asp:ScriptManager>
      </div> 
+
+    </form>
 
     <script type="text/javascript" src="/Themes/js/easing.js"></script>
 	<script src="/Themes/js/jquery.nav.js"></script>

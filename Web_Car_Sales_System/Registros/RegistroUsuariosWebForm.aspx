@@ -29,7 +29,8 @@
         }
         .auto-style18 {
             text-align: left;
-        }
+        height: 48px;
+    }
     .auto-style19 {
         width: 310px;
         text-decoration: underline;
@@ -49,6 +50,19 @@
     .auto-style25 {
         text-align: right;
         width: 393px;
+    }
+    .auto-style26 {
+        text-align: right;
+        width: 393px;
+        height: 48px;
+    }
+    .auto-style27 {
+        text-align: right;
+        width: 293px;
+        height: 48px;
+    }
+    .auto-style28 {
+        height: 48px;
     }
     </style>
 </asp:Content>
@@ -89,30 +103,34 @@
     </table>
     <table class="auto-style1">
         <tr>
-            <td class="auto-style25"><strong>UsuarioId:</strong></td>
-            <td class="auto-style4">
+            <td class="auto-style26"><strong>UsuarioId:</strong></td>
+            <td class="auto-style27">
                 <asp:TextBox ID="UsuarioIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="UsuarioId*"></asp:TextBox>
             </td>
             <td class="auto-style18">
+                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="UsuarioIdTextBox" ErrorMessage="CompareValidator" ForeColor="Red" SetFocusOnError="True" ValidationGroup="BuscarEliminar">*</asp:CompareValidator>
                 <strong>
                 <asp:Button ID="BuscarButton" Class="btn btn-default" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" />
                 </strong>
             </td>
         </tr>
         <tr>
-            <td class="auto-style25"><strong>Nombre:</strong></td>
-            <td class="auto-style4">
+            <td class="auto-style26"><strong>Nombre:</strong></td>
+            <td class="auto-style27">
                 <asp:TextBox ID="NombreTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nombre*"></asp:TextBox>
             </td>
-            <td class="text-right">&nbsp;</td>
+            <td class="auto-style28">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="NombreTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td class="auto-style25"><strong>Nombre de Usuario:</strong></td>
             <td class="auto-style4">
               <asp:TextBox ID="NombreUsuarioTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nombre de usuario*"></asp:TextBox>
             </td>
-            <td class="text-right">
-                &nbsp;</td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ControlToValidate="NombreUsuarioTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+            </td>
         </tr>
     </table>
     <table class="auto-style1">
@@ -121,14 +139,18 @@
             <td class="auto-style4">
                 <asp:TextBox ID="ContraseñaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Contraseña*"></asp:TextBox>
             </td>
-            <td class="text-right">&nbsp;</td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator20" runat="server" ControlToValidate="ContraseñaTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td class="auto-style25"><strong>Confirmar Contraseña:</strong></td>
             <td class="auto-style9">
                 <asp:TextBox ID="ConfirmarTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Repetir contraseña*"></asp:TextBox>
             </td>
-            <td class="text-right">&nbsp;</td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator21" runat="server" ControlToValidate="ConfirmarTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td class="auto-style25">
@@ -136,6 +158,7 @@
             <td class="auto-style8">
                 <asp:DropDownList ID="PrioridadDropDownList" Class="form-control input-sm" runat="server" CssClass="col-xs-offset-0" Height="42px" Width="285px" style="margin-left: 0px">
                     <asp:ListItem> </asp:ListItem>
+                    <asp:ListItem Value="0">Seleccione--</asp:ListItem>
                     <asp:ListItem Value="1">Administrador</asp:ListItem>
                     <asp:ListItem Value="2">Usuario</asp:ListItem>
                 </asp:DropDownList>
@@ -164,6 +187,8 @@
         </tr>
         <tr>
             <td class="auto-style22">    
+
+                <asp:ValidationSummary ID="ValidationSummary" runat="server" />
 
             </td>
             <td class="auto-style11">    

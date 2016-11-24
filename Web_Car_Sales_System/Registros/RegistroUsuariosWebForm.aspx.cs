@@ -15,7 +15,7 @@ namespace Web_Car_Sales_System.Registros
             Usuarios usuario = new Usuarios();
             if (!IsPostBack)
             {
-                
+                PrioridadDropDownList.SelectedIndex = 0;
             }
         }
 
@@ -26,7 +26,7 @@ namespace Web_Car_Sales_System.Registros
             NombreUsuarioTextBox.Text = string.Empty;
             ContraseñaTextBox.Text = string.Empty;
             ConfirmarTextBox.Text = string.Empty;
-            PrioridadDropDownList.SelectedIndex = -1;
+            PrioridadDropDownList.SelectedIndex = 0;
         }
 
         private void ObtenerValores(Usuarios usuario)

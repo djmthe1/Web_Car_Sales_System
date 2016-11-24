@@ -122,7 +122,7 @@
             <td class="auto-style4">
                 <asp:TextBox ID="ClienteIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="ClienteId*"></asp:TextBox>
             </td>
-            <td class="auto-style18">
+            <td>
                 <strong>
                 <asp:Button ID="BuscarButton" Class="btn btn-default" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" />
                 </strong>
@@ -133,14 +133,14 @@
             <td class="auto-style4">
                 <asp:TextBox ID="NombreCompletoTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nombre Completo*"></asp:TextBox>
             </td>
-            <td class="text-right">&nbsp;</td>
+            <td>&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style35"><strong>Nombre de Usuario:</strong></td>
             <td class="auto-style4">
                 <asp:TextBox ID="NombreUsuarioTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nombre de Usuario*"></asp:TextBox>
             </td>
-            <td class="text-right">
+            <td>
                 &nbsp;</td>
         </tr>
     </table>
@@ -150,7 +150,7 @@
             <td class="auto-style4">
                 <asp:TextBox ID="ContraseñaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Contraseña*"></asp:TextBox>
             </td>
-            <td class="auto-style18">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
@@ -158,14 +158,14 @@
             <td class="auto-style4">
                 <asp:TextBox ID="RepetirTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Repetir Contraseña*"></asp:TextBox>
             </td>
-            <td class="text-right">&nbsp;</td>
+            <td>&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style36"><strong>Dirección:</strong></td>
             <td class="auto-style4">
                 <asp:TextBox ID="DireccionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Dirección*"></asp:TextBox>
             </td>
-            <td class="text-right">
+            <td>
                 &nbsp;</td>
         </tr>
     </table>
@@ -175,7 +175,7 @@
             <td class="auto-style4">
                 <asp:TextBox ID="CedulaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Cedula*"></asp:TextBox>
             </td>
-            <td class="auto-style18">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
@@ -183,15 +183,16 @@
             <td class="auto-style4">
                 <asp:TextBox ID="NacionalidadTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nacionalidad*"></asp:TextBox>
             </td>
-            <td class="text-right">&nbsp;</td>
+            <td>&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style36"><strong>Lugar de Nacimiento:</strong></td>
             <td class="auto-style4">
                 <asp:TextBox ID="NacimientoTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Lugar de Nacimiento*"></asp:TextBox>
             </td>
-            <td class="text-right">
-                &nbsp;</td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="NacimientoTextBox"></asp:RequiredFieldValidator>
+            </td>
         </tr>
     </table>
     <table style="width: 100%;">
@@ -288,6 +289,7 @@
         <tr>
             <td class="auto-style22">    
 
+                <asp:ValidationSummary ID="ValidationSummary" runat="server" />
             </td>
             <td class="auto-style11">    
 

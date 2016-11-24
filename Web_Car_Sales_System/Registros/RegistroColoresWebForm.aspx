@@ -87,7 +87,8 @@
             </td>
             <td class="auto-style18">
                 <strong>
-                <asp:Button ID="BuscarButton" Class="btn btn-default" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" />
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="ColorIdTextBox" EnableTheming="False" ErrorMessage="Debe insertar un Id" ForeColor="Red" SetFocusOnError="True" ValidationGroup="BuscarEliminar">*</asp:RequiredFieldValidator>
+                <asp:Button ID="BuscarButton" Class="btn btn-default" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" ValidationGroup="BuscarEliminar" />
                 </strong>
             </td>
         </tr>
@@ -96,7 +97,9 @@
             <td class="auto-style4">
                 <asp:TextBox ID="DescripcionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Descripción*"></asp:TextBox>
             </td>
-            <td class="text-right">&nbsp;</td>
+            <td class="text-left">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ControlToValidate="DescripcionTextBox" ErrorMessage="Debe insertar la descripcion" ForeColor="Red" SetFocusOnError="True" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td class="auto-style25">&nbsp;</td>
@@ -115,18 +118,19 @@
             </td>
             <td class="auto-style12">
                 <strong>
-                <asp:Button ID="GuardarButton" Class="btn btn-success" runat="server" Text="Guardar" Width="100px" OnClick="GuardarButton_Click"/>
+                <asp:Button ID="GuardarButton" Class="btn btn-success" runat="server" Text="Guardar" Width="100px" OnClick="GuardarButton_Click" ValidationGroup="Guardar"/>
                 </strong>
             </td>
             <td> 
                 <strong>   
-                <asp:Button ID="EliminarButton" Class="btn btn-danger" runat="server" Text="Eliminar" Width="100px" OnClick="EliminarButton_Click"/>
+                <asp:Button ID="EliminarButton" Class="btn btn-danger" runat="server" Text="Eliminar" Width="100px" OnClick="EliminarButton_Click" ValidationGroup="BuscarEliminar"/>
                 </strong>
             </td>
         </tr>
         <tr>
             <td class="auto-style22">    
 
+                <asp:ValidationSummary ID="ValidationSummary" runat="server" />
             </td>
             <td class="auto-style11">    
 
