@@ -130,7 +130,7 @@
         <tr>
             <td class="auto-style22">    
 
-                <asp:ValidationSummary ID="ValidationSummary" runat="server" />
+                <asp:ValidationSummary ID="ValidationSummary" runat="server" ValidationGroup="Guardar" />
             </td>
             <td class="auto-style11">    
 

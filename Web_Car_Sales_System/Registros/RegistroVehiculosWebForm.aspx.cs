@@ -12,14 +12,14 @@ namespace Web_Car_Sales_System.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Vehiculos vehiculo = new Vehiculos();
             if (!IsPostBack)
             {
+                Vehiculos vehiculo = new Vehiculos();
                 ObtenerDropDownList();
-                if (Request.QueryString["ID"] != null)
+                if (Request.QueryString["VehiculoId"] != null)
                 {
                     int id = 0;
-                    int.TryParse(Request.QueryString["ID"].ToString(), out id);
+                    int.TryParse(Request.QueryString["VehiculoId"].ToString(), out id);
 
                     if (vehiculo.Buscar(id))
                     {

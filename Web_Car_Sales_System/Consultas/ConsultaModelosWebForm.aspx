@@ -116,6 +116,13 @@
             <td class="auto-style29">&nbsp;</td>
             <td class="auto-style30">
                 <asp:GridView ID="ConsultaGridView" runat="server" Width="438px">
+                    <Columns>
+                        <asp:HyperLinkField
+                        DataNavigateUrlFields="ModeloId"
+                        DataNavigateUrlFormatString="/Registros/RegistroColoresWebForm.aspx?ModeloId={0}"
+                        Text="Editar"
+                        ControlStyle-CssClass="btn btn-default"  />
+                    </Columns>
                 </asp:GridView>
             </td>
             <td>

@@ -10,16 +10,15 @@ namespace Web_Car_Sales_System.Registros
 {
     public partial class RegistroMotoresWebForm : System.Web.UI.Page
     {
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            Motores motor = new Motores();
             if (!IsPostBack)
             {
-                if (Request.QueryString["ID"] != null)
+                Motores motor = new Motores();
+                if (Request.QueryString["MotorId"] != null)
                 {
                     int id = 0;
-                    int.TryParse(Request.QueryString["ID"].ToString(), out id);
+                    int.TryParse(Request.QueryString["MotorId"].ToString(), out id);
 
                     if (motor.Buscar(id))
                     {

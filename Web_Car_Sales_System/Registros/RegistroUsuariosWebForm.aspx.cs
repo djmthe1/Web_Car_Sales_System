@@ -12,10 +12,17 @@ namespace Web_Car_Sales_System.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Usuarios usuario = new Usuarios();
             if (!IsPostBack)
             {
+                Usuarios usuario = new Usuarios();
                 PrioridadDropDownList.SelectedIndex = 0;
+                if (Request.QueryString["UsuarioId"] != null)
+                {
+                    if (usuario.Buscar(Validaciones.Entero(Request.QueryString["UsuarioId"].ToString())))
+                    {
+                        DevolverValores(usuario);
+                    }
+                }
             }
         }
 

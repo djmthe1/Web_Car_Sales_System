@@ -12,12 +12,12 @@ namespace Web_Car_Sales_System.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            TipoVehiculos tipo = new TipoVehiculos();
             if (!IsPostBack)
             {
-                if (Request.QueryString["ID"] != null)
+                TipoVehiculos tipo = new TipoVehiculos();
+                if (Request.QueryString["TipoVehiculoId"] != null)
                 {
-                    if (tipo.Buscar(Validaciones.Entero(Request.QueryString["ID"].ToString())))
+                    if (tipo.Buscar(Validaciones.Entero(Request.QueryString["TipoVehiculoId"].ToString())))
                     {
                         DevolverValores(tipo);
                     }

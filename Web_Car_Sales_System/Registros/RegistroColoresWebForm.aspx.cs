@@ -12,12 +12,12 @@ namespace Web_Car_Sales_System.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Colores color = new Colores();
             if (!IsPostBack)
             {
-                if (Request.QueryString["ID"] != null)
+                Colores color = new Colores();
+                if (Request.QueryString["ColorId"] != null)
                 {
-                    if (color.Buscar(Validaciones.Entero(Request.QueryString["ID"].ToString())))
+                    if (color.Buscar(Validaciones.Entero(Request.QueryString["ColorId"].ToString())))
                     {
                         DevolverValores(color);
                     }

@@ -12,15 +12,15 @@ namespace Web_Car_Sales_System.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Facturas factura = new Facturas();
             if (!IsPostBack)
             {
+                Facturas factura = new Facturas();
                 FechaTextBox.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 ObtenerDropDownList();
-                if (Request.QueryString["ID"] != null)
+                if (Request.QueryString["FacturaId"] != null)
                 {
                     int id = 0;
-                    int.TryParse(Request.QueryString["ID"].ToString(), out id);
+                    int.TryParse(Request.QueryString["FacturaId"].ToString(), out id);
 
                     if (factura.Buscar(id))
                     {

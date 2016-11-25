@@ -14,13 +14,13 @@ namespace Web_Car_Sales_System.Registros
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Clientes cliente = new Clientes();
             if (!IsPostBack)
             {
+                Clientes cliente = new Clientes();
                 InsertarColumnas();
-                if (Request.QueryString["ID"] != null)
+                if (Request.QueryString["ClienteId"] != null)
                 {
-                    if (cliente.Buscar(Validaciones.Entero(Request.QueryString["ID"].ToString())))
+                    if (cliente.Buscar(Validaciones.Entero(Request.QueryString["ClienteId"].ToString())))
                     {
                         DevolverValores(cliente);
                     }
