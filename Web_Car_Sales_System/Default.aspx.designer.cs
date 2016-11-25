@@ -10,7 +10,7 @@
 namespace Web_Car_Sales_System {
     
     
-    public partial class Nuevo {
+    public partial class Default {
         
         /// <summary>
         /// form1 control.
