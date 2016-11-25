@@ -19,7 +19,7 @@
     <!--webfont-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
-    
+
     <!--///////////////////////////////////////////////////////////////////////////////////////////////////
     //
     //		Styles
@@ -72,7 +72,7 @@
     <div class="header_top">	
 	  <div class="container">		  
           <div class="logo">
-			 <a href="index.html"><img src="images/logo.jpg" width="280px" height="30px" alt=""></a>
+			 <h3><strong>Web Car Sales System</strong></h3>
 		  </div>
 		  <div class="cssmenu">
 				<ul id="nav">
@@ -306,6 +306,7 @@
 			</ul>
 		 </div>
      </div> 
+    <script type="text/javascript" src="/Themes/js/move-top.js"></script>
     <script src="Themes/js/jquery.scrollTo.js"></script>
 	<script src="Themes/js/jquery.nav.js"></script>
 	<script>

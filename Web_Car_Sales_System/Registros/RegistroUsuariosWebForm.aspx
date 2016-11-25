@@ -5,18 +5,6 @@
             width: 100%;
             height: 128px;
         }
-        .auto-style4 {
-            text-align: right;
-            width: 293px;
-        }
-        .auto-style8 {
-            text-align: left;
-            width: 290px;
-        }
-        .auto-style9 {
-            text-align: left;
-            width: 293px;
-        }
         .auto-style11 {
             width: 314px
         }
@@ -47,10 +35,6 @@
     .auto-style24 {
         width: 392px
     }
-    .auto-style25 {
-        text-align: right;
-        width: 393px;
-    }
     .auto-style26 {
         text-align: right;
         width: 393px;
@@ -64,6 +48,11 @@
     .auto-style28 {
         height: 48px;
     }
+        .auto-style29 {
+            text-align: left;
+            width: 293px;
+            height: 48px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -120,51 +109,51 @@
                 <asp:TextBox ID="NombreTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nombre*"></asp:TextBox>
             </td>
             <td class="auto-style28">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="NombreTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="NombreTextBox" ErrorMessage="Inserte el nombre" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
-            <td class="auto-style25"><strong>Nombre de Usuario:</strong></td>
-            <td class="auto-style4">
+            <td class="auto-style26"><strong>Nombre de Usuario:</strong></td>
+            <td class="auto-style27">
               <asp:TextBox ID="NombreUsuarioTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nombre de usuario*"></asp:TextBox>
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ControlToValidate="NombreUsuarioTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ControlToValidate="NombreUsuarioTextBox" ErrorMessage="Inserte un nombre de usuario" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </td>
         </tr>
     </table>
     <table class="auto-style1">
         <tr>
-            <td class="auto-style25"><strong>Contraseña:</strong></td>
-            <td class="auto-style4">
+            <td class="auto-style26"><strong>Contraseña:</strong></td>
+            <td class="auto-style27">
                 <asp:TextBox ID="ContraseñaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Contraseña*"></asp:TextBox>
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator20" runat="server" ControlToValidate="ContraseñaTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator20" runat="server" ControlToValidate="ContraseñaTextBox" ErrorMessage="Inserte una contraseña" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
-            <td class="auto-style25"><strong>Confirmar Contraseña:</strong></td>
-            <td class="auto-style9">
+            <td class="auto-style26"><strong>Confirmar Contraseña:</strong></td>
+            <td class="auto-style27">
                 <asp:TextBox ID="ConfirmarTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Repetir contraseña*"></asp:TextBox>
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator21" runat="server" ControlToValidate="ConfirmarTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator21" runat="server" ControlToValidate="ConfirmarTextBox" ErrorMessage="Confirme la contraseña" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
-            <td class="auto-style25">
+            <td class="auto-style26">
                 <strong>Prioridad:</strong></td>
-            <td class="auto-style8">
-                <asp:DropDownList ID="PrioridadDropDownList" Class="form-control input-sm" runat="server" CssClass="col-xs-offset-0" Height="42px" Width="285px" style="margin-left: 0px">
-                    <asp:ListItem> </asp:ListItem>
+            <td class="auto-style29">
+                <asp:DropDownList ID="PrioridadDropDownList" Class="form-control input-sm" runat="server" CssClass="col-xs-offset-0" Height="35px" Width="285px" style="margin-left: 0px">
                     <asp:ListItem Value="0">Seleccione--</asp:ListItem>
                     <asp:ListItem Value="1">Administrador</asp:ListItem>
                     <asp:ListItem Value="2">Usuario</asp:ListItem>
                 </asp:DropDownList>
             </td>
-            <td class="text-left">
-                &nbsp;</td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPrioridad" runat="server" ControlToValidate="PrioridadDropDownList" ErrorMessage="Seleccione una prioridad" ForeColor="Red" InitialValue="0" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+            </td>
         </tr>
     </table>
     <table class="auto-style1">
@@ -176,7 +165,7 @@
             </td>
             <td class="auto-style12">
                 <strong>
-                <asp:Button ID="GuardarButton" Class="btn btn-success" runat="server" Text="Guardar" Width="100px" OnClick="GuardarButton_Click"/>
+                <asp:Button ID="GuardarButton" Class="btn btn-success" runat="server" Text="Guardar" Width="100px" OnClick="GuardarButton_Click" ValidationGroup="Guardar"/>
                 </strong>
             </td>
             <td> 
