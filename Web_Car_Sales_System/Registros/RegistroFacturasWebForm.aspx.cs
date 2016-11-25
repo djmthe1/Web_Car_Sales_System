@@ -39,7 +39,7 @@ namespace Web_Car_Sales_System.Registros
             ClienteDropDownList.DataBind();
 
             Vehiculos vehiculo = new Vehiculos();
-            VehiculoDropDownList.DataSource = vehiculo.Listado(" * ", " 1=1 ", " ");
+            VehiculoDropDownList.DataSource = vehiculo.Listado(" * ", " Vendido != 1 ", " ");
             VehiculoDropDownList.DataTextField = "VehiculoId";
             VehiculoDropDownList.DataValueField = "VehiculoId";
             VehiculoDropDownList.DataBind();

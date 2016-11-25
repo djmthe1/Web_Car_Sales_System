@@ -37,8 +37,9 @@ namespace BLL
         public bool ManualDeUsuario { set; get; }
         public bool DuplicadoLlaveEncendido { set; get; }
         public bool LlaveRueda { set; get; }
+        public bool Vendido { get; set; }
 
-        public Vehiculos(int vehiculoId, int estadoVehiculo, int marcaId, int modeloId, int motorId, int colorId, int año, string noChasis, int tipoVehiculoId, int kilometraje, int precio, string placa, string matricula, bool espejoRetrovisorInterno, bool espejoRetrovisorDerecho, bool espejoRetrovisorIzquierdo, bool radio, bool gato, bool gomas, bool gomaRepuesto, bool alfombras, bool botiquin, bool taponGasolina, bool taponRadiador, bool encendedor, bool manualDeUsuario, bool duplicadoLlaveEncendido, bool llaveRueda)
+        public Vehiculos(int vehiculoId, int estadoVehiculo, int marcaId, int modeloId, int motorId, int colorId, int año, string noChasis, int tipoVehiculoId, int kilometraje, int precio, string placa, string matricula, bool espejoRetrovisorInterno, bool espejoRetrovisorDerecho, bool espejoRetrovisorIzquierdo, bool radio, bool gato, bool gomas, bool gomaRepuesto, bool alfombras, bool botiquin, bool taponGasolina, bool taponRadiador, bool encendedor, bool manualDeUsuario, bool duplicadoLlaveEncendido, bool llaveRueda, bool vendido)
         {
             this.VehiculoId = vehiculoId;
             this.EstadoVehiculo = estadoVehiculo;
@@ -68,6 +69,7 @@ namespace BLL
             this.ManualDeUsuario = manualDeUsuario;
             this.DuplicadoLlaveEncendido = duplicadoLlaveEncendido;
             this.LlaveRueda = llaveRueda;
+            this.Vendido = vendido;
         }
 
         public Vehiculos()
@@ -81,7 +83,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(string.Format("INSERT INTO Vehiculos (EstadoVehiculo, MarcaId, ModeloId, MotorId, ColorId, Año, NoChasis, TipoVehiculoId, Kilometraje, Precio, Placa, Matricula, EspejoRetrovisorInterno, EspejoRetrovisorDerecho, EspejoRetrovisorIzquierdo, Radio, Gato, Gomas, GomaRepuesto, Alfombras, Botiquin, TaponGasolina, TaponRadiador, Encendedor, ManualDeUsuario, DuplicadoLlaveEncendido, LlaveRueda) VALUES ({0},{1},{2},{3},{4},{5},'{6}',{7},{8},{9},'{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}','{20}','{21}','{22}','{23}','{24}','{25}','{26}')", this.EstadoVehiculo, this.MarcaId, this.ModeloId, this.MotorId, this.ColorId, this.Año, this.NoChasis, this.TipoVehiculoId, this.Kilometraje, this.Precio, this.Placa, this.Matricula, this.EspejoRetrovisorInterno, this.EspejoRetrovisorDerecho, this.EspejoRetrovisorIzquierdo, this.Radio, this.Gato, this.Gomas, this.GomaRepuesto, this.Alfombras, this.Botiquin, this.TaponGasolina, this.TaponRadiador, this.Encendedor, this.ManualDeUsuario, this.DuplicadoLlaveEncendido, this.LlaveRueda));
+                retorno = conexion.Ejecutar(string.Format("INSERT INTO Vehiculos (EstadoVehiculo, MarcaId, ModeloId, MotorId, ColorId, Año, NoChasis, TipoVehiculoId, Kilometraje, Precio, Placa, Matricula, EspejoRetrovisorInterno, EspejoRetrovisorDerecho, EspejoRetrovisorIzquierdo, Radio, Gato, Gomas, GomaRepuesto, Alfombras, Botiquin, TaponGasolina, TaponRadiador, Encendedor, ManualDeUsuario, DuplicadoLlaveEncendido, LlaveRueda, Vendido) VALUES ({0},{1},{2},{3},{4},{5},'{6}',{7},{8},{9},'{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}','{20}','{21}','{22}','{23}','{24}','{25}','{26}','{27}')", this.EstadoVehiculo, this.MarcaId, this.ModeloId, this.MotorId, this.ColorId, this.Año, this.NoChasis, this.TipoVehiculoId, this.Kilometraje, this.Precio, this.Placa, this.Matricula, this.EspejoRetrovisorInterno, this.EspejoRetrovisorDerecho, this.EspejoRetrovisorIzquierdo, this.Radio, this.Gato, this.Gomas, this.GomaRepuesto, this.Alfombras, this.Botiquin, this.TaponGasolina, this.TaponRadiador, this.Encendedor, this.ManualDeUsuario, this.DuplicadoLlaveEncendido, this.LlaveRueda, this.Vendido));
                 return retorno;
             }
             catch (Exception ex)
@@ -96,7 +98,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(string.Format("UPDATE Vehiculos SET EstadoVehiculo={0}, MarcaId={1}, ModeloId={2}, MotorId={3}, ColorId={4}, Año={5}, NoChasis='{6}', TipoVehiculoId={7}, Kilometraje={8}, Precio={9}, Placa='{10}', Matricula='{11}', EspejoRetrovisorInterno='{12}', EspejoRetrovisorDerecho='{13}', EspejoRetrovisorIzquierdo='{14}', Radio='{15}', Gato='{16}', Gomas='{17}', GomaRepuesto='{18}', Alfombras='{19}', Botiquin='{20}', TaponGasolina='{21}', TaponRadiador='{22}', Encendedor='{23}', ManualDeUsuario='{24}', DuplicadoLlaveEncendido='{25}', LlaveRueda='{26}' WHERE VehiculoId={27}", this.EstadoVehiculo, this.MarcaId, this.ModeloId, this.MotorId, this.ColorId, this.Año, this.NoChasis, this.TipoVehiculoId, this.Kilometraje, this.Precio, this.Placa, this.Matricula, this.EspejoRetrovisorInterno, this.EspejoRetrovisorDerecho, this.EspejoRetrovisorIzquierdo, this.Radio, this.Gato, this.Gomas, this.GomaRepuesto, this.Alfombras, this.Botiquin, this.TaponGasolina, this.TaponRadiador, this.Encendedor, this.ManualDeUsuario, this.DuplicadoLlaveEncendido, this.LlaveRueda, this.VehiculoId));
+                retorno = conexion.Ejecutar(string.Format("UPDATE Vehiculos SET EstadoVehiculo={0}, MarcaId={1}, ModeloId={2}, MotorId={3}, ColorId={4}, Año={5}, NoChasis='{6}', TipoVehiculoId={7}, Kilometraje={8}, Precio={9}, Placa='{10}', Matricula='{11}', EspejoRetrovisorInterno='{12}', EspejoRetrovisorDerecho='{13}', EspejoRetrovisorIzquierdo='{14}', Radio='{15}', Gato='{16}', Gomas='{17}', GomaRepuesto='{18}', Alfombras='{19}', Botiquin='{20}', TaponGasolina='{21}', TaponRadiador='{22}', Encendedor='{23}', ManualDeUsuario='{24}', DuplicadoLlaveEncendido='{25}', LlaveRueda='{26}', Vendido='{27}' WHERE VehiculoId={28}", this.EstadoVehiculo, this.MarcaId, this.ModeloId, this.MotorId, this.ColorId, this.Año, this.NoChasis, this.TipoVehiculoId, this.Kilometraje, this.Precio, this.Placa, this.Matricula, this.EspejoRetrovisorInterno, this.EspejoRetrovisorDerecho, this.EspejoRetrovisorIzquierdo, this.Radio, this.Gato, this.Gomas, this.GomaRepuesto, this.Alfombras, this.Botiquin, this.TaponGasolina, this.TaponRadiador, this.Encendedor, this.ManualDeUsuario, this.DuplicadoLlaveEncendido, this.LlaveRueda, this.Vendido, this.VehiculoId));
                 return retorno;
             }
             catch (Exception ex)
@@ -155,6 +157,7 @@ namespace BLL
                 this.ManualDeUsuario = (bool)dt.Rows[0]["ManualDeUsuario"];
                 this.DuplicadoLlaveEncendido = (bool)dt.Rows[0]["DuplicadoLlaveEncendido"];
                 this.LlaveRueda = (bool)dt.Rows[0]["LlaveRueda"];
+                this.Vendido = (bool)dt.Rows[0]["Vendido"];
             }
             return dt.Rows.Count > 0;
         }

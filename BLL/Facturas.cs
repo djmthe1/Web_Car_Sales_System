@@ -42,6 +42,10 @@ namespace BLL
             try
             {
                 retorno = conexion.Ejecutar(string.Format("INSERT INTO Facturas (Fecha, ClienteId, VehiculoId, PagoInicialEfectivo, PagoInicialCheque, PrecioAPagar, AutorizadoPor) VALUES ('{0}',{1},{2},{3},{4},{5},{6})", this.Fecha, this.ClienteId, this.VehiculoId, this.PagoInicialEfectivo, this.PagoInicialCheque, this.PrecioAPagar, this.AutorizadoPor));
+                if (retorno)
+                {
+                    conexion.Ejecutar(string.Format("UPDATE Vehiculos SET Vendido=True WHERE VehiculoId={0}", this.VehiculoId));
+                }
                 return retorno;
             }
             catch (Exception ex)
@@ -72,6 +76,10 @@ namespace BLL
             try
             {
                 retorno = conexion.Ejecutar(string.Format("DELETE FROM Facturas WHERE FacturaId={0}", this.FacturaId));
+                if (retorno)
+                {
+                    conexion.Ejecutar(string.Format("UPDATE Vehiculos SET Vendido=False WHERE VehiculoId={0}", this.VehiculoId));
+                }
                 return retorno;
             }
             catch (Exception ex)

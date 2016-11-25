@@ -248,6 +248,7 @@ namespace Web_Car_Sales_System.Registros
         {
             VehiculoIdTextBox.Text = vehiculo.VehiculoId.ToString();
             EstadoDropDownList.SelectedValue = vehiculo.EstadoVehiculo.ToString();
+            MarcaDropDownList.SelectedValue = vehiculo.MarcaId.ToString();
             ModeloDropDownList.SelectedValue = vehiculo.ModeloId.ToString();
             MotorDropDownList.SelectedValue = vehiculo.MotorId.ToString();
             ColorDropDownList.SelectedValue = vehiculo.ColorId.ToString();

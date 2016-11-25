@@ -31,7 +31,7 @@
 			    <nav id="nav">
                     <ul class="nav">
                      <li><a href="/Default.aspx">INICIO</a></li>
-					 <li><a href="/Consulta/ConsultaVehiculosGuestWebForm.aspx">BUSQUEDA</a></li>
+					 <li><a href="/Consultas/ConsultaVehiculosGuestWebForm.aspx">BUSQUEDA</a></li>
 					 <li><a href="#section-3">VEHICULOS</a></li>
                     <li><a href="/Login.aspx">INICIAR SESION/REGISTRARSE</a></li>
 			        </ul>

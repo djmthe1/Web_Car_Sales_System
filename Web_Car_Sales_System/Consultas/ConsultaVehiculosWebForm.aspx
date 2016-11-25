@@ -104,6 +104,7 @@
                 <asp:ListItem>Precio</asp:ListItem>
                 <asp:ListItem>Placa</asp:ListItem>
                 <asp:ListItem>Matricula</asp:ListItem>
+                <asp:ListItem>Vendido</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td class="auto-style28">

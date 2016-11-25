@@ -84,7 +84,7 @@ create table Vehiculos(
 	MotorId int References Motores(MotorId),
 	ColorId int References Colores(ColorId),
 	Año int,
-	NoChasis int,
+	NoChasis varchar(30),
 	TipoVehiculoId int References TipoVehiculos(TipoVehiculoId),
 	Kilometraje int,
 	Precio int,
@@ -104,5 +104,6 @@ create table Vehiculos(
 	Encendedor bit,
 	ManualDeUsuario bit,
 	DuplicadoLlaveEncendido bit,
-	LlaveRueda bit
+	LlaveRueda bit,
+	Vendido bit
 )

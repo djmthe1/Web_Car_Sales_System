@@ -25,7 +25,7 @@ namespace Web_Car_Sales_System.Consultas
                 filtro = BuscarPorDropDownList.SelectedValue + " like '%" + FiltroTextBox.Text + "%'";
             }
 
-            ConsultaGridView.DataSource = vehiculo.Listado("VehiculoId, EstadoVehiculo, MarcaId, ModeloId, MotorId, ColorId, Año, NoChasis, TipoVehiculoId, Kilometraje, Precio, Placa, Matricula", filtro, "");
+            ConsultaGridView.DataSource = vehiculo.Listado("VehiculoId, EstadoVehiculo, MarcaId, ModeloId, MotorId, ColorId, Año, NoChasis, TipoVehiculoId, Kilometraje, Precio, Placa, Matricula, Vendido", filtro, "");
             ConsultaGridView.DataBind();
         }
 
