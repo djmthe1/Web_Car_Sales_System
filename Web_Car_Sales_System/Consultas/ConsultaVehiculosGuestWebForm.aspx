@@ -121,26 +121,90 @@
             <td class="auto-style29">&nbsp;</td>
             <td class="auto-style30">
                 <asp:Repeater ID="VehiculosRepeater" runat="server">
-                     <ItemTemplate>
-                         <div class="col s4">
-                             <div class="card-panel light-blue lighten-1 white-text">
-                                 <%--<div class="card-title">
-                                     <asp:Label ID="VehiculoId" runat="server" Text='<%# Eval("VehiculoId")%>'></asp:Label>
-                                 </div>--%>
-                                 <div class="card-content">
-                                     <asp:Label ID="EstadoVehiculo" runat="server" Text='<%# Eval("EstadoVehiculo")%>'></asp:Label><br />
-                                     <asp:Label ID="MarcaId" runat="server" Text='<%# Eval("MarcaId")%>'></asp:Label><br />
-                                     <asp:Label ID="ModeloId" runat="server" Text='<%# Eval("ModeloId")%>'></asp:Label><br />
-                                     <asp:Label ID="MotorId" runat="server" Text='<%# Eval("MotorId")%>'></asp:Label><br />
-                                     <asp:Label ID="ColorId" runat="server" Text='<%# Eval("ColorId")%>'></asp:Label><br />
-                                     <asp:Label ID="Año" runat="server" Text='<%# Eval("Año")%>'></asp:Label><br />
-                                     <asp:Label ID="TipoVehiculoId" runat="server" Text='<%# Eval("TipoVehiculoId")%>'></asp:Label><br />
-                                     <asp:Label ID="Precio" runat="server" Text='<%# Eval("Precio")%>'></asp:Label>
-                                 </div>
-                             </div>
-                         </div>
-                     </ItemTemplate>
-                </asp:Repeater>
+                    <ItemTemplate>
+                        <table>
+                            <tr>
+                                <td style="width:50px">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <b>Estado:</b>
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="EstadoLabel" runat="server" Text='<%#Eval("EstadoVehiculo") %>'></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>Marca:</b>
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="MarcaLabel" runat="server" Text='<%#Eval("Marca")%>'></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>Modelo:</b>
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="ModeloLabel" runat="server" Text='<%#Eval("Modelo")%>'></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>Motor:</b>
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="MotorLabel" runat="server" Text='<%#Eval("Motor")%>'></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>Color:</b>
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="ColorLabel" runat="server" Text='<%#Eval("Color")%>'></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>Año:</b>
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="AñoLabel" runat="server" Text='<%#Eval("Año") %>'></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>Tipo de Vehiculo:</b>
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="TipoVehiculoLabel" runat="server" Text='<%#Eval("TipoVehiculo")%>'></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>Kilometraje:</b>
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="KilometrajeLabel" runat="server" Text='<%#Eval("Kilometraje") %>'> ></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>Precio:</b>
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="PrecioLabel" runat="server" Text='<%#Eval("Precio") %>'></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>--------------------------------</tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </ItemTemplate>
+            </asp:Repeater>
             </td>
             <td>
                 &nbsp;</td>

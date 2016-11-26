@@ -70,6 +70,7 @@
     <Content Include="Consultas\ConsultaModelosWebForm.aspx" />
     <Content Include="Consultas\ConsultaMotoresWebForm.aspx" />
     <Content Include="Consultas\ConsultaTipoVehiculosWebForm.aspx" />
+    <Content Include="Consultas\ConsultaTodosVehiculosWebForm.aspx" />
     <Content Include="Consultas\ConsultaUsuariosWebForm.aspx" />
     <Content Include="Consultas\ConsultaVehiculosGuestWebForm.aspx" />
     <Content Include="Consultas\ConsultaVehiculosWebForm.aspx" />
@@ -189,6 +190,13 @@
     </Compile>
     <Compile Include="Consultas\ConsultaTipoVehiculosWebForm.aspx.designer.cs">
       <DependentUpon>ConsultaTipoVehiculosWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaTodosVehiculosWebForm.aspx.cs">
+      <DependentUpon>ConsultaTodosVehiculosWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaTodosVehiculosWebForm.aspx.designer.cs">
+      <DependentUpon>ConsultaTodosVehiculosWebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Consultas\ConsultaUsuariosWebForm.aspx.cs">
       <DependentUpon>ConsultaUsuariosWebForm.aspx</DependentUpon>

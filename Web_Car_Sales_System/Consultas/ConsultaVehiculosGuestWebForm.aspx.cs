@@ -25,7 +25,7 @@ namespace Web_Car_Sales_System.Consultas
                 filtro = BuscarPorDropDownList.SelectedValue + " like '%" + FiltroTextBox.Text + "%'";
             }
 
-            VehiculosRepeater.DataSource = vehiculo.Listado("EstadoVehiculo, MarcaId, ModeloId, MotorId, ColorId, Año, TipoVehiculoId, Precio", filtro, "");
+            VehiculosRepeater.DataSource = vehiculo.Listado("EstadoVehiculo, MRC.Descripcion AS 'Marca', MDL.Descripcion AS 'Modelo', CLR.Descripcion AS 'Color', MTR.Descripcion AS 'Motor', Año, TVS.Descripcion AS 'TipoVehiculo', Kilometraje, Precio", filtro, "");
             VehiculosRepeater.DataBind();
         }
 

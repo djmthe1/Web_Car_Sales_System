@@ -67,13 +67,13 @@ namespace Web_Car_Sales_System.Consultas {
         protected global::System.Web.UI.WebControls.TextBox HastaTextBox;
         
         /// <summary>
-        /// ConsultaGridView control.
+        /// VehiculosRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ConsultaGridView;
+        protected global::System.Web.UI.WebControls.Repeater VehiculosRepeater;
         
         /// <summary>
         /// ImprimirButton control.
