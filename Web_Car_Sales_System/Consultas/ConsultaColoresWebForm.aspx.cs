@@ -41,6 +41,9 @@ namespace Web_Car_Sales_System.Consultas
             Visor.reporte = "Reportes/ColoresReport.rdlc";
             Visor.data = dt;
             Visor.DataBind();*/
+            //Colores color = new Colores();
+            //Validaciones.Reporte( , @"Reportes\ColoresReport.rdlc", "Colores", color.Listado("ColorId, Descripcion", "1=1", ""));
+
         }
     }
 }

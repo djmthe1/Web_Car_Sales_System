@@ -13,5 +13,15 @@ namespace Web_Car_Sales_System
         {
 
         }
+
+        protected void RegistrarseButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Registros/RegistroClientesGuestWebForm.aspx");
+        }
+
+        protected void EntrarButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

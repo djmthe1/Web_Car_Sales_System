@@ -33,7 +33,7 @@
 			    <nav id="nav">
                     <ul class="nav">
                         <li><a href="/Index.aspx">INICIO</a></li>
-                        <li><a href="">VEHICULOS</a></li>
+                        <li><a href="/Consultas/ConsultaTodosVehiculosWebForm">VEHICULOS</a></li>
 				        <li><a href="#">REGISTROS</a>
 					        <ul>
                                  <li><a href="/Registros/RegistroColoresWebForm.aspx">COLORES </a></li>

@@ -155,7 +155,7 @@
    	   	  	 	<img src="images/icon-group-inventory.png "width="500px" class="img-responsive" alt=""/>
    	   	  	 </div>
    	   	   <ul class="portfolio_grids">
-                     <asp:DataList ID="VehiculosDataList" runat="server" GridLines="Vertical" RepeatColumns="3" RepeatDirection="Horizontal">
+                     <asp:DataList ID="VehiculosDataList" runat="server" GridLines="Vertical" RepeatColumns="2" RepeatDirection="Horizontal">
                     <ItemTemplate>
                         <table>
                             <tr>

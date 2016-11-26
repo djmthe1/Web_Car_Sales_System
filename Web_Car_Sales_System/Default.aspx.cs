@@ -26,7 +26,7 @@ namespace Web_Car_Sales_System
         protected void repeater()
         {
             Vehiculos vehiculo = new Vehiculos();
-            VehiculosDataList.DataSource = vehiculo.Listado("TOP 9 EstadoVehiculo, MRC.Descripcion AS 'Marca', MDL.Descripcion AS 'Modelo', Año", "1=1", "");
+            VehiculosDataList.DataSource = vehiculo.Listado("TOP 6 EstadoVehiculo, MRC.Descripcion AS 'Marca', MDL.Descripcion AS 'Modelo', Año", "1=1", "");
             VehiculosDataList.DataBind();
         }
     }
