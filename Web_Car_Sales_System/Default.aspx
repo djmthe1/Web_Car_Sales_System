@@ -108,7 +108,7 @@
         <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
             <div data-thumb="../images/2015-toyota-camry.jpg" data-src="../images/2015-toyota-camry.jpg">
                 <div class="camera_caption fadeFromBottom">
-                    Toyota-2015. <em>Camry</em>
+                    Toyota-2017. <em>Camry SE</em>
                 </div>
             </div>
             <div data-thumb="../images/2017-Lexus-GX-460.jpg" data-src="../images/2017-Lexus-GX-460.jpg">
@@ -155,73 +155,50 @@
    	   	  	 	<img src="images/icon-group-inventory.png "width="500px" class="img-responsive" alt=""/>
    	   	  	 </div>
    	   	   <ul class="portfolio_grids">
-	  	  	<li>
-	  	  		<div class="view view-fifth">
-                   <img src="images/p1.jpg" class="img-responsive" alt=""/>
-                    <div class="mask">
-                      <div class="mask1">
-                        <h3>Latest</h3>
-                        <h4>Fashion</h4>
-                         <a class="popup-with-zoom-anim" href="#small-dialog1"> <div class="info">Next</div></a>
-		                     <div id="small-dialog1" class="mfp-hide">
-							   <div class="pop_up1">
-							   	 <h3>Duis autem vel </h3>
-								 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie.</p>
-								 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie.</p>
-								</div>
-							 </div>
-                        </div>
-                     </div>
-                  </div>
-	  	  	</li>
-	  	  	<li>
-	  	  		<div class="view view-fifth">
-                   <img src="images/p2.jpg" class="img-responsive" alt=""/>
-                    <div class="mask">
-                      <div class="mask1">
-                        <h3>Latest</h3>
-                        <h4>Fashion</h4>
-                         <a class="popup-with-zoom-anim" href="#small-dialog1"> <div class="info">Next</div></a>
-		              </div>
-                     </div>
-                  </div>
-	  	  	</li>
-	  	  	<li>
-	  	  		<div class="view view-fifth">
-                   <img src="images/p3.jpg" class="img-responsive" alt=""/>
-                    <div class="mask">
-                      <div class="mask1">
-                        <h3>Latest</h3>
-                        <h4>Fashion</h4>
-                         <a class="popup-with-zoom-anim" href="#small-dialog1"> <div class="info">Next</div></a>
-		              </div>
-                     </div>
-                  </div>
-	  	  	</li>
-	  	  	<li>
-	  	  		<div class="view view-fifth">
-                   <img src="images/p4.jpg" class="img-responsive" alt=""/>
-                    <div class="mask">
-                      <div class="mask1">
-                        <h3>Latest</h3>
-                        <h4>Fashion</h4>
-                         <a class="popup-with-zoom-anim" href="#small-dialog1"> <div class="info">Next</div></a>
-		              </div>
-                     </div>
-                  </div>
-	  	  	</li>
-	  	  	<li>
-	  	  		<div class="view view-fifth">
-                   <img src="images/p5.jpg" class="img-responsive" alt=""/>
-                    <div class="mask">
-                      <div class="mask1">
-                        <h3>Latest</h3>
-                        <h4>Fashion</h4>
-                         <a class="popup-with-zoom-anim" href="#small-dialog1"> <div class="info">Next</div></a>
-		              </div>
-                     </div>
-                  </div>
-	  	  	</li>
+                     <asp:DataList ID="VehiculosDataList" runat="server" GridLines="Vertical" RepeatColumns="3" RepeatDirection="Horizontal">
+                    <ItemTemplate>
+                        <table>
+                            <tr>
+                                <td style="width:50px">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <b>Estado:</b>
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="EstadoLabel" runat="server" Text='<%#Eval("EstadoVehiculo") %>'></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>Marca:</b>
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="MarcaLabel" runat="server" Text='<%#Eval("Marca")%>'></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>Modelo:</b>
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="ModeloLabel" runat="server" Text='<%#Eval("Modelo")%>'></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>Año:</b>
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="AñoLabel" runat="server" Text='<%#Eval("Año") %>'></asp:Label>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </ItemTemplate>
+            </asp:DataList>
 	  	  	<div class="clearfix"></div>
 	  	   </ul>
 	  	   <ul class="portfolio_grids">

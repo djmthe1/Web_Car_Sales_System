@@ -120,7 +120,7 @@
         <tr>
             <td class="auto-style29">&nbsp;</td>
             <td class="auto-style30">
-                <asp:Repeater ID="VehiculosRepeater" runat="server">
+                <asp:DataList ID="VehiculosDataList" runat="server" GridLines="Vertical" RepeatColumns="3" RepeatDirection="Horizontal">
                     <ItemTemplate>
                         <table>
                             <tr>
@@ -198,13 +198,12 @@
                                                 <asp:Label ID="PrecioLabel" runat="server" Text='<%#Eval("Precio") %>'></asp:Label>
                                             </td>
                                         </tr>
-                                        <tr>--------------------------------</tr>
                                     </table>
                                 </td>
                             </tr>
                         </table>
                     </ItemTemplate>
-            </asp:Repeater>
+            </asp:DataList>
             </td>
             <td>
                 &nbsp;</td>
