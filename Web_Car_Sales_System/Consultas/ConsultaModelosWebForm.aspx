@@ -95,7 +95,7 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style27">Buscar Por:<asp:DropDownList ID="BuscarPorDropDownList" Class="form-control input-sm" runat="server" CssClass="col-xs-offset-0" Height="40px" Width="150px" style="margin-left: 0px">
+            <td class="auto-style27">Buscar Por:<asp:DropDownList ID="BuscarPorDropDownList" Class="form-control input-sm" runat="server" CssClass="col-xs-offset-0" Height="34px" Width="150px" style="margin-left: 0px">
                 <asp:ListItem>ModeloId</asp:ListItem>
                 <asp:ListItem>MarcaId</asp:ListItem>
                 <asp:ListItem>Descripcion</asp:ListItem>
@@ -119,7 +119,7 @@
                     <Columns>
                         <asp:HyperLinkField
                         DataNavigateUrlFields="ModeloId"
-                        DataNavigateUrlFormatString="/Registros/RegistroColoresWebForm.aspx?ModeloId={0}"
+                        DataNavigateUrlFormatString="/Registros/RegistroModelosWebForm.aspx?ModeloId={0}"
                         Text="Editar"
                         ControlStyle-CssClass="btn btn-default"  />
                     </Columns>

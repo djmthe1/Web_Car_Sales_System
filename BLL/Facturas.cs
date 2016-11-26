@@ -114,7 +114,7 @@ namespace BLL
         string ordenar = "";
             if (!Orden.Equals(""))
                 ordenar = " orden by  " + Orden;
-            return conexion.ObtenerDatos(("SELECT " + Campos + " FROM Facturas WHERE " + Condicion + Orden));
+            return conexion.ObtenerDatos(("SELECT " + Campos + " FROM Facturas AS FA INNER JOIN Clientes as CTS on FA.ClienteId = CTS.ClienteId WHERE " + Condicion + Orden));
         }
 }
 }

@@ -25,7 +25,7 @@ namespace Web_Car_Sales_System.Consultas
                 filtro = BuscarPorDropDownList.SelectedValue + " like '%" + FiltroTextBox.Text + "%'";
             }
 
-            ConsultaGridView.DataSource = factura.Listado("FacturaId, Fecha, ClienteId, VehiculoId, PagoInicialEfectivo, PagoInicialCheque, PrecioAPagar, AutorizadoPor", filtro, "");
+            ConsultaGridView.DataSource = factura.Listado("FacturaId, Fecha, CTS.NombreCompleto AS 'Cliente', VehiculoId, PagoInicialEfectivo, PagoInicialCheque, PrecioAPagar, AutorizadoPor", filtro, "");
             ConsultaGridView.DataBind();
         }
 

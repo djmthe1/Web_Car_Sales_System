@@ -12,8 +12,8 @@
             width: 279px;
         }
         .auto-style5 {
-            width: 185px;
-        }
+        width: 185px;
+    }
         .auto-style6 {
             text-align: center;
             font-size: xx-large;

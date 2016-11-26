@@ -148,7 +148,7 @@
    	   	  	 <div class="col-md-8 about_left">
    	   	  	 	<h3>Vehiculos:</h3>
                 <div class="video_btn">
-		  		     <a href="/Consultas/ConsultaVehiculosGuestWebForm.aspx" class="btn1 btn-1 btn1-1b">Ver Todos</a>
+		  		     <a href="/Consultas/ConsultaTodosVehiculosWebForm.aspx" class="btn1 btn-1 btn1-1b">Ver Todos</a>
 		  		</div>
    	   	  	 </div>
    	   	  	 <div class="col-md-4 about_right">

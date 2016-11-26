@@ -32,6 +32,7 @@ namespace Web_Car_Sales_System.Consultas
         protected void ImprimirButton_Click(object sender, EventArgs e)
         {
 
+            Response.Write("<script type='text/javascript'>detailedresults=window.open('/Registros/RegistroTipoVehiculosWebForm.aspx');</script>");
         }
     }
 }

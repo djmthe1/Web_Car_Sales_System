@@ -32,7 +32,7 @@
                     <ul class="nav">
                      <li><a href="/Default.aspx">INICIO</a></li>
 					 <li><a href="/Consultas/ConsultaVehiculosGuestWebForm.aspx">BUSQUEDA</a></li>
-					 <li><a href="/Consultas/ConsultaTodosVehiculosWebForm">VEHICULOS</a></li>
+					 <li><a href="/Consultas/ConsultaTodosVehiculosWebForm.aspx">VEHICULOS</a></li>
                      <li><a href="/Login.aspx">INICIAR SESION/REGISTRARSE</a></li>
 			        </ul>
 				</nav>

@@ -95,7 +95,7 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style27">Buscar Por:<asp:DropDownList ID="BuscarPorDropDownList" Class="form-control input-sm" runat="server" CssClass="col-xs-offset-0" Height="40px" Width="150px" style="margin-left: 0px">
+            <td class="auto-style27">Buscar Por:<asp:DropDownList ID="BuscarPorDropDownList" Class="form-control input-sm" runat="server" CssClass="col-xs-offset-0" Height="34px" Width="150px" style="margin-left: 0px">
                 <asp:ListItem>EstadoVehiculo</asp:ListItem>
                 <asp:ListItem>MarcaId</asp:ListItem>
                 <asp:ListItem>ModeloId</asp:ListItem>
