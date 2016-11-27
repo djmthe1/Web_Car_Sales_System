@@ -15,24 +15,18 @@
         font-size: x-large;
     }
         .auto-style25 {
-            width: 315px
+            width: 354px
         }
             .auto-style26 {
-            width: 296px;
+            width: 310px;
             text-align: left;
         }
         .auto-style27 {
-            width: 315px;
+            width: 354px;
             text-align: right;
         }
-            .auto-style28 {
-            width: 296px;
-            text-decoration: underline;
-            text-align: center;
-            font-size: x-large;
-        }
-        .auto-style29 {
-            width: 170px
+            .auto-style29 {
+            width: 215px
         }
         .auto-style30 {
             width: 441px
@@ -45,6 +39,40 @@
         }
             .auto-style32 {
             width: 301px
+        }
+            .auto-style33 {
+            display: block;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+        .auto-style34 {
+            width: 312px;
+            font-size: x-large;
+            text-align: center;
+        }
+        .auto-style35 {
+            width: 314px
+        }
+        .auto-style36 {
+            width: 312px;
+            font-size: x-large;
+            text-align: center;
+            text-decoration: underline;
+        }
+        .auto-style37 {
+            width: 354px;
+            text-align: center;
         }
             </style>
 </asp:Content>
@@ -68,25 +96,25 @@
     </table>
     <table style="width: 100%;">
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="auto-style35">&nbsp;</td>
+            <td class="auto-style34">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
+            <td class="auto-style35">&nbsp;</td>
+            <td class="auto-style34">&nbsp;</td>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style35">&nbsp;</td>
+            <td class="auto-style36"><strong><em>Consulta de Facturas</em></strong></td>
             <td>&nbsp;</td>
         </tr>
     </table>
     <table class="auto-style1">
         <tr>
             <td class="auto-style25">&nbsp;</td>
-            <td class="auto-style28"><strong>Consulta de Facturas</strong></td>
+            <td class="auto-style19"></td>
             <td>&nbsp;</td>
         </tr>
         <tr>
@@ -101,7 +129,7 @@
                 <asp:ListItem>AutorizadoPor</asp:ListItem>
                 </asp:DropDownList>
             </td>
-            <td class="auto-style28">
+            <td class="auto-style19">
                 <asp:TextBox ID="FiltroTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Filtro"></asp:TextBox>
             </td>
             <td>
@@ -111,13 +139,12 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style27">Filtral por Fecha:<asp:CheckBox ID="FechaCheckBox" runat="server" Text="" />
+            <td class="auto-style37">Filtral por Fecha:<asp:CheckBox ID="FechaCheckBox" runat="server" Text="" />
             </td>
             <td class="auto-style26">
-                &nbsp;&nbsp;&nbsp; Desde:
-                &nbsp;<asp:TextBox ID="DesdeTextBox" CssClass="form-control" runat="server" Width="150px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hasta:</td>
-            <td>
+                Desde:<asp:TextBox ID="DesdeTextBox" CssClass="auto-style33" runat="server" Width="100px" Height="34px"></asp:TextBox>
+            </td>
+            <td>Hasta:
                 <asp:TextBox ID="HastaTextBox" CssClass="form-control" runat="server" Width="150px"></asp:TextBox>
             </td>
         </tr>

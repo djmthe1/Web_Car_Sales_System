@@ -21,6 +21,5 @@ namespace Web_Car_Sales_System.Consultas
             VehiculosDataList.DataSource = vehiculo.Listado("EstadoVehiculo, MRC.Descripcion AS 'Marca', MDL.Descripcion AS 'Modelo', CLR.Descripcion AS 'Color', MTR.Descripcion AS 'Motor', Año, TVS.Descripcion AS 'TipoVehiculo', Kilometraje, Precio", "1=1", "");
             VehiculosDataList.DataBind();
         }
-
     }
 }
