@@ -99,5 +99,25 @@ namespace BLL
                 ordenar = " orden by  " + Orden;
             return conexion.ObtenerDatos(("SELECT " + Campos + " FROM Usuarios WHERE " + Condicion + Orden));
         }
+
+        public bool Login()
+        {
+            DataTable dt = new DataTable();
+            ConexionDb conexion = new ConexionDb();
+            bool retorno = false;
+            try
+            {
+                dt = conexion.ObtenerDatos(string.Format("SELECT * FROM Usuarios WHERE NombreUsuario='{0}' AND Password='{1}'", this.NombreUsuario, this.Password));
+                if (dt.Rows.Count > 0)
+                {
+                    retorno = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return retorno;
+        }
     }
 }

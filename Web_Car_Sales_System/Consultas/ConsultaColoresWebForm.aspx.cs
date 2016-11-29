@@ -14,11 +14,18 @@ namespace Web_Car_Sales_System.Consultas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+                Filtro();
         }
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
+            Filtro();
+        }
+
+       protected string Filtro()
+        {
+           
             Colores color = new Colores();
             string filtro = "1=1";
 
@@ -29,21 +36,17 @@ namespace Web_Car_Sales_System.Consultas
 
             ConsultaGridView.DataSource = color.Listado("ColorId, Descripcion", filtro, "");
             ConsultaGridView.DataBind();
+
+            return filtro;
         }
 
         protected void ImprimirButton_Click(object sender, EventArgs e)
         {
-            /*Reportes.VisorReportes Visor = new Reportes.VisorReportes();
-            DataTable dt = new DataTable();
-
-            dt = (DataTable)ConsultaGridView.DataSource;
-            dt.TableName = "Colores";
-            Visor.reporte = "Reportes/ColoresReport.rdlc";
-            Visor.data = dt;
-            Visor.DataBind();*/
-            //Colores color = new Colores();
-            //Validaciones.Reporte( , @"Reportes\ColoresReport.rdlc", "Colores", color.Listado("ColorId, Descripcion", "1=1", ""));
-
+            Colores color = new Colores();
+            Validaciones.dataset = "Colores";
+            Validaciones.reporte = @"Reportes\ColoresReport.rdlc";
+            Validaciones.data = color.Listado("*", Filtro(), "");
+            Response.Write("<script type='text/javascript'>detailedresults=window.open('/Reportes/VisorReportes.aspx');</script>");
         }
     }
 }

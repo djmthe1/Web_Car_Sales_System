@@ -12,10 +12,10 @@ namespace Web_Car_Sales_System.Consultas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Filtro();
         }
 
-        protected void BuscarButton_Click(object sender, EventArgs e)
+        protected string Filtro()
         {
             TipoVehiculos tipo = new TipoVehiculos();
             string filtro = "1=1";
@@ -27,12 +27,17 @@ namespace Web_Car_Sales_System.Consultas
 
             ConsultaGridView.DataSource = tipo.Listado("TipoVehiculoId, Descripcion", filtro, "");
             ConsultaGridView.DataBind();
+
+            return filtro;
         }
 
         protected void ImprimirButton_Click(object sender, EventArgs e)
         {
-
-            Response.Write("<script type='text/javascript'>detailedresults=window.open('/Registros/RegistroTipoVehiculosWebForm.aspx');</script>");
+            TipoVehiculos tipo = new TipoVehiculos();
+            Validaciones.dataset = "TipoVehiculos";
+            Validaciones.reporte = @"Reportes\TipoVehiculosReport.rdlc";
+            Validaciones.data = tipo.Listado("*", Filtro(), "");
+            Response.Write("<script type='text/javascript'>detailedresults=window.open('/Reportes/VisorReportes.aspx');</script>");
         }
     }
 }

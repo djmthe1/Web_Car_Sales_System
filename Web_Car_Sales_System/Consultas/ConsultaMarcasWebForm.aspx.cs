@@ -13,10 +13,16 @@ namespace Web_Car_Sales_System.Consultas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+                Filtro();
         }
 
         protected void BuscarButton_Click(object sender, EventArgs e)
+        {
+            Filtro();
+        }
+
+        protected string Filtro()
         {
             Marcas marca = new Marcas();
             string filtro = "1=1";
@@ -25,20 +31,20 @@ namespace Web_Car_Sales_System.Consultas
             {
                 filtro = BuscarPorDropDownList.SelectedValue + " like '%" + FiltroTextBox.Text + "%'";
             }
-            
+
             ConsultaGridView.DataSource = marca.Listado("MarcaId, Descripcion", filtro, "");
             ConsultaGridView.DataBind();
+
+            return filtro;
         }
 
         protected void ImprimirButton_Click(object sender, EventArgs e)
         {
-            Reportes.VisorReportes Visor = new Reportes.VisorReportes();
-            DataTable dt = new DataTable();
-
-            dt = (DataTable)ConsultaGridView.DataSource;
-            Visor.nombre = "Marcas";
-            Visor.reporte = "MarcasReport.rdlc";
-            Visor.data = dt;
+            Marcas marca = new Marcas();
+            Validaciones.dataset = "Marcas";
+            Validaciones.reporte = @"Reportes\MarcasReport.rdlc";
+            Validaciones.data = marca.Listado("*", Filtro(), "");
+            Response.Write("<script type='text/javascript'>detailedresults=window.open('/Reportes/VisorReportes.aspx');</script>");
         }
     }
 }

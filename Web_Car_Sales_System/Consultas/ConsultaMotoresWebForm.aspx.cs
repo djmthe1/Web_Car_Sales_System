@@ -12,10 +12,16 @@ namespace Web_Car_Sales_System.Consultas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+                Filtro();
         }
 
         protected void BuscarButton_Click(object sender, EventArgs e)
+        {
+            Filtro();
+        }
+
+        protected string Filtro()
         {
             Motores motor = new Motores();
             string filtro = "1=1";
@@ -27,11 +33,17 @@ namespace Web_Car_Sales_System.Consultas
 
             ConsultaGridView.DataSource = motor.Listado("MotorId, Descripcion", filtro, "");
             ConsultaGridView.DataBind();
+
+            return filtro;
         }
 
         protected void ImprimirButton_Click(object sender, EventArgs e)
         {
-
+            Motores motor = new Motores();
+            Validaciones.dataset = "Motores";
+            Validaciones.reporte = @"Reportes\MotoresReport.rdlc";
+            Validaciones.data = motor.Listado("*", Filtro(), "");
+            Response.Write("<script type='text/javascript'>detailedresults=window.open('/Reportes/VisorReportes.aspx');</script>");
         }
     }
 }

@@ -10,6 +10,10 @@ namespace Web_Car_Sales_System
 {
     public static class Validaciones
     {
+        public static string reporte { get; set; }
+        public static DataTable data { get; set; }
+        public static string dataset { get; set; }
+
         public static int Entero(string s)
         {
             int variable = 0;

@@ -85,7 +85,7 @@
         </tr>
         <tr>
             <td class="auto-style2">&nbsp;</td>
-            <td class="auto-style5">&nbsp;</td>
+            <td class="auto-style5"><asp:CheckBox ID="RecuerdarCheckBox" runat="server" type="checkbox" /> Recordar?</td>
             <td>&nbsp;</td>
         </tr>
         <tr>

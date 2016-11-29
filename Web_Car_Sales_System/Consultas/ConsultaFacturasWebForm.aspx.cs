@@ -12,10 +12,10 @@ namespace Web_Car_Sales_System.Consultas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Filtro();
         }
 
-        protected void BuscarButton_Click(object sender, EventArgs e)
+        protected string Filtro()
         {
             Facturas factura = new Facturas();
             string filtro = "1=1";
@@ -27,10 +27,22 @@ namespace Web_Car_Sales_System.Consultas
 
             ConsultaGridView.DataSource = factura.Listado("FacturaId, Fecha, CTS.NombreCompleto AS 'Cliente', VehiculoId, PagoInicialEfectivo, PagoInicialCheque, PrecioAPagar, AutorizadoPor", filtro, "");
             ConsultaGridView.DataBind();
+
+            return filtro;
+        }
+
+        protected void BuscarButton_Click(object sender, EventArgs e)
+        {
+            Filtro();
         }
 
         protected void ImprimirButton_Click(object sender, EventArgs e)
         {
+            Facturas factura = new Facturas();
+            Validaciones.dataset = "Facturas";
+            Validaciones.reporte = @"Reportes\FacturasReport.rdlc";
+            Validaciones.data = factura.Listado("*", Filtro(), "");
+            Response.Write("<script type='text/javascript'>detailedresults=window.open('/Reportes/VisorReportes.aspx');</script>");
 
         }
     }
