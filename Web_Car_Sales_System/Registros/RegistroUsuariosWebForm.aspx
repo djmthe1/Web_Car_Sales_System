@@ -95,11 +95,15 @@
             <td class="auto-style26"><strong>UsuarioId:</strong></td>
             <td class="auto-style27">
                 <asp:TextBox ID="UsuarioIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="UsuarioId*" MaxLength="5"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="UsuarioIdTextBox" EnableTheming="False" ErrorMessage="Debe insertar un Id" ForeColor="Red" SetFocusOnError="True" ValidationGroup="Buscar">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="UsuarioIdTextBox" ErrorMessage="*Ingrese Valores Numericos" ValidationExpression="^[0-9]*" ValidationGroup="Buscar">*</asp:RegularExpressionValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="UsuarioIdTextBox" EnableTheming="False" ErrorMessage="Debe insertar un Id" ForeColor="Red" SetFocusOnError="True" ValidationGroup="Eliminar">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="UsuarioIdTextBox" ErrorMessage="*Ingrese Valores Numericos" ValidationExpression="^[0-9]*" ValidationGroup="Eliminar">*</asp:RegularExpressionValidator>
+				<asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="UsuarioIdTextBox" ErrorMessage="*Ingrese Valores Numericos" ValidationExpression="^[0-9]*" ValidationGroup="Guardar">*</asp:RegularExpressionValidator>
             </td>
             <td class="auto-style18">
-                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="UsuarioIdTextBox" ErrorMessage="CompareValidator" ForeColor="Red" SetFocusOnError="True" ValidationGroup="BuscarEliminar">*</asp:CompareValidator>
                 <strong>
-                <asp:Button ID="BuscarButton" Class="btn btn-default" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" />
+                <asp:Button ID="BuscarButton" Class="btn btn-default" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" ValidationGroup="Buscar"/>
                 </strong>
             </td>
         </tr>
@@ -107,18 +111,20 @@
             <td class="auto-style26"><strong>Nombre:</strong></td>
             <td class="auto-style27">
                 <asp:TextBox ID="NombreTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nombre*" MaxLength="30"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="NombreTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="NombreTextBox" ErrorMessage="*Ingrese Solo Letras"  ValidationExpression="^[A-Za-z]*$" ValidationGroup="Guardar">*</asp:RegularExpressionValidator>
             </td>
             <td class="auto-style28">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="NombreTextBox" ErrorMessage="Inserte el nombre" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style26"><strong>Nombre de Usuario:</strong></td>
             <td class="auto-style27">
               <asp:TextBox ID="NombreUsuarioTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nombre de usuario*" MaxLength="20"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="NombreUsuarioTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="NombreUsuarioTextBox" ErrorMessage="*Ingrese Solo Letras"  ValidationExpression="^[A-Za-z]*$" ValidationGroup="Guardar">*</asp:RegularExpressionValidator>
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ControlToValidate="NombreUsuarioTextBox" ErrorMessage="Inserte un nombre de usuario" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </td>
         </tr>
     </table>
@@ -127,19 +133,20 @@
             <td class="auto-style26"><strong>Contraseña:</strong></td>
             <td class="auto-style27">
                 <asp:TextBox ID="ContraseñaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Contraseña*" MaxLength="40"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="ContraseñaTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="ContraseñaTextBox" ErrorMessage="*Ingrese Solo Letras"  ValidationExpression="^[A-Za-z]*$" ValidationGroup="Guardar">*</asp:RegularExpressionValidator>
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator20" runat="server" ControlToValidate="ContraseñaTextBox" ErrorMessage="Inserte una contraseña" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style26"><strong>Confirmar Contraseña:</strong></td>
             <td class="auto-style27">
                 <asp:TextBox ID="ConfirmarTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Repetir contraseña*" MaxLength="40"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="ConfirmarTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="ConfirmarTextBox" ErrorMessage="*Ingrese Solo Letras"  ValidationExpression="^[A-Za-z]*$" ValidationGroup="Guardar">*</asp:RegularExpressionValidator>
             </td>
-            <td>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator21" runat="server" ControlToValidate="ConfirmarTextBox" ErrorMessage="Confirme la contraseña" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
-            </td>
+            <td></td>
         </tr>
         <tr>
             <td class="auto-style26">
@@ -151,9 +158,7 @@
                     <asp:ListItem Value="2">Usuario</asp:ListItem>
                 </asp:DropDownList>
             </td>
-            <td>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPrioridad" runat="server" ControlToValidate="PrioridadDropDownList" ErrorMessage="Seleccione una prioridad" ForeColor="Red" InitialValue="0" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
-            </td>
+            <td></td>
         </tr>
     </table>
     <table class="auto-style1">
@@ -170,7 +175,7 @@
             </td>
             <td> 
                 <strong>   
-                <asp:Button ID="EliminarButton" Class="btn btn-danger" runat="server" Text="Eliminar" Width="100px" OnClick="EliminarButton_Click"/>
+                <asp:Button ID="EliminarButton" Class="btn btn-danger" runat="server" Text="Eliminar" Width="100px" OnClick="EliminarButton_Click" ValidationGroup="Eliminar"/>
                 </strong>
             </td>
         </tr>

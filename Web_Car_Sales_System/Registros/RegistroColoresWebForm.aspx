@@ -84,11 +84,15 @@
             <td class="auto-style25"><strong>ColorId:</strong></td>
             <td class="auto-style4">
                 <asp:TextBox ID="ColorIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="ColorId*" MaxLength="5"></asp:TextBox>
-            </td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="ColorIdTextBox" EnableTheming="False" ErrorMessage="Debe insertar un Id" ForeColor="Red" SetFocusOnError="True" ValidationGroup="Buscar">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="ColorIdTextBox" ErrorMessage="*Ingrese Valores Numericos" ValidationExpression="^[0-9]*" ValidationGroup="Buscar">*</asp:RegularExpressionValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="ColorIdTextBox" EnableTheming="False" ErrorMessage="Debe insertar un Id" ForeColor="Red" SetFocusOnError="True" ValidationGroup="Eliminar">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="ColorIdTextBox" ErrorMessage="*Ingrese Valores Numericos" ValidationExpression="^[0-9]*" ValidationGroup="Eliminar">*</asp:RegularExpressionValidator>
+				<asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="ColorIdTextBox" ErrorMessage="*Ingrese Valores Numericos" ValidationExpression="^[0-9]*" ValidationGroup="Guardar">*</asp:RegularExpressionValidator>
+				 </td>
             <td class="auto-style18">
                 <strong>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="ColorIdTextBox" EnableTheming="False" ErrorMessage="Debe insertar un Id" ForeColor="Red" SetFocusOnError="True" ValidationGroup="BuscarEliminar">*</asp:RequiredFieldValidator>
-                <asp:Button ID="BuscarButton" Class="btn btn-default" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" ValidationGroup="BuscarEliminar" />
+                <asp:Button ID="BuscarButton" Class="btn btn-default" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" ValidationGroup="Buscar" />
                 </strong>
             </td>
         </tr>
@@ -96,10 +100,11 @@
             <td class="auto-style25"><strong>Descripción:</strong></td>
             <td class="auto-style4">
                 <asp:TextBox ID="DescripcionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Descripción*" MaxLength="10"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="DescripcionTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="DescripcionTextBox" ErrorMessage="*Ingrese Solo Letras"  ValidationExpression="^[A-Za-z]*$" ValidationGroup="Guardar">*</asp:RegularExpressionValidator>
             </td>
             <td class="text-left">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ControlToValidate="DescripcionTextBox" ErrorMessage="Debe insertar la descripcion" ForeColor="Red" SetFocusOnError="True" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style25">&nbsp;</td>
@@ -123,7 +128,7 @@
             </td>
             <td> 
                 <strong>   
-                <asp:Button ID="EliminarButton" Class="btn btn-danger" runat="server" Text="Eliminar" Width="100px" OnClick="EliminarButton_Click" ValidationGroup="BuscarEliminar"/>
+                <asp:Button ID="EliminarButton" Class="btn btn-danger" runat="server" Text="Eliminar" Width="100px" OnClick="EliminarButton_Click" ValidationGroup="Eliminar"/>
                 </strong>
             </td>
         </tr>

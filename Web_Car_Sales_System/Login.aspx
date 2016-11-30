@@ -24,9 +24,17 @@
             width: 292px;
             text-decoration: underline;
         }
-        .auto-style8 {
+        .auto-style21 {
             width: 530px;
             text-align: right;
+            height: 80px;
+        }
+        .auto-style22 {
+            width: 279px;
+            height: 80px;
+        }
+        .auto-style23 {
+            height: 80px;
         }
     </style>
 </asp:Content>
@@ -50,18 +58,25 @@
     </table>
     <table class="auto-style1">
         <tr>
-            <td class="auto-style8"><strong>Nombre de Usuario:</strong></td>
-            <td class="auto-style3">
+            <td class="auto-style21"><strong>Nombre de Usuario:</strong></td>
+            <td class="auto-style22">
                 <asp:TextBox ID="UsuarioTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nombre de Usuario*"></asp:TextBox>
+              </td>
+            <td class="auto-style23">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="UsuarioTextBox" EnableTheming="False" ErrorMessage="Debe insertar un Usuario" ForeColor="Red" SetFocusOnError="True" ValidationGroup="Entrar">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="UsuarioTextBox" ErrorMessage="*Ingrese Solo Letras"  ValidationExpression="^[A-Za-z]*$" ValidationGroup="Entrar"></asp:RegularExpressionValidator>
             </td>
-            <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style8"><strong>Contraseña:</strong></td>
-            <td class="auto-style3">
+            <td class="auto-style21"><strong>Contraseña:</strong></td>
+            <td class="auto-style22">
                 <asp:TextBox ID="PassTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Contraseña*"></asp:TextBox>
             </td>
-            <td>&nbsp;</td>
+            <td class="auto-style23">
+                
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="PassTextBox" EnableTheming="False" ErrorMessage="Debe insertar una Contraseña" ForeColor="Red" SetFocusOnError="True" ValidationGroup="Entrar">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="PassTextBox" ErrorMessage="*Ingrese Valores Numericos" ValidationExpression="^[0-9]*" ValidationGroup="Entrar"></asp:RegularExpressionValidator>
+        </td>
         </tr>
         <tr>
             <td class="auto-style2">&nbsp;</td>
@@ -71,10 +86,12 @@
     </table>
     <table class="auto-style1">
         <tr>
-            <td class="auto-style2">&nbsp;</td>
+            <td class="auto-style2">
+                <asp:ValidationSummary ID="ValidationSummary" runat="server" Height="66px" ValidationGroup="Entrar"/>
+            </td>
             <td class="auto-style5">
                 <strong>
-                <asp:Button ID="EntrarButton" Class="btn btn-success" runat="server" Text="Ingresar" Width="100px" OnClick="EntrarButton_Click"/>
+                <asp:Button ID="EntrarButton" Class="btn btn-success" runat="server" Text="Ingresar" Width="100px" OnClick="EntrarButton_Click" ValidationGroup="Entrar"/>
                 </strong>
             </td>
             <td class="text-left">
