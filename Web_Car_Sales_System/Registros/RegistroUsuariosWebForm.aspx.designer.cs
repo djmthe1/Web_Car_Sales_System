@@ -139,13 +139,13 @@ namespace Web_Car_Sales_System.Registros {
         protected global::System.Web.UI.WebControls.TextBox ContraseñaTextBox;
         
         /// <summary>
-        /// RequiredFieldValidator5 control.
+        /// CompareValidatorValidator5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorValidator5;
         
         /// <summary>
         /// RegularExpressionValidator6 control.
@@ -166,13 +166,13 @@ namespace Web_Car_Sales_System.Registros {
         protected global::System.Web.UI.WebControls.TextBox ConfirmarTextBox;
         
         /// <summary>
-        /// RequiredFieldValidator6 control.
+        /// CompareValidator6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator6;
         
         /// <summary>
         /// RegularExpressionValidator7 control.

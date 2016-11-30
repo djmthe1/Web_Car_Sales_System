@@ -133,7 +133,7 @@
             <td class="auto-style26"><strong>Contraseña:</strong></td>
             <td class="auto-style27">
                 <asp:TextBox ID="ContraseñaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Contraseña*" MaxLength="40"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="ContraseñaTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:CompareValidator ID="CompareValidatorValidator5" runat="server" ControlToCompare="ConfirmarTextBox" ControlToValidate="ContraseñaTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:CompareValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="ContraseñaTextBox" ErrorMessage="*Ingrese Solo Letras"  ValidationExpression="^[A-Za-z]*$" ValidationGroup="Guardar">*</asp:RegularExpressionValidator>
             </td>
             <td>
@@ -143,7 +143,7 @@
             <td class="auto-style26"><strong>Confirmar Contraseña:</strong></td>
             <td class="auto-style27">
                 <asp:TextBox ID="ConfirmarTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Repetir contraseña*" MaxLength="40"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="ConfirmarTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:CompareValidator ID="CompareValidator6" runat="server" ControlToCompare="ContraseñaTextBox" ControlToValidate="ConfirmarTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:CompareValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="ConfirmarTextBox" ErrorMessage="*Ingrese Solo Letras"  ValidationExpression="^[A-Za-z]*$" ValidationGroup="Guardar">*</asp:RegularExpressionValidator>
             </td>
             <td></td>
