@@ -42,6 +42,10 @@
         text-align: right;
         width: 393px;
     }
+            .auto-style26 {
+                text-align: left;
+                width: 293px;
+            }
             </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -82,29 +86,36 @@
     <table class="auto-style1">
         <tr>
             <td class="auto-style25"><strong>MarcaId:</strong></td>
-            <td class="auto-style4">
-                <asp:TextBox ID="MarcaIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="MarcaId*"></asp:TextBox>
+            <td class="auto-style26">
+                <asp:TextBox ID="MarcaIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="MarcaId*" MaxLength="5"></asp:TextBox>
+                 <asp:RegularExpressionValidator  ValidationGroup="Guardar" ID="RegularExpressionValidator1" runat="server" ControlToValidate="MarcaIdTextBox" ErrorMessage="*Ingrese Valores Numericos" ValidationExpression="^[0-9]*"></asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ValidationGroup="Eliminar" ID="RegularExpressionValidator3" runat="server" ControlToValidate="MarcaIdTextBox" ErrorMessage="*Ingrese Valores Numericos" ValidationExpression="^[0-9]*"></asp:RegularExpressionValidator>
+
+<asp:RegularExpressionValidator ValidationGroup="Buscar" ID="RegularExpressionValidator4" runat="server" ControlToValidate="MarcaIdTextBox" ErrorMessage="*Ingrese Valores Numericos" ValidationExpression="^[0-9]*"></asp:RegularExpressionValidator>
             </td>
             <td class="auto-style18">
                 <strong>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ControlToValidate="MarcaIdTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="BuscarEliminar">*</asp:RequiredFieldValidator>
-                <asp:Button ID="BuscarButton" Class="btn btn-default" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" />
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ControlToValidate="MarcaIdTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                    <asp:Button ValidationGroup="Buscar"  ID="BuscarButton" Class="btn btn-default" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" />
                 </strong>
             </td>
         </tr>
         <tr>
             <td class="auto-style25"><strong>Descripción:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="DescripcionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Descripción*"></asp:TextBox>
+                <asp:TextBox ID="DescripcionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Descripción*" MaxLength="20"></asp:TextBox>
             </td>
             <td class="text-left">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="DescripcionTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                
             </td>
         </tr>
         <tr>
             <td class="auto-style25">&nbsp;</td>
-            <td class="auto-style4">
-                &nbsp;</td>
+            <td class="auto-style26">
+              <asp:RegularExpressionValidator ValidationGroup="Guardar" ID="RegularExpressionValidator2" runat="server" ControlToValidate="DescripcionTextBox" ErrorMessage="*Ingrese Solo Letras"  ValidationExpression="^[A-Za-z]*$"></asp:RegularExpressionValidator>
+                
+            </td>
             <td class="text-right">
                 &nbsp;</td>
         </tr>
@@ -118,12 +129,12 @@
             </td>
             <td class="auto-style12">
                 <strong>
-                <asp:Button ID="GuardarButton" Class="btn btn-success" runat="server" Text="Guardar" Width="100px" OnClick="GuardarButton_Click"/>
+                <asp:Button ValidationGroup="Guardar" ID="GuardarButton" Class="btn btn-success" runat="server" Text="Guardar" Width="100px" OnClick="GuardarButton_Click"/>
                 </strong>
             </td>
             <td> 
                 <strong>   
-                <asp:Button ID="EliminarButton" Class="btn btn-danger" runat="server" Text="Eliminar" Width="100px" OnClick="EliminarButton_Click"/>
+                <asp:Button ValidationGroup="Eliminar" ID="EliminarButton" Class="btn btn-danger" runat="server" Text="Eliminar" Width="100px" OnClick="EliminarButton_Click"/>
                 </strong>
             </td>
         </tr>

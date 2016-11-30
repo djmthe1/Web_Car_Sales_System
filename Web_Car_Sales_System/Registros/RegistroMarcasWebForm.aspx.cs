@@ -14,17 +14,30 @@ namespace Web_Car_Sales_System.Registros
         {
             if (!IsPostBack)
             {
+                Validar();
                 Marcas marca = new Marcas();
                 if (Request.QueryString["MarcaId"] != null)
                 {
-                    int id = 0;
-                    int.TryParse(Request.QueryString["MarcaId"].ToString(), out id);
-
-                    if (marca.Buscar(id))
+                    if (marca.Buscar(Validaciones.Entero(Request.QueryString["MarcaId"].ToString())))
                     {
                         DevolverValores(marca);
                     }
                 }
+            }
+        }
+
+        private void Validar()
+        {
+            if (Session["Login"] != null)
+            {
+                Usuarios usuario = new Usuarios();
+                usuario = (Usuarios)Session["Login"];
+                if (usuario.Prioridad != 1)
+                    Response.Redirect("/Default.aspx");
+            }
+            else
+            {
+                Response.Redirect("/Login.aspx");
             }
         }
 

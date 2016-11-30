@@ -74,7 +74,7 @@ namespace BLL
 
         public Vehiculos()
         {
-
+            Vendido = false;
         }
 
         public override bool Insertar()

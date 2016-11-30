@@ -33,9 +33,9 @@ namespace Web_Car_Sales_System
             visor.ProcessingMode = ProcessingMode.Local;
             
             visor.LocalReport.ReportPath = ruta;
-            ReportDataSource sourse = new ReportDataSource(DataSets, listado);
+            ReportDataSource source = new ReportDataSource(DataSets, listado);
 
-            visor.LocalReport.DataSources.Add(sourse);
+            visor.LocalReport.DataSources.Add(source);
             visor.LocalReport.Refresh();
         }
     }

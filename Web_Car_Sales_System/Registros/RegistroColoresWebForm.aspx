@@ -83,7 +83,7 @@
         <tr>
             <td class="auto-style25"><strong>ColorId:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="ColorIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="ColorId*"></asp:TextBox>
+                <asp:TextBox ID="ColorIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="ColorId*" MaxLength="5"></asp:TextBox>
             </td>
             <td class="auto-style18">
                 <strong>
@@ -95,7 +95,7 @@
         <tr>
             <td class="auto-style25"><strong>Descripción:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="DescripcionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Descripción*"></asp:TextBox>
+                <asp:TextBox ID="DescripcionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Descripción*" MaxLength="10"></asp:TextBox>
             </td>
             <td class="text-left">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ControlToValidate="DescripcionTextBox" ErrorMessage="Debe insertar la descripcion" ForeColor="Red" SetFocusOnError="True" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>

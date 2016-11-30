@@ -14,19 +14,32 @@ namespace Web_Car_Sales_System.Registros
         {
             if (!IsPostBack)
             {
+                Validar();
                 Facturas factura = new Facturas();
                 FechaTextBox.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 ObtenerDropDownList();
                 if (Request.QueryString["FacturaId"] != null)
                 {
-                    int id = 0;
-                    int.TryParse(Request.QueryString["FacturaId"].ToString(), out id);
-
-                    if (factura.Buscar(id))
+                    if (factura.Buscar(Validaciones.Entero(Request.QueryString["FacturaId"].ToString())))
                     {
                         DevolverValores(factura);
                     }
                 }
+            }
+        }
+
+        private void Validar()
+        {
+            if (Session["Login"] != null)
+            {
+                Usuarios usuario = new Usuarios();
+                usuario = (Usuarios)Session["Login"];
+                if (usuario.Prioridad != 1)
+                    Response.Redirect("/Default.aspx");
+            }
+            else
+            {
+                Response.Redirect("/Login.aspx");
             }
         }
 

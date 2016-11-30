@@ -14,6 +14,7 @@ namespace Web_Car_Sales_System.Registros
         {
             if (!IsPostBack)
             {
+                Validar();
                 TipoVehiculos tipo = new TipoVehiculos();
                 if (Request.QueryString["TipoVehiculoId"] != null)
                 {
@@ -22,6 +23,21 @@ namespace Web_Car_Sales_System.Registros
                         DevolverValores(tipo);
                     }
                 }
+            }
+        }
+
+        private void Validar()
+        {
+            if (Session["Login"] != null)
+            {
+                Usuarios usuario = new Usuarios();
+                usuario = (Usuarios)Session["Login"];
+                if (usuario.Prioridad != 1)
+                    Response.Redirect("/Default.aspx");
+            }
+            else
+            {
+                Response.Redirect("/Login.aspx");
             }
         }
 

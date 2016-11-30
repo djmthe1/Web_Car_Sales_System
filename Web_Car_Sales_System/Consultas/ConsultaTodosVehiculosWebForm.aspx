@@ -153,6 +153,7 @@
                                                 <asp:Label ID="PrecioLabel" runat="server" Text='<%#Eval("Precio") %>'></asp:Label>
                                             </td>
                                         </tr>
+                                        <tr>----------------------------------------------</tr>
                                     </table>
                                 </td>
                             </tr>

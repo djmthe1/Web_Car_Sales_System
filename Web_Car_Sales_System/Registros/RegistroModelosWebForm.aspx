@@ -87,7 +87,7 @@
         <tr>
             <td class="auto-style25"><strong>ModeloId:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="ModeloIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="ModeloId*"></asp:TextBox>
+                <asp:TextBox ID="ModeloIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="ModeloId*" MaxLength="5"></asp:TextBox>
             </td>
             <td class="auto-style18">
                 <strong>
@@ -106,7 +106,7 @@
         <tr>
             <td class="auto-style25"><strong>Descripción:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="DescripcionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Descripción*"></asp:TextBox>
+                <asp:TextBox ID="DescripcionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Descripción*" MaxLength="30"></asp:TextBox>
             </td>
             <td class="text-left">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="DescripcionTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>

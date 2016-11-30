@@ -42,24 +42,24 @@
         text-align: right;
         width: 393px;
     }
-            .auto-style26 {
-                text-align: left;
-                width: 294px;
-            }
-            .auto-style27 {
-                width: 295px
-            }
-            .auto-style28 {
-                width: 295px;
-                text-decoration: underline;
-                text-align: center;
-                font-size: x-large;
-            }
-            .auto-style29 {
-                width: 392px;
-                text-align: right;
-            }
-            </style>
+    .auto-style26 {
+        text-align: left;
+        width: 294px;
+    }
+    .auto-style27 {
+        width: 295px
+    }
+    .auto-style28 {
+        width: 295px;
+        text-decoration: underline;
+        text-align: center;
+        font-size: x-large;
+    }
+    .auto-style29 {
+        width: 392px;
+        text-align: right;
+    }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <table style="width: 100%;">
@@ -100,7 +100,7 @@
         <tr>
             <td class="auto-style25"><strong>FacturaId:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="FacturaIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="FacturaId*"></asp:TextBox>
+                <asp:TextBox ID="FacturaIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="FacturaId*" MaxLength="5"></asp:TextBox>
             </td>
             <td class="auto-style18">
                 <strong>
@@ -111,7 +111,7 @@
         <tr>
             <td class="auto-style25"><strong>Fecha:</strong></td>
             <td class="auto-style26">
-                <asp:TextBox ID="FechaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Fecha*"></asp:TextBox>
+                <asp:TextBox ID="FechaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Fecha*" MaxLength="10"></asp:TextBox>
             </td>
             <td class="text-right">&nbsp;</td>
         </tr>
@@ -135,14 +135,14 @@
         <tr>
             <td class="auto-style29"><strong>Pago Inicial en Efectivo:</strong></td>
             <td class="auto-style28">
-                <asp:TextBox ID="InicialEfectivoTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Pago Inicial en Efectivo*"></asp:TextBox>
+                <asp:TextBox ID="InicialEfectivoTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Pago Inicial en Efectivo*" MaxLength="7"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style29"><strong>Pago Inicial en Cheque:</strong></td>
             <td class="auto-style27">
-                <asp:TextBox ID="InicialChequeTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Pago Inicial en Cheque*"></asp:TextBox>
+                <asp:TextBox ID="InicialChequeTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Pago Inicial en Cheque*" MaxLength="7"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -151,7 +151,7 @@
         <tr>
             <td class="auto-style25"><strong>Precio a Pagar:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="PrecioAPagarTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Precio a Pagar*"></asp:TextBox>
+                <asp:TextBox ID="PrecioAPagarTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Precio a Pagar*" MaxLength="7"></asp:TextBox>
             </td>
             <td class="auto-style18">
                 &nbsp;</td>

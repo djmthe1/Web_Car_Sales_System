@@ -15,15 +15,14 @@ namespace Web_Car_Sales_System.Reportes
         {
             if (!IsPostBack)
             {
-                    cargar();
+                Visualizar();
 
-                }
             }
+        }
 
-        public void cargar()
+        public void Visualizar()
         {
             Validaciones.Reporte(ReportViewer, Validaciones.reporte, Validaciones.dataset, Validaciones.data);
         }
-
     }
 }

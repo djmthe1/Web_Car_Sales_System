@@ -241,6 +241,7 @@
                                                 <asp:Label ID="MatriculaLabel" runat="server" Text='<%#Eval("Matricula") %>'></asp:Label>
                                             </td>
                                         </tr>
+                                        <tr>----------------------------------------------</tr>
                                     </table>
                                 </td>
                             </tr>

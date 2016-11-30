@@ -83,8 +83,8 @@
         <tr>
             <td class="auto-style25"><strong>MotorId:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="MotorIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="MotorId*"></asp:TextBox>
-            </td>
+                <asp:TextBox ID="MotorIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="MotorId*" MaxLength="5"></asp:TextBox>
+           </td>
             <td class="auto-style18">
                 <strong>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ControlToValidate="MotorIdTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="BuscarEliminar">*</asp:RequiredFieldValidator>
@@ -95,7 +95,7 @@
         <tr>
             <td class="auto-style25"><strong>Descripción:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="DescripcionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Descripción*"></asp:TextBox>
+                <asp:TextBox ID="DescripcionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Descripción*" MaxLength="10"></asp:TextBox>
             </td>
             <td class="text-left">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="DescripcionTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>

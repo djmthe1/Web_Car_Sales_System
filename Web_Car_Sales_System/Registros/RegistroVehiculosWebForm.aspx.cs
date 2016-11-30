@@ -14,6 +14,7 @@ namespace Web_Car_Sales_System.Registros
         {
             if (!IsPostBack)
             {
+                Validar();
                 Vehiculos vehiculo = new Vehiculos();
                 ObtenerDropDownList();
                 if (Request.QueryString["VehiculoId"] != null)
@@ -26,6 +27,21 @@ namespace Web_Car_Sales_System.Registros
                         DevolverValores(vehiculo);
                     }
                 }
+            }
+        }
+
+        private void Validar()
+        {
+            if (Session["Login"] != null)
+            {
+                Usuarios usuario = new Usuarios();
+                usuario = (Usuarios)Session["Login"];
+                if (usuario.Prioridad != 1)
+                    Response.Redirect("/Default.aspx");
+            }
+            else
+            {
+                Response.Redirect("/Login.aspx");
             }
         }
 

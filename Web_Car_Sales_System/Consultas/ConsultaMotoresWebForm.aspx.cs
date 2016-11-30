@@ -13,7 +13,25 @@ namespace Web_Car_Sales_System.Consultas
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
+            {
                 Filtro();
+                Validar();
+            }
+        }
+
+        private void Validar()
+        {
+            if (Session["Login"] != null)
+            {
+                Usuarios usuario = new Usuarios();
+                usuario = (Usuarios)Session["Login"];
+                if (usuario.Prioridad != 1)
+                    Response.Redirect("/Default.aspx");
+            }
+            else
+            {
+                Response.Redirect("/Login.aspx");
+            }
         }
 
         protected void BuscarButton_Click(object sender, EventArgs e)

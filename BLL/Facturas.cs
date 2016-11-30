@@ -44,7 +44,7 @@ namespace BLL
                 retorno = conexion.Ejecutar(string.Format("INSERT INTO Facturas (Fecha, ClienteId, VehiculoId, PagoInicialEfectivo, PagoInicialCheque, PrecioAPagar, AutorizadoPor) VALUES ('{0}',{1},{2},{3},{4},{5},{6})", this.Fecha, this.ClienteId, this.VehiculoId, this.PagoInicialEfectivo, this.PagoInicialCheque, this.PrecioAPagar, this.AutorizadoPor));
                 if (retorno)
                 {
-                    conexion.Ejecutar(string.Format("UPDATE Vehiculos SET Vendido=True WHERE VehiculoId={0}", this.VehiculoId));
+                    conexion.Ejecutar(string.Format("UPDATE Vehiculos SET Vendido='True' WHERE VehiculoId={0}", this.VehiculoId));
                 }
                 return retorno;
             }

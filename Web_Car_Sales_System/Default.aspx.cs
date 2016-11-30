@@ -15,6 +15,7 @@ namespace Web_Car_Sales_System
             if (!IsPostBack)
             {
                 repeater();
+                Session.Clear();
             }
         }
 

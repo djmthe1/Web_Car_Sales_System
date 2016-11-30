@@ -87,7 +87,7 @@
         <tr>
             <td class="auto-style25"><strong>VehiculoId:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="VehiculoIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="VehiculoId*"></asp:TextBox>
+                <asp:TextBox ID="VehiculoIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="VehiculoId*" MaxLength="5"></asp:TextBox>
             </td>
             <td class="auto-style18">
                 <strong>
@@ -147,7 +147,7 @@
         <tr>
             <td class="auto-style25"><strong>Año:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="AñoTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Año*"></asp:TextBox>
+                <asp:TextBox ID="AñoTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Año*" MaxLength="4"></asp:TextBox>
             </td>
             <td class="auto-style18">
                 &nbsp;</td>
@@ -155,7 +155,7 @@
         <tr>
             <td class="auto-style25"><strong>No. Chasis:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="ChasisTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="No. Chasis*"></asp:TextBox>
+                <asp:TextBox ID="ChasisTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="No. Chasis*" MaxLength="30"></asp:TextBox>
             </td>
             <td class="text-right">&nbsp;</td>
         </tr>
@@ -173,7 +173,7 @@
         <tr>
             <td class="auto-style25"><strong>Kilometraje:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="KilometrajeTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Kilometraje*"></asp:TextBox>
+                <asp:TextBox ID="KilometrajeTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Kilometraje*" MaxLength="6"></asp:TextBox>
             </td>
             <td class="auto-style18">
                 &nbsp;</td>
@@ -181,14 +181,14 @@
         <tr>
             <td class="auto-style25"><strong>Precio:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="PrecioTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Precio*"></asp:TextBox>
+                <asp:TextBox ID="PrecioTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Precio*" MaxLength="7"></asp:TextBox>
             </td>
             <td class="text-right">&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style25"><strong>Placa:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="PlacaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Placa*"></asp:TextBox>
+                <asp:TextBox ID="PlacaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Placa*" MaxLength="20"></asp:TextBox>
             </td>
             <td class="text-right">
                 &nbsp;</td>
@@ -198,7 +198,7 @@
         <tr>
             <td class="auto-style25"><strong>Matricula:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="MatriculaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Matricula*"></asp:TextBox>
+                <asp:TextBox ID="MatriculaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Matricula*" MaxLength="20"></asp:TextBox>
             </td>
             <td class="auto-style18">
                 &nbsp;</td>

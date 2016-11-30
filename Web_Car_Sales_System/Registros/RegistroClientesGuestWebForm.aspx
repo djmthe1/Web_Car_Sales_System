@@ -116,7 +116,7 @@
         <tr>
             <td class="auto-style35"><strong>ClienteId:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="ClienteIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="ClienteId*"></asp:TextBox>
+                <asp:TextBox ID="ClienteIdTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="ClienteId*" MaxLength="5"></asp:TextBox>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="ClienteIdTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red">*</asp:RequiredFieldValidator>
@@ -125,7 +125,7 @@
         <tr>
             <td class="auto-style35"><strong>Nombre Completo:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="NombreCompletoTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nombre Completo*"></asp:TextBox>
+                <asp:TextBox ID="NombreCompletoTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nombre Completo*" MaxLength="30"></asp:TextBox>
             </td>
             <td class="text-left">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ControlToValidate="NombreCompletoTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red">*</asp:RequiredFieldValidator>
@@ -134,7 +134,7 @@
         <tr>
             <td class="auto-style35"><strong>Nombre de Usuario:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="NombreUsuarioTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nombre de Usuario*"></asp:TextBox>
+                <asp:TextBox ID="NombreUsuarioTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nombre de Usuario*" MaxLength="20"></asp:TextBox>
             </td>
             <td class="text-left">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator20" runat="server" ControlToValidate="NombreUsuarioTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red">*</asp:RequiredFieldValidator>
@@ -145,7 +145,7 @@
         <tr>
             <td class="auto-style36"><strong>Contraseña:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="ContraseñaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Contraseña*"></asp:TextBox>
+                <asp:TextBox ID="ContraseñaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Contraseña*" MaxLength="40"></asp:TextBox>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator21" runat="server" ControlToValidate="ContraseñaTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red">*</asp:RequiredFieldValidator>
@@ -154,7 +154,7 @@
         <tr>
             <td class="auto-style36"><strong>Repetir Contraseña:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="RepetirTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Repetir Contraseña*"></asp:TextBox>
+                <asp:TextBox ID="RepetirTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Repetir Contraseña*" MaxLength="40"></asp:TextBox>
             </td>
             <td class="text-left">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator22" runat="server" ControlToValidate="RepetirTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red">*</asp:RequiredFieldValidator>
@@ -163,7 +163,7 @@
         <tr>
             <td class="auto-style36"><strong>Dirección:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="DireccionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Dirección*"></asp:TextBox>
+                <asp:TextBox ID="DireccionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Dirección*" MaxLength="30"></asp:TextBox>
             </td>
             <td class="text-left">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
@@ -174,7 +174,7 @@
         <tr>
             <td class="auto-style36"><strong>Cedula:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="CedulaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Cedula*"></asp:TextBox>
+                <asp:TextBox ID="CedulaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Cedula*" MaxLength="12"></asp:TextBox>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="CedulaTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
@@ -183,7 +183,7 @@
         <tr>
             <td class="auto-style36"><strong>Nacionalidad:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="NacionalidadTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nacionalidad*"></asp:TextBox>
+                <asp:TextBox ID="NacionalidadTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nacionalidad*" MaxLength="10"></asp:TextBox>
             </td>
             <td class="text-left">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="NacionalidadTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
@@ -192,7 +192,7 @@
         <tr>
             <td class="auto-style36"><strong>Lugar de Nacimiento:</strong></td>
             <td class="auto-style4">
-                <asp:TextBox ID="NacimientoTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Lugar de Nacimiento*"></asp:TextBox>
+                <asp:TextBox ID="NacimientoTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Lugar de Nacimiento*" MaxLength="20"></asp:TextBox>
             </td>
             <td class="text-left">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="NacimientoTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
@@ -203,7 +203,7 @@
         <tr>
             <td class="auto-style51"><strong>Ocupación:</strong></td>
             <td class="auto-style52">
-                <asp:TextBox ID="OcupacionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Ocupación*"></asp:TextBox>
+                <asp:TextBox ID="OcupacionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Ocupación*" MaxLength="30"></asp:TextBox>
             </td>
             <td class="auto-style53">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator24" runat="server" ControlToValidate="OcupacionTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
@@ -227,7 +227,7 @@
                 <table class="auto-style56">
                     <tr>
                         <td class="auto-style49">
-             <asp:TextBox ID="TelefonoTextBox" CssClass="form-control" runat="server" Width="100px" placeholder="Telefono*"></asp:TextBox>
+             <asp:TextBox ID="TelefonoTextBox" CssClass="form-control" runat="server" Width="100px" placeholder="Telefono*" MaxLength="12"></asp:TextBox>
                         </td>
                         <td class="auto-style50">
              <strong>Tipo:</strong></td>

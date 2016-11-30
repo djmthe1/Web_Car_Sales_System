@@ -14,18 +14,31 @@ namespace Web_Car_Sales_System.Registros
         {
             if (!IsPostBack)
             {
+                Validar();
                 Modelos modelo = new Modelos();
                 ObtenerDropDownList();
                 if (Request.QueryString["ModeloId"] != null)
                 {
-                    int id = 0;
-                    int.TryParse(Request.QueryString["ModeloId"].ToString(), out id);
-
-                    if (modelo.Buscar(id))
+                    if (modelo.Buscar(Validaciones.Entero(Request.QueryString["ModeloId"].ToString())))
                     {
                         DevolverValores(modelo);
                     }
                 }
+            }
+        }
+
+        private void Validar()
+        {
+            if (Session["Login"] != null)
+            {
+                Usuarios usuario = new Usuarios();
+                usuario = (Usuarios)Session["Login"];
+                if (usuario.Prioridad != 1)
+                    Response.Redirect("/Default.aspx");
+            }
+            else
+            {
+                Response.Redirect("/Login.aspx");
             }
         }
 

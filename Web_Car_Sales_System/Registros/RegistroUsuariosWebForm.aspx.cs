@@ -14,6 +14,7 @@ namespace Web_Car_Sales_System.Registros
         {
             if (!IsPostBack)
             {
+                Validar();
                 Usuarios usuario = new Usuarios();
                 PrioridadDropDownList.SelectedIndex = 0;
                 if (Request.QueryString["UsuarioId"] != null)
@@ -23,6 +24,21 @@ namespace Web_Car_Sales_System.Registros
                         DevolverValores(usuario);
                     }
                 }
+            }
+        }
+
+        private void Validar()
+        {
+            if (Session["Login"] != null)
+            {
+                Usuarios usuario = new Usuarios();
+                usuario = (Usuarios)Session["Login"];
+                if (usuario.Prioridad != 1)
+                    Response.Redirect("/Default.aspx");
+            }
+            else
+            {
+                Response.Redirect("/Login.aspx");
             }
         }
 
