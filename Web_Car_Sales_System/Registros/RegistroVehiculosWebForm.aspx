@@ -107,6 +107,7 @@
                     <asp:ListItem Value="1">Nuevo</asp:ListItem>
                     <asp:ListItem Value="2">Usado</asp:ListItem>
                 </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="EstadoDropDownList" InitialValue="Seleccionar--" ErrorMessage="Debe Seleccionar uno" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </td>
             <td class="text-right">&nbsp;</td>
         </tr>
@@ -115,6 +116,7 @@
             <td class="auto-style26">
                 <asp:DropDownList ID="MarcaDropDownList" runat="server" Class="form-control input-sm" CssClass="col-xs-offset-0" Height="34px" style="margin-left: 0px" Width="285px">
                 </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="MarcaDropDownList" InitialValue="Seleccionar--" ErrorMessage="Debe Seleccionar uno" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </td>
             <td class="text-right">
                 &nbsp;</td>
@@ -126,6 +128,7 @@
             <td class="auto-style26">
                 <asp:DropDownList ID="ModeloDropDownList" runat="server" Class="form-control input-sm" CssClass="col-xs-offset-0" Height="34px" style="margin-left: 0px" Width="285px">
                 </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="ModeloDropDownList" InitialValue="Seleccionar--" ErrorMessage="Debe Seleccionar uno" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </td>
             <td class="auto-style18">
                 &nbsp;</td>
@@ -135,6 +138,7 @@
             <td class="auto-style26">
                 <asp:DropDownList ID="MotorDropDownList" runat="server" Class="form-control input-sm" CssClass="col-xs-offset-0" Height="34px" style="margin-left: 0px" Width="285px">
                 </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="MotorDropDownList" InitialValue="Seleccionar--" ErrorMessage="Debe Seleccionar uno" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </td>
             <td class="text-right">&nbsp;</td>
         </tr>
@@ -143,6 +147,7 @@
             <td class="auto-style26">
                 <asp:DropDownList ID="ColorDropDownList" runat="server" Class="form-control input-sm" CssClass="col-xs-offset-0" Height="34px" style="margin-left: 0px" Width="285px">
                 </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="ColorDropDownList" InitialValue="Seleccionar--" ErrorMessage="Debe Seleccionar uno" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </td>
             <td class="text-right">
                 &nbsp;</td>
@@ -153,6 +158,8 @@
             <td class="auto-style25"><strong>Año:</strong></td>
             <td class="auto-style4">
                 <asp:TextBox ID="AñoTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Año*" MaxLength="4"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="AñoTextBox" EnableTheming="False" ErrorMessage="Debe insertar un Año" ForeColor="Red" SetFocusOnError="True" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="AñoTextBox" ErrorMessage="*Ingrese Valores Numericos" ValidationExpression="^[0-9]*" ValidationGroup="Guardar">*</asp:RegularExpressionValidator>
             </td>
             <td class="auto-style18">
                 &nbsp;</td>
@@ -161,6 +168,8 @@
             <td class="auto-style25"><strong>No. Chasis:</strong></td>
             <td class="auto-style4">
                 <asp:TextBox ID="ChasisTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="No. Chasis*" MaxLength="30"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="ChasisTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="ChasisTextBox" ErrorMessage="*Ingrese Solo Letras y Numeros"  ValidationExpression="[0-9 A-Za-z]+$" ValidationGroup="Guardar">*</asp:RegularExpressionValidator>
             </td>
             <td class="text-right">&nbsp;</td>
         </tr>
@@ -169,6 +178,7 @@
             <td class="auto-style26">
                 <asp:DropDownList ID="TipoDropDownList" runat="server" Class="form-control input-sm" CssClass="col-xs-offset-0" Height="34px" style="margin-left: 0px" Width="285px">
                 </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="TipoDropDownList" InitialValue="Seleccionar--" ErrorMessage="Debe Seleccionar uno" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </td>
             <td class="text-right">
                 &nbsp;</td>
@@ -179,6 +189,8 @@
             <td class="auto-style25"><strong>Kilometraje:</strong></td>
             <td class="auto-style4">
                 <asp:TextBox ID="KilometrajeTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Kilometraje*" MaxLength="6"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="KilometrajeTextBox" EnableTheming="False" ErrorMessage="Debe insertar un Kilometraje" ForeColor="Red" SetFocusOnError="True" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="KilometrajeTextBox" ErrorMessage="*Ingrese Valores Numericos" ValidationExpression="^[0-9]*" ValidationGroup="Guardar">*</asp:RegularExpressionValidator>
             </td>
             <td class="auto-style18">
                 &nbsp;</td>
@@ -187,6 +199,8 @@
             <td class="auto-style25"><strong>Precio:</strong></td>
             <td class="auto-style4">
                 <asp:TextBox ID="PrecioTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Precio*" MaxLength="7"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="PrecioTextBox" EnableTheming="False" ErrorMessage="Debe insertar un Precio" ForeColor="Red" SetFocusOnError="True" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="PrecioTextBox" ErrorMessage="*Ingrese Valores Numericos" ValidationExpression="^[0-9]*" ValidationGroup="Guardar">*</asp:RegularExpressionValidator>
             </td>
             <td class="text-right">&nbsp;</td>
         </tr>
@@ -194,6 +208,8 @@
             <td class="auto-style25"><strong>Placa:</strong></td>
             <td class="auto-style4">
                 <asp:TextBox ID="PlacaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Placa*" MaxLength="20"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="PlacaTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ControlToValidate="PlacaTextBox" ErrorMessage="*Ingrese Solo Letras y Numeros"  ValidationExpression="[0-9 A-Za-z]+$" ValidationGroup="Guardar">*</asp:RegularExpressionValidator>
             </td>
             <td class="text-right">
                 &nbsp;</td>
@@ -204,6 +220,8 @@
             <td class="auto-style25"><strong>Matricula:</strong></td>
             <td class="auto-style4">
                 <asp:TextBox ID="MatriculaTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Matricula*" MaxLength="20"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="MatriculaTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ControlToValidate="MatriculaTextBox" ErrorMessage="*Ingrese Solo Letras y Numeros"  ValidationExpression="[0-9 A-Za-z]+$" ValidationGroup="Guardar">*</asp:RegularExpressionValidator>
             </td>
             <td class="auto-style18">
                 &nbsp;</td>

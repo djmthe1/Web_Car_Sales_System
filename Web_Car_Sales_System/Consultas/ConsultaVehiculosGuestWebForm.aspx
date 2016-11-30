@@ -97,21 +97,17 @@
         <tr>
             <td class="auto-style27">Buscar Por:<asp:DropDownList ID="BuscarPorDropDownList" Class="form-control input-sm" runat="server" CssClass="col-xs-offset-0" Height="34px" Width="150px" style="margin-left: 0px">
                 <asp:ListItem>EstadoVehiculo</asp:ListItem>
-                <asp:ListItem>MarcaId</asp:ListItem>
-                <asp:ListItem>ModeloId</asp:ListItem>
-                <asp:ListItem>MotorId</asp:ListItem>
-                <asp:ListItem>ColorId</asp:ListItem>
                 <asp:ListItem>Año</asp:ListItem>
-                <asp:ListItem>TipoVehiculoId</asp:ListItem>
                 <asp:ListItem>Precio</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td class="auto-style26">
                 <asp:TextBox ID="FiltroTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Filtro"></asp:TextBox>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="FiltroTextBox" ErrorMessage="*Ingrese Solo Letras y Numeros" ValidationExpression="[0-9 A-Za-z]+$" ValidationGroup=">Buscar">*</asp:RegularExpressionValidator>
             </td>
             <td>
                 <strong>
-                <asp:Button ID="BuscarButton" Class="btn btn-success" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" />
+                <asp:Button ID="BuscarButton" Class="btn btn-success" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" ValidationGroup="Buscar"/>
                 </strong>
             </td>
         </tr>

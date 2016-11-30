@@ -43,6 +43,8 @@
                                  <li><a href="/Registros/RegistroTipoVehiculosWebForm.aspx">TIPO DE VEHICULOS </a></li>
                                  <li><a href="/Registros/RegistroVehiculosWebForm.aspx">VEHICULOS </a></li>
                                  <li><a href="/Registros/RegistroUsuariosWebForm.aspx">USUARIOS </a></li>
+                                 <li><a href="/Registros/RegistroClientesWebForm.aspx">CLIENTES </a></li>
+                                 <li><a href="/Registros/RegistroFacturasWebForm.aspx">FACTURAS </a></li>
 					        </ul>
 				        </li>
                         <li><a href="/Reportes/VisorReportes.aspx">REPORTES</a></li>
@@ -55,6 +57,8 @@
                                  <li"><a href="/Consultas/ConsultaTipoVehiculosWebForm.aspx">TIPO DE VEHICULOS </a></li>
                                  <li"><a href="/Consultas/ConsultaVehiculosWebForm.aspx">VEHICULOS </a></li>
                                  <li"><a href="/Consultas/ConsultaUsuariosWebForm.aspx">USUARIOS </a></li>
+                                <li"><a href="/Consultas/ConsultaClientesWebForm.aspx">CLIENTES </a></li>
+                                 <li"><a href="/Consultas/ConsultaFacturasWebForm.aspx">FACTURAS </a></li>
                             </ul>
 				        </li>
                             <li><a href="/Default.aspx">CERRAR SESION</a></li>

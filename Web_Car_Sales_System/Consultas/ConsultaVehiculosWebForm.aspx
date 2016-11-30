@@ -15,18 +15,18 @@
         font-size: x-large;
         }
         .auto-style25 {
-            width: 315px
+            width: 297px
         }
             .auto-style26 {
-            width: 296px;
+            width: 345px;
             text-align: right;
         }
         .auto-style27 {
-            width: 315px;
+            width: 297px;
             text-align: right;
         }
             .auto-style28 {
-            width: 296px;
+            width: 345px;
             text-decoration: underline;
             text-align: center;
             font-size: x-large;
@@ -92,14 +92,8 @@
         <tr>
             <td class="auto-style27">Buscar Por:<asp:DropDownList ID="BuscarPorDropDownList" Class="form-control input-sm" runat="server" CssClass="col-xs-offset-0" Height="34px" Width="150px" style="margin-left: 0px">
                 <asp:ListItem>VehiculoId</asp:ListItem>
-                <asp:ListItem>EstadoVehiculo</asp:ListItem>
-                <asp:ListItem>MarcaId</asp:ListItem>
-                <asp:ListItem>ModeloId</asp:ListItem>
-                <asp:ListItem>MotorId</asp:ListItem>
-                <asp:ListItem>ColorId</asp:ListItem>
                 <asp:ListItem>Año</asp:ListItem>
                 <asp:ListItem>NoChasis</asp:ListItem>
-                <asp:ListItem>TipoVehiculoId</asp:ListItem>
                 <asp:ListItem>Kilometraje</asp:ListItem>
                 <asp:ListItem>Precio</asp:ListItem>
                 <asp:ListItem>Placa</asp:ListItem>
@@ -111,8 +105,9 @@
                 <asp:TextBox ID="FiltroTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Filtro"></asp:TextBox>
             </td>
             <td>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="FiltroTextBox" ErrorMessage="*Ingrese Solo Letras y Numeros" ValidationExpression="[0-9 A-Za-z]+$" ValidationGroup=">Buscar">*</asp:RegularExpressionValidator>
                 <strong>
-                <asp:Button ID="BuscarButton" Class="btn btn-success" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" />
+                <asp:Button ID="BuscarButton" Class="btn btn-success" runat="server" Text="Buscar" Width="100px" OnClick="BuscarButton_Click" ValidationGroup="Buscar"/>
                 </strong>
             </td>
         </tr>

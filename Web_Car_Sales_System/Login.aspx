@@ -60,7 +60,7 @@
         <tr>
             <td class="auto-style21"><strong>Nombre de Usuario:</strong></td>
             <td class="auto-style22">
-                <asp:TextBox ID="UsuarioTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nombre de Usuario*"></asp:TextBox>
+                <asp:TextBox ID="UsuarioTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Nombre de Usuario*" MaxLength="20"></asp:TextBox>
               </td>
             <td class="auto-style23">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="UsuarioTextBox" EnableTheming="False" ErrorMessage="Debe insertar un Usuario" ForeColor="Red" SetFocusOnError="True" ValidationGroup="Entrar">*</asp:RequiredFieldValidator>
@@ -70,7 +70,7 @@
         <tr>
             <td class="auto-style21"><strong>Contraseña:</strong></td>
             <td class="auto-style22">
-                <asp:TextBox ID="PassTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Contraseña*"></asp:TextBox>
+                <asp:TextBox ID="PassTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Contraseña*" MaxLength="40"></asp:TextBox>
             </td>
             <td class="auto-style23">
                 

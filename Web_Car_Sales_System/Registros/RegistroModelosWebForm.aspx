@@ -102,6 +102,7 @@
             <td class="auto-style25"><strong>Marca:</strong></td>
             <td class="auto-style26">
                 <asp:DropDownList ID="MarcaDropDownList" Class="form-control input-sm" runat="server" CssClass="col-xs-offset-0" Height="40px" Width="285px" style="margin-left: 0px"></asp:DropDownList>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="MarcaDropDownList" InitialValue="Seleccionar--" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </td>
             <td class="text-right">&nbsp;</td>
         </tr>
@@ -111,7 +112,7 @@
                 <asp:TextBox ID="DescripcionTextBox" CssClass="form-control" runat="server" Width="285px" placeholder="Descripción*" MaxLength="30"></asp:TextBox>
             </td>
             <td class="text-left">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="DescripcionTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="DescripcionTextBox" ErrorMessage="Ingrese la Descripcion" ForeColor="Red" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="DescripcionTextBox" ErrorMessage="*Ingrese Solo Letras"  ValidationExpression="^[A-Za-z]*$" ValidationGroup="Guardar">*</asp:RegularExpressionValidator>
             </td>
         </tr>
